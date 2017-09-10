@@ -66,3 +66,5 @@ tags: 技术博客
 
 ## 截图介绍 chrome 开发者工具的功能区
 ![](http://ouqp9l9vp.bkt.clouddn.com/20170910144328.png)
+
+*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
