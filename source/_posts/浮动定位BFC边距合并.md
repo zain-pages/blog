@@ -39,6 +39,9 @@ tags: 技术博客
 清除浮动可以通过设置父级元素overflow:auto;或者display:inline-block;等方法来实现。
 
 ## 有几种定位方式，分别是如何实现定位的，参考点是什么，使用场景是什么？
+
+absolute生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。fixed生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。relative生成相对定位的元素，相对于其正常位置进行定位。因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。static默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
+
 ## z-index 有什么作用? 如何使用?
 
 相当于photoshop中“图层”的概念，上面的图层覆盖下面的图层，此属性的数值越大相当于图层越上。
