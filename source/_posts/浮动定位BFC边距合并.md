@@ -72,7 +72,7 @@ CSS2.1中规定满足下列CSS声明之一的元素便会生成BFC。
 举例：
 {% codeblock lang:html %}
 
-<div style="margin: 20px;border: 1px solid;">
+<div style="margin: 20px;">
 	<div style="margin: 20px;">222</div>
 </div>
 
