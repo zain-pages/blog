@@ -30,10 +30,14 @@ tags: 技术博客
 如作业代码所示
 
 ## 单行文本溢出加 ...如何实现?
+
 {% codeblock lang:css %}
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
+#something{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;	
+}
+
 {% endcodeblock %}
 多行文本溢出加 ...参考：[如何实现单行／多行文本溢出的省略](http://www.cnblogs.com/penghuwan/p/6682303.html)
 
