@@ -70,7 +70,13 @@ CSS2.1中规定满足下列CSS声明之一的元素便会生成BFC。
 
 ## 在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例
 
-同一BFC下会产生外边距合并；合并存在两种情况，分别是内外嵌套元素的外边距合并和元素的上下外边距合并，使两个元素处于不同BFC或者在内外嵌套情况时，在外元素加border或者padding即可。
+同一BFC下会产生外边距合并；合并存在两种情况，分别是内外嵌套元素的外边距合并和元素的上下外边距合并；
+合并规则：
+margin都为正值，取较大值。
+margin都为是负值，取较小值。
+margin有正有负，先取出负margin中较小的，然后和正margin最大值相加。
+所有相邻的margin一起参与运算，不能分部分进行。
+使两个元素处于不同BFC或者在内外嵌套情况时，在外元素加border或者padding即可。
 
 举例：
 {% codeblock lang:html %}
@@ -78,6 +84,11 @@ CSS2.1中规定满足下列CSS声明之一的元素便会生成BFC。
 <div style="margin: 20px;">
 	<div style="margin: 20px;">222</div>
 </div>
+<!-- 内外嵌套边距合并的情况 -->
+
+<div style="margin: 20px"></div>
+<div style="margin: 20px"></div>
+<!-- 上下外边距合并的情况 -->
 
 {% endcodeblock %}
 
