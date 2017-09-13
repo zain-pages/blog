@@ -17,5 +17,8 @@
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
     "hexo-util": "^0.6.1"
+  },
+  "scripts": {
+  	"blog": "hexo g && hexo d && git add . && git commit -m 'auto update' && git push"
   }
 }
