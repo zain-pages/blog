@@ -11,7 +11,7 @@ tags: 技术博客
 * elem.childNodes包含HTML节点，文本节点，属性节点
 * elem.children只包含子HTML节点
 ## 查询元素有几种常见的方法？ES5的元素选择方法是什么?
-DOM1查询元素方法：
+DOM0查询元素方法：
 * document.getElementById('id');
 * document.getElementsByTagName('tagName');
 * document.getElementsByClassName('className');
