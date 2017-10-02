@@ -25,9 +25,9 @@ tags: 技术博客
 {% endcodeblock %}
 {% codeblock lang:javascript %}
     var fnArr = [];
-    for (let i = 0; i < 10; i ++) {
+    for (var i = 0; i < 10; i ++) {
     	!function(){
-			fnArr[i] =  function(){
+			     fnArr[i] =  function(){
 	    	    return i;
 	        };
 	    }()
@@ -69,7 +69,7 @@ Car.decelerate();
 Car.decelerate();
 Car.getSpeed(); //20
 Car.getStatus(); // 'running';
-Car.decelerate(); 
+Car.decelerate();
 Car.decelerate();
 Car.getStatus();  //'stop';
 //Car.speed;  //error
