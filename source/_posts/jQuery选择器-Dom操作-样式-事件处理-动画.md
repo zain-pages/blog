@@ -28,8 +28,38 @@ $('agent').on('event','principal',function(e){
   });
 {% endcodeblock %}
 ## jQuery 如何展示/隐藏元素？
+{% codeblock lang:javascript %}
+/* jQuery展示/隐藏元素 */
+$(selector).show();//展示
+$(selector).hide();//隐藏
+{% endcodeblock %}
 ##  jQuery 动画如何使用？
+{% codeblock lang:javascript %}
+$(selector).animate({params},speed,callback);
+{% endcodeblock %}
+其中{params}为之后的CSS样式，（事实上jQuery不支持某些css样式渐变如background-color，这个时候用css3的transition属性更为好用），speed为动画时间，callback为动画执行完毕时候产生的回调函数。animate支持链式调用，支持动画队列。动画会依次执行。
+另有一堆封装好的动画方法，还有两个特殊的方法：
+{% codeblock lang:javascript %}
+$(selector).finish();//停止动画于最终样式
+$(selector).stop();//停止动画于此序列最终样式
+{% endcodeblock %}
 ## 如何设置和获取元素内部 HTML 内容？如何设置和获取元素内部文本？
+{% codeblock lang:javascript %}
+/* 获取元素的html与设置元素的html */
+$(selector).html();//获取
+$(selector).html(value);//设置
+/* 获取元素的text与设置元素的text */
+$(selector).text();//获取
+$(selector).text(value);//设置
+{% endcodeblock %}
 ## 如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？
+{% codeblock lang:javascript %}
+/* 获取元素的值与设置元素的值 */
+$(selector).val();//获取
+$(selector).val(value);//设置
+/* 获取和设置元素属性 */
+$(selector).attr('Arrtibute');//获取
+$(selector).attr('Arrtibute','value');//设置
+{% endcodeblock %}
 ## 作业
 [进阶14](https://github.com/Zainking/demos/tree/master/%E8%BF%9B%E9%98%B614)
