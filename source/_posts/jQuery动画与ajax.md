@@ -177,7 +177,7 @@ Success:
 }
 {% endcodeblock %}
 Error:
-{% codeblock lang:json %}
+{% codeblock lang:javascript %}
 {
   'data':{},
   'status':{
