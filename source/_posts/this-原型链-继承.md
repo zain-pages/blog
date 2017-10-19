@@ -119,13 +119,34 @@ p.toString()是从Person对象的原型对象Object对象中来的。
 [水乙：三张图搞懂JavaScript的原型对象与原型链](http://www.cnblogs.com/shuiyi/p/5305435.html)
 ## 对String做扩展，实现如下方式获取字符串中频率最高的字符
 {% codeblock lang:javascript %}
+String.prototype.getMostOften = function(){
+  var mostNum = 0, currentNum = 0, mostChar = this[0];
+  for(var i = 0;i < this.length;i++){
+    currentNum = 0;
+    for(var j = i;j < this.length;j++){
+      if(this[i] === this[j]){
+        currentNum++;
+        if(currentNum > mostNum){
+          mostNum = currentNum;
+          mostChar = this[i];
+        }
+      }
+    }
+  }
+  return mostChar;
+}
 var str = 'ahbbccdeddddfg';
 var ch = str.getMostOften();
 console.log(ch); //d , 因为d 出现了5次
 {% endcodeblock %}
 ## instanceOf有什么作用？内部逻辑是如何实现的？
-
+Object.prototype.instanceOf(Constructor)可以判断这个实例对象是否是某个构造函数的后代。
+它会去寻找此对象中\_\_proto\_\_属性中constructor属性是否与参数吻合，如果不吻合则寻找下一级\_\_proto\_\_属性中的constructor属性是否吻合，一直寻找到Object构造函数，如果全部没有吻合则返回false，有一个吻合就返回true。
 ## 继承有什么作用?
+
+1. 可以使对象派生结构清晰。
+2. 可以节省重复代码。
+3. 如果父级类属性改变，则只需更改父级类，继承的子级类自动得到修改。
 
 ## 下面两种写法有什么区别?
 {% codeblock lang:javascript %}
@@ -150,10 +171,32 @@ Person.prototype.printName = function(){
 }
 var p1 = new Person('若愚', 27);
 {% endcodeblock %}
+
+第一种写法在每次实例化对象时都在实例对象中生成一个单独的printName方法，每一个函数占用一块内存。
+第二种写法只需要开辟一块内存存放printName方法即可，其他所有实例对象的原型指向含有这个函数的原型对象，节省内存。
+
 ## Object.create 有什么作用？兼容性如何？
+Object.create(prototype, descriptors)创建一个具有指定原型且可选择性地包含指定属性的对象。
+prototype 必需。  要用作原型的对象。 可以为 null。
+descriptors 可选。 包含一个或多个属性描述符的 JavaScript 对象。
+“数据属性”是可获取且可设置值的属性。 数据属性描述符包含 value 特性，以及 writable、enumerable 和 configurable 特性。
 
+如果未指定最后三个特性，则它们默认为 false。 只要检索或设置该值，“访问器属性”就会调用用户提供的函数。 访问器属性描述符包含 set 特性和/或 get 特性。
+{% codeblock lang:javascript %}
+var pt = {
+        say : function(){
+            console.log('saying!');    
+        }
+    }
+
+    var o = Object.create(pt);
+
+    console.log('say' in o); // true
+    console.log(o.hasOwnProperty('say')); // false
+{% endcodeblock %}
+Object.create()是ES5语法，仅在支持ES5语法的浏览器上可以实现。
 ## hasOwnProperty有什么作用？ 如何使用？
-
+hasOwnProperty()用于判断此实例对象是否含有此属性,如上题代码，say是pt的属性，o可以以它的子代身份调用，但是检测发现并非其自带属性。
 ## 如下代码中call的作用是什么?
 {% codeblock lang:javascript %}
 function Person(name, sex){
@@ -165,25 +208,32 @@ function Male(name, sex, age){
     this.age = age;
 }
 {% endcodeblock %}
+这里的call相当于实现属性的继承。可以将Person的属性全部继承给Male。
 ## 补全代码，实现继承
 {% codeblock lang:javascript %}
 function Person(name, sex){
-    // todo ...
+    this.name = name;
+    this.sex = sex;
 }
 
 Person.prototype.getName = function(){
-    // todo ...
+    console.log(this.name);
 };    
 
 function Male(name, sex, age){
-   //todo ...
+   Person.call(this, name, sex);
+   this.age = age;
 }
 
-//todo ...
+function fn(){};
+fn.prototype = Person.prototype;
+Male.prototype = new fn();
+Male.prototype.constructor = Male;
 Male.prototype.getAge = function(){
-    //todo ...
+    console.log(this.age);
 };
 
 var ruoyu = new Male('若愚', '男', 27);
-ruoyu.printName();
+ruoyu.getName();
 {% endcodeblock %}
+*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
