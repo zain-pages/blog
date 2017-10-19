@@ -100,7 +100,7 @@ var module= {
   }
 }
 {% endcodeblock %}
-## 有如下代码，解释Person、 prototype、__proto__、p、constructor之间的关联。
+## 有如下代码，解释Person、 prototype、\_\_proto\_\_、p、constructor之间的关联。
 {% codeblock lang:javascript %}
 function Person(name){
     this.name = name;
@@ -115,7 +115,7 @@ p.sayName();
 ## 上例中，对对象 p可以这样调用 p.toString()。toString是哪里来的? 画出原型图?并解释什么是原型链。
 p.toString()是从Person对象的原型对象Object对象中来的。
 ![Person原型链](http://img1.zain.red/10.19/2.jpg)
-函数的原型对象constructor默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针__proto__，该指针指向上一层的原型对象，而上一层的原型对象的结构依然类似，这样利用__proto__一直指向Object的原型对象上，而Object的原型对象用Object.prototype.__proto__ = null表示原型链的最顶端，如此变形成了javascript的原型链继承，同时也解释了为什么所有的javascript对象都具有Object的基本方法。
+函数的原型对象constructor默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针__proto__，该指针指向上一层的原型对象，而上一层的原型对象的结构依然类似，这样利用__proto__一直指向Object的原型对象上，而Object的原型对象用Object.prototype.\_\_proto\_\_ = null表示原型链的最顶端，如此变形成了javascript的原型链继承，同时也解释了为什么所有的javascript对象都具有Object的基本方法。
 [水乙：三张图搞懂JavaScript的原型对象与原型链](http://www.cnblogs.com/shuiyi/p/5305435.html)
 ## 对String做扩展，实现如下方式获取字符串中频率最高的字符
 {% codeblock lang:javascript %}
