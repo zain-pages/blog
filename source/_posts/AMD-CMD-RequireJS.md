@@ -8,6 +8,7 @@ tags: 技术博客
 2. 依赖管理
 3. 提高代码可读性
 4. 代码解耦，提高复用性
+
 ## CMD、AMD、CommonJS 规范分别指什么？有哪些应用
 commonjs是用在服务器端的，同步的，如nodejs。
 amd, cmd是用在浏览器端的，异步的，如requirejs和seajs。
