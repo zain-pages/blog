@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.3.9"
+    "version": "3.3.8"
   },
   "dependencies": {
     "hexo": "^3.3.8",
@@ -19,6 +19,6 @@
     "hexo-util": "^0.6.1"
   },
   "scripts": {
-    "blog": "hexo g && hexo d && git add . && git commit -m 'Autoupdate-By-npmScript' && git push"
+    "start": "hexo g && hexo d && git add . && git commit -m 'Autoupdate-By-npmScript' && git push"
   }
 }
