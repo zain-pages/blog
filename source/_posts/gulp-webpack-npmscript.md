@@ -5,9 +5,9 @@ tags: 技术博客
 ---
 ## 如何全局安装一个 node 应用?
 命令行中输入下列代码即可
-'''
-npm i -g <application name>
-'''
+
+    npm i -g <application name>
+
 ## package.json 有什么作用？
 ## npm install --save app 与 npm install --save-dev app有什么区别?
 ## node_modules的查找路径是怎样的?
