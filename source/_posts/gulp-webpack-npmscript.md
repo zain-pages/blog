@@ -101,7 +101,7 @@ npm script脚本的使用方式就是在需要使用的工程的package.json文�
   }
 }
 {% endcodeblock %}
-仅·npm start·一行代码，就实现了hexo博客的编译发布和备份。
+仅`npm start`一行代码，就实现了hexo博客的编译发布和备份。
 ## 代码作业
 * 使用 webpack 替换 入门-任务15中模块化使用的 requriejs
 * gulp是什么？使用 gulp 实现图片压缩、CSS 压缩合并、JS 压缩合并
