@@ -11,7 +11,7 @@ tags: 技术博客
 ## package.json 有什么作用？
 package.json 是npm的工程配置文件，在里面配置了一些参数来方便我们生成npm工程。
 让我们通过实例的方式来学习这个文件：
-{ codeblock lang:json }
+{% codeblock lang:json %}
 {
 	"name": "Hello World",  //工程名称 如果存在要发布npm包的情况，这个名称必须全网唯一
 	"version": "0.0.1",
@@ -47,7 +47,7 @@ package.json 是npm的工程配置文件，在里面配置了一些参数来方�
 		"grunt-browserify": "~1.3.0",
 	}
 }
-{ endcodeblock }
+{% endcodeblock %}
 ## npm install --save app 与 npm install --save-dev app有什么区别?
 ## node_modules的查找路径是怎样的?
 
