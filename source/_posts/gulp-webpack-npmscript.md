@@ -13,7 +13,7 @@ package.json 是npm的工程配置文件，在里面配置了一些参数来方�
 让我们通过实例的方式来学习这个文件：
 {% codeblock lang:json %}
 {
-	"name": "Hello World",  //工程名称 如果存在要发布npm包的情况，这个名称必须全网唯一
+	"name": "Hello World",
 	"version": "0.0.1",
 	"author": "张三",
 	"description": "第一个node.js程序",
@@ -48,13 +48,32 @@ package.json 是npm的工程配置文件，在里面配置了一些参数来方�
 	}
 }
 {% endcodeblock %}
+这是一个比较完整的package.json文件，其中各个字段的含义分别如下：
+* name: 工程名称，如果是要发布npm包的情况，此名称必须全网唯一。
+* version: 工程版本，如果是要更新npm包的情况，此版本号必须增加。
+* author: 工程作者。
+* description: 工程描述。
+* keywords: 工程描述关键词。
+* repository: 工程源代码地址。
+* license: 工程遵循的开源协议。
+* engines: 工程所使用的引擎。
+* bugs: 工程如果出现BUG，该向哪里提交。
+* contributors: 为工程做出贡献的人。
+* scripts: 自定义的npm脚本，除test和start两条命令可以用npm xxx在命令行执行之外其他的命令必须用npm run xxx执行，这个对象中的键值对键名代表npm脚本的命令，而值则代表实际执行的命令。
+* dependencies: 工程所依赖的包，当在执行npm install命令时，将会根据此对象中的属性来安装依赖。
+* devDependencies: 工程构建者构建工程所依赖的包，这个对象中的依赖仅仅在构建工程时安装。
+* 还有一些其他的配置见[package.json中文网](http://www.mujiang.info/translation/npmjs/files/package.json.html)
+
 ## npm install --save app 与 npm install --save-dev app有什么区别?
 ## node_modules的查找路径是怎样的?
-
 ## npm3与 npm2相比有什么改进？yarn和 npm 相比有什么优势?
 ## webpack是什么？和其他同类型工具比有什么优势？
 ## npm script是什么？如何使用？
-## 使用 webpack 替换 入门-任务15中模块化使用的 requriejs
 
-## gulp是什么？使用 gulp 实现图片压缩、CSS 压缩合并、JS 压缩合并
+## 代码作业
+* 使用 webpack 替换 入门-任务15中模块化使用的 requriejs
+* gulp是什么？使用 gulp 实现图片压缩、CSS 压缩合并、JS 压缩合并
+
+[高级5](https://github.com/Zainking/demos/tree/master/%E9%AB%98%E7%BA%A75)
+
 *本文章著作权由Zainking与饥人谷所有，转载请著明出处*
