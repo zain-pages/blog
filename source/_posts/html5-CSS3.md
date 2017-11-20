@@ -74,18 +74,16 @@ var cat = localStorage.getItem("myCat");
 
 ## 代码作业
 
-### 写出如下 CSS3效果的简单事例
-1. 圆角， 圆形
-2. div 阴影
-3. 2D 转换：放大、缩小、偏移、旋转
-4. 3D 转换：移动、旋转
-5. 背景色渐变
-6. 过渡效果
-7. 动画
-
-### 实现如下全屏图加过渡色的效果（具体效果随意）[DEMO](http://book.jirengu.com/jirengu-inc/js-works/css3/big-cover.html)
-
-### 写出如下 loading 动画效果 [DEMO1](http://book.jirengu.com/jirengu-inc/js-works/css3/loading1.html) [DEMO2](http://book.jirengu.com/jirengu-inc/js-works/css3/loading2.html)
+* 写出如下 CSS3效果的简单事例
+  1. 圆角， 圆形
+  2. div 阴影
+  3. 2D 转换：放大、缩小、偏移、旋转
+  4. 3D 转换：移动、旋转
+  5. 背景色渐变
+  6. 过渡效果
+  7. 动画
+* 实现如下全屏图加过渡色的效果（具体效果随意）[DEMO](http://book.jirengu.com/jirengu-inc/js-works/css3/big-cover.html)
+* 写出如下 loading 动画效果 [DEMO1](http://book.jirengu.com/jirengu-inc/js-works/css3/loading1.html) [DEMO2](http://book.jirengu.com/jirengu-inc/js-works/css3/loading2.html)
 [高级7](https://github.com/Zainking/demos/tree/master/%E9%AB%98%E7%BA%A77)
 
 *本文章著作权由Zainking与饥人谷所有，转载请著明出处*
