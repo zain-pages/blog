@@ -38,8 +38,6 @@ HTML5 中的一些有趣的新特性：
 |&lt;nav&gt;|导航链接的部分。|&lt;nav&gt;&lt;/nav&gt;|&lt;ul&gt;&lt;/ul&gt;|
 |&lt;output&gt;|不同类型的输出，比如脚本的输出。|&lt;output&gt;&lt;/output&gt;|&lt;span&gt;&lt;/span&gt;|
 |&lt;progress&gt;|标签运行中的进程。可以使用 &lt;progress&gt; 标签来显示 JavaScript 中耗费时间的函数的进程。|&lt;progress&gt;&lt;/progress&gt;|none|
-|&lt;rp&gt; 标签在 ruby 注释中使用，以定义不支持 ruby 元素的浏览器所显示的内容。|&lt;ruby&gt;漢 |&lt;rt&gt;&lt;rp&gt;(&lt;/rp&gt;ㄏㄢˋ&lt;rp&gt;)&lt;/rp&gt;&lt;/rt&gt;&lt;/ruby&gt;|none|
-|&lt;rt&gt;|字符（中文注音或字符）的解释或发音。|&lt;ruby&gt;漢 &lt;rt&gt; ㄏㄢˋ &lt;/rt&gt;&lt;/ruby&gt;|none|
 |&lt;ruby&gt;| ruby 注释（中文注音或字符）。|&lt;ruby&gt;漢 &lt;rt&gt;&lt;rp&gt;(&lt;/rp&gt;ㄏㄢˋ&lt;rp&gt;)&lt;/rp&gt;&lt;/rt&gt;&lt;/ruby&gt;|none|
 |&lt;section&gt;|文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。|&lt;section&gt;&lt;/section&gt;|&lt;div&gt;&lt;/div&gt;
 |&lt;source&gt;|标签为媒介元素（比如 &lt;video&gt; 和 &lt;audio&gt;）定义媒介资源。|&lt;source&gt;|&lt;param&gt;|
