@@ -21,7 +21,7 @@ HTML5 中的一些有趣的新特性：
 |---------|-------|-------|------------|
 |&lt;article&gt;|外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。|&lt;article&gt;&lt;/article&gt;|&lt;div class='article'&gt;&lt;/div&gt;|
 |&lt;aside&gt;| article 以外的内容。aside 的内容应该与 article 的内容相关。|&lt;aside&gt;Aside 的内容是独立的内容，但应与文档内容相关。&lt;/aside&gt;|&lt;div&gt;Aside 的内容是独立的内容，但应与文档内容相关。&lt;/div&gt;|
-|&lt;audio&gt|声音，比如音乐或其他音频流。|&lt;audio src="someaudio.wav"&gt;您的浏览器不支持 audio 标签。&lt;/audio&gt;|&lt;object type="application/ogg" data="someaudio.wav"&gt;&lt;param name="src" value="someaudio.wav"&gt;&lt;/object&gt;|
+|&lt;audio&gt;|声音，比如音乐或其他音频流。|&lt;audio src="someaudio.wav"&gt;您的浏览器不支持 audio 标签。&lt;/audio&gt;|&lt;object type="application/ogg" data="someaudio.wav"&gt;&lt;param name="src" value="someaudio.wav"&gt;&lt;/object&gt;|
 |&lt;canvas&gt;|图形，比如图表和其他图像。这个 HTML 元素是为了客户端矢量图形而设计的。它自己没有行为，但却把一个绘图 API 展现给客户端 JavaScript 以使脚本能够把想绘制的东西都绘制到一块画布上。|&lt;canvas id="myCanvas" width="200" height="200"&gt;&lt;/canvas&gt;|&lt;object data="inc/hdr.svg" type="image/svg+xml" width="200" height="200"&gt;&lt;/object&gt;|
 |&lt;command&gt;|命令按钮，比如单选按钮、复选框或按钮。|&lt;command onclick=cut()" label="cut"&gt;|none|
 |&lt;datalist&gt;|可选数据的列表。与 input 元素配合使用，就可以制作出输入值的下拉列表。|&lt;datalist&gt;&lt;/datalist&gt;|see combobox.|
