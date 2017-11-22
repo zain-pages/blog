@@ -168,7 +168,7 @@ sidebar:
 
   # Scroll percent label in b2t button
   scrollpercent: false
-  
+
   # Enable sidebar on narrow view
   onmobile: false
 
@@ -262,7 +262,7 @@ highlight_theme: normal
 # - Introduce in 5.0.1
 # ---------------------------------------------------------------
 font:
-  enable: true
+  enable: false
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
   host:
@@ -317,7 +317,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-# baidu_analytics: 
+# baidu_analytics:
 # Duoshuo ShortName
 #duoshuo_shortname:
 
@@ -336,8 +336,8 @@ changyan:
   appid:
   appkey:
 
-    
-# Valine. 
+
+# Valine.
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
