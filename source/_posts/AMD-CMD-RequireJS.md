@@ -84,4 +84,4 @@ define(function(require, exports, module) {
 > 3. 图片区使用瀑布流布局（图片高度不一），下部有加载更多按钮，点击加载更多会加载更多数据(数据在后端 mock)
 
 [高级4](https://github.com/Zainking/demos/tree/master/%E9%AB%98%E7%BA%A74)
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 

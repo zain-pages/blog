@@ -101,4 +101,4 @@ div :first-of-type：div 标签下每个标签的第一个元素
 .item1:first-child选中了item1类中第一个元素，所以内容为“aa”的p标签变红色了。
 .item1:first-of-type选中了item1类中所有的标签的第一个元素，所以p标签和第一个h3标签的背景变蓝了。
 
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 

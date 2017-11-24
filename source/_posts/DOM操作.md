@@ -45,4 +45,4 @@ element.classList有element.classList.add('class'),element.classList.remove('cla
 	var btn = document.querySelector('.btn');
 </script>
 {% endcodeblock %}
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 

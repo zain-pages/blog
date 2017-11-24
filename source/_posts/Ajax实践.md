@@ -24,4 +24,4 @@ ajax 全称Async Javascript And XML（异步Javascript和XML脚本），可以�
 ## 实现加载更多的功能，后端在本地使用server-mock来模拟数据
 [进阶12作业](https://github.com/Zainking/demos/tree/master/%E8%BF%9B%E9%98%B612)
 
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 

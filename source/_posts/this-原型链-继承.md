@@ -236,4 +236,4 @@ Male.prototype.getAge = function(){
 var ruoyu = new Male('若愚', '男', 27);
 ruoyu.getName();
 {% endcodeblock %}
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 

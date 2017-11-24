@@ -54,4 +54,4 @@ POST:由于不是通过URL传值，理论上数据不受限。但实际各个WEB
 
 <form action="#"> <table> <tr> <td>姓名：</td> <td><input type="text" placeholder="请输入姓名"></td> </tr> <tr> <td>密码：</td> <td><input type="password" placeholder="请输入密码"></td> </tr> <tr> <td>性别：</td> <td><input type="radio" name="sex" value="male">男<input type="radio" name="sex" value="female">女</td> </tr> <tr> <td>取向：</td> <td><input type="radio" name="like" value="male">男<input type="radio" name="like" value="female">女</td> </tr> <tr> <td>爱好：</td> <td><input name="favorite" type="checkbox" value="dota">Dota<input name="favorite" type="checkbox" value="旅游">旅游<input name="favorite" type="checkbox" value="宠物">宠物</td> </tr> <tr> <td>评论：</td> <td><textarea name="comment" id="comment"></textarea></td> </tr> <tr> <td>我的car：</td> <td><select name="mycar" id="mycar"> <option value="奔驰">奔驰</option> <option value="宝马">宝马</option> </select><input type="submit" value="提交"></td> </tr> </table> </form>
 
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 

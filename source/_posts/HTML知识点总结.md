@@ -117,4 +117,4 @@ CSS1Compat：标准模式，浏览器使用W3C的标准解析渲染页面。
 
 <table> <thead> <tr> <th>标签</th> <th>场景</th> </tr> </thead> <tbody> <tr> <td>head</td> <td>页面头部，放置脚本，样式，设置等</td> </tr> <tr> <td>body</td> <td>页面内容</td> </tr> <tr> <td>h1~h6</td> <td>标题</td> </tr> <tr> <td>p</td> <td>段落标签</td> </tr> <tr> <td>br/</td> <td>换行</td> </tr> <tr> <td>div</td> <td>分块用标签</td> </tr> <tr> <td>ul</td> <td>无序列表</td> </tr> <tr> <td>ol</td> <td>有序列表</td> </tr> <tr> <td>form</td> <td>表单</td> </tr> <tr> <td>img</td> <td>设置一个图像</td> </tr> <tr> <td>a</td> <td>超链接</td> </tr> </tbody> </table>
 
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 

@@ -151,4 +151,4 @@ function friendlyDate(time){
 var str = friendlyDate( '1484286699422' ) //  1分钟前
 var str2 = friendlyDate('1483941245793') //4天前
 {% endcodeblock %}
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 

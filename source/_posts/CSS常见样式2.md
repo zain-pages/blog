@@ -41,4 +41,4 @@ IE盒模型以外边框的宽度高度为width和height；W3C盒模型以content
 
 ## 作业
 [作业代码](https://github.com/Zainking/demos)
-*本文章著作权由Zainking与饥人谷所有，转载请著明出处*
+ 
