@@ -6,7 +6,7 @@
 # favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "大丸子Zain, 前端技术, Web技术博客"
+keywords: 大丸子Zain, 前端技术, Web技术博客
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -318,7 +318,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-# baidu_analytics:
+baidu_analytics: 55151028ead3d9ae4c18e0578fa4546c
 # Duoshuo ShortName
 #duoshuo_shortname:
 
