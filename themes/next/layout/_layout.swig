@@ -12,6 +12,7 @@
   {% include '_third-party/analytics/index.swig' %}
   <meta name="baidu-site-verification" content="LNOGTk4l0M" />
   <meta name="google-site-verification" content="fVeC_F3GnkKN6N8uVxB-8jQtPZpm-ky2JxKwAJftNcc" />
+  <meta name="msvalidate.01" content="A2739EC7E3F06C7F2C84D491B39E026E" />
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
