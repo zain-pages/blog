@@ -70,9 +70,9 @@ console.log(arr); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ### 简单选择排序算法实现
 {% codeblock lang:javascript %}
 function selection_sort (array) {
-	for (var i = 0 ; i < array.length - 1 ; i++) {
-		var min = i,temp;
-		for (var j = i + 1; j < array.length; j++) {
+  for (var i = 0 ; i < array.length - 1 ; i++) {
+      var min = i,temp;
+      for (var j = i + 1; j < array.length; j++) {
       if (arr[j] < arr[min]) {
         min = j;
       }
@@ -82,7 +82,7 @@ function selection_sort (array) {
       array[i] = array[min];
       array[min] = temp;
     }
-	}
+  }
 }
 
 arr = [6, 5, 7, 2, 4, 3, 0, 9, 1, 8];
