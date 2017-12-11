@@ -64,7 +64,7 @@ console.log(result); //3
 {% codeblock lang:javascript %}
 function bisect_search (keyword, array) {
   var mid = array.length / 2;  
-  if (keyword == array[mid]) {  
+  if (keyword === array[mid]) {  
       return mid;  
   }  
   var start = 0;  
