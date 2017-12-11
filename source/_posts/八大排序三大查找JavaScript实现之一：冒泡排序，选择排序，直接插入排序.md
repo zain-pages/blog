@@ -17,10 +17,45 @@ tags: 技术博客
 依次比较两个元素，如果他们的顺序错误就把他们交换过来。重复地进行走访数列的工作直到没有元素再需要交换。
 ### 算法实现
 {% codeblock lang:javascript %}
+function bubble_sort (array) {
+  var temp;
+  for (var i = 0;i < array.length;i++) {
+    for (var j = 0;j < array.length - 1 - i;j++) {
+      if (array[j] > array[j+1]) {
+        temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+      }
+    }
+  }
+}
+
+arr = [6, 5, 7, 2, 4, 3, 0, 9, 1, 8];
+bubble_sort(arr);
+console.log(arr); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 {% endcodeblock %}
 ### 改进冒泡排序
 {% codeblock lang:javascript %}
+function bubble_sort (array) {
+  var temp,flag = true; //引入flag
+  for (var i = 0;i < array.length && flag;i++) {    //判断条件加上flag
+    flag = false;
+    for (var j = 0;j < array.length - 1 - i;j++) {
+      if (array[j] > array[j+1]) {
+        flag = true; //如果排序有错误，证明还有可能没有完全排序成功
+        temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+      }
+    }
+  }
+}
+
+arr = [6, 5, 7, 2, 4, 3, 0, 9, 1, 8];
+bubble_sort(arr);
+console.log(arr); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 {% endcodeblock %}
+为什么在这种情况下说冒泡排序算法被改进了?因为“某一次循环时所有的元素位置都正确”等价于“排序完成”。
 
 ## 简单选择排序
 
@@ -34,6 +69,25 @@ tags: 技术博客
 
 ### 简单选择排序算法实现
 {% codeblock lang:javascript %}
+function selection_sort (array) {
+	for (var i = 0 ; i < array.length - 1 ; i++) {
+		var min = i,temp;
+		for (var j = i + 1; j < array.length; j++) {
+      if (arr[j] < arr[min]) {
+        min = j;
+      }
+    }
+    if (min !== i) {
+      temp = array[i];
+      array[i] = array[min];
+      array[min] = temp;
+    }
+	}
+}
+
+arr = [6, 5, 7, 2, 4, 3, 0, 9, 1, 8];
+selection_sort(arr);
+console.log(arr); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 {% endcodeblock %}
 
 ## 插入排序
@@ -44,12 +98,47 @@ tags: 技术博客
 * 稳定性：稳定
 
 ### 算法描述
-通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。
+通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入（直接插入排序）。或对于未排序数据，在已排序序列中以二分查找法扫描，找到相应位置并插入（二分插入排序）。
 
 ### 直接插入排序算法实现
 {% codeblock lang:javascript %}
+function insertion_sort (array) {
+  var temp;
+  for (var i = 1; i < array.length; i++) {
+    temp = array[i];
+    for (var j = i; j > 0 && array[j-1] > temp; j--) {
+        array[j] = array[j-1];
+    }
+    array[j] = temp;
+  }
+}
+
+arr = [6, 5, 7, 2, 4, 3, 0, 9, 1, 8];
+insertion_sort(arr);
+console.log(arr); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 {% endcodeblock %}
 
 ### 二分查找插入排序
 {% codeblock lang:javascript %}
+function insertion_sort (array) {  
+  for (var i = 0;i < array.length;i++) {  
+    var start = 0, end = i - 1, middle = 0, temp = array[i];
+    while (start <= end) {  
+      middle = Math.floor((start + end) / 2);  
+      if (array[middle] > temp) {  
+        end = middle - 1;
+      } else {  
+        start = middle + 1;
+      }  
+    }  
+    for (var j = i - 1; j > end; j--) {  
+       array[j + 1] = array[j];  
+    }
+    array[end + 1] = temp;  
+  }
+}  
+
+arr = [6, 5, 7, 2, 4, 3, 0, 9, 1, 8];
+insertion_sort(arr);
+console.log(arr); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 {% endcodeblock %}
