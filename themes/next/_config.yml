@@ -46,7 +46,7 @@ index_with_subtitle: false
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
-  home: /back
+  home: //zain.red
   #categories: /categories/
   #about: /about/
   archives: /archives/
