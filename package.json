@@ -24,6 +24,6 @@
     "hexo-util": "^0.6.1"
   },
   "scripts": {
-    "start": "node ./node_modules/hexo-cli/bin/hexo g && node ./node_modules/hexo-cli/bin/hexo d && git add . && git commit -m 'Autoupdate-By-npmScript' && git push"
+    "start": "node ./node_modules/hexo-cli/bin/hexo g && node ./node_modules/hexo-cli/bin/hexo d && git add . && git commit -m 'Autoupdate-By-npmScript' && git push origin source-code"
   }
 }
