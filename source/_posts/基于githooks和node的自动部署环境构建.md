@@ -63,3 +63,11 @@ google搜索一番，发现已经有相关实现：
 思考一番发现这个老哥似乎和自己思路一模一样，本着不重复造轮子的原则，直接将老哥大部分代码拷贝，进行细节调整后放到自己服务器上，用nginx代理一个特殊的端口到这个服务上，稍作微调即正常运行。
 
 现在我所有的线上个人项目都使用 `git-deployer + npm script`进行一键部署，爽歪歪。
+
+## 参考资料
+* [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)
+* [Node.js命令行程序开发完整教程
+](https://www.kancloud.cn/outsider/clitool/313173)
+* [Git-Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
+* [Node.js:使用hook+shell+git进行自动化构建
+](https://smallpath.me/post/Node.js:%E4%BD%BF%E7%94%A8git%E5%92%8Cwebhook%E8%BF%9B%E8%A1%8C%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA)
