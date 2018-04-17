@@ -7,7 +7,7 @@ tags: 技术博客
 
 ## 项目中用到的函数
 
-#### omit(object, [props])
+### omit(object, [props])
 Object方法，返回忽略属性之外的自身和继承的可枚举属性。
 {% codeblock lang:javascript %}
 const object = { 'a': 1, 'b': '2', 'c': 3 }
@@ -15,7 +15,7 @@ const object = { 'a': 1, 'b': '2', 'c': 3 }
 _.omit(object, ['a', 'c'])
 // => { 'b': '2' }
 {% endcodeblock %}
-#### get(object, path, [defaultValue])
+### get(object, path, [defaultValue])
 Object方法，根据对象路径获取值，如果解析`value`是`undefined`会以`defaultValue`取代。
 {% codeblock lang:javascript %}
 const object = { 'a': [{ 'b': { 'c': 3 } }] }
@@ -29,7 +29,7 @@ _.get(object, ['a', '0', 'b', 'c'])
 _.get(object, 'a.b.c', 'default')
 // => 'default'
 {% endcodeblock %}
-#### pick(object, [props])
+### pick(object, [props])
 Object方法，创建一个从 object 中选中的属性的对象。
 {% codeblock lang:javascript %}
 const object = { 'a': 1, 'b': '2', 'c': 3 }
@@ -37,7 +37,7 @@ const object = { 'a': 1, 'b': '2', 'c': 3 }
 _.pick(object, ['a', 'c'])
 // => { 'a': 1, 'c': 3 }
 {% endcodeblock %}
-#### noop
+### noop
 Util方法，无论传递什么参数，都返回 undefined。
 {% codeblock lang:javascript %}
 const object = { 'user': 'fred' }
@@ -45,7 +45,7 @@ const object = { 'user': 'fred' }
 _.noop(object) === undefined
 // => true
 {% endcodeblock %}
-#### sortBy(collection, [iteratees=[_.identity]])
+### sortBy(collection, [iteratees=[_.identity]])
 Collection方法，创建一个元素数组。 以 iteratee 处理的结果升序排序。 这个方法执行稳定排序。 iteratees 会传入1个参数：(value)。
 {% codeblock lang:javascript %}
 const users = [
@@ -67,7 +67,7 @@ _.sortBy(users, 'user', o => Math.floor(o.age / 10))
 // => 排序结果 [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]
 // 先按照user排序，再按照Math.floor(o.age / 10)排序，因为稳定排序，所以age顺序不变。
 {% endcodeblock %}
-#### isArray(value)
+### isArray(value)
 Lang方法，检查 value 是否是 Array 类对象。
 {% codeblock lang:javascript %}
 _.isArray([1, 2, 3])
@@ -82,13 +82,13 @@ _.isArray('abc')
 _.isArray(_.noop)
 // => false
 {% endcodeblock %}
-#### without(array, [values])
+### without(array, [values])
 Array方法，创建一个移除了所有提供的 values 。
 {% codeblock lang:javascript %}
 _.without([1, 2, 1, 3], 1, 2)
 // => [3]
 {% endcodeblock %}
-#### identity(value)
+### identity(value)
 Util方法，这个方法返回首个提供的参数。
 {% codeblock lang:javascript %}
 const object = { 'user': 'fred' }
@@ -96,7 +96,7 @@ const object = { 'user': 'fred' }
 _.identity(object) === object
 // => true
 {% endcodeblock %}
-#### filter(collection, [predicate=_.identity])
+### filter(collection, [predicate=_.identity])
 Collection方法，遍历集合中的元素，筛选出一个经过 predicate 检查结果为真值的数组，predicate 会传入3个参数：(value, index|key, collection)。
 {% codeblock lang:javascript %}
 const resolve = _.partial(_.map, _, 'user')
@@ -122,7 +122,7 @@ resolve( _.filter(users, ['active', false]) )
 resolve( _.filter(users, 'active') )
 // => ['barney']
 {% endcodeblock %}
-#### find(collection, [predicate=_.identity])
+### find(collection, [predicate=_.identity])
 Collection方法，遍历集合中的元素，返回最先经 predicate 检查为真值的元素，如无匹配，返回undefined。
 {% codeblock lang:javascript %}
 const users = [
@@ -146,7 +146,7 @@ _.find(users, ['active', false])
 _.find(users, 'active')
 // => 结果: 'barney'
 {% endcodeblock %}
-#### omitBy(object, [predicate=_.identity])
+### omitBy(object, [predicate=_.identity])
 Object方法，返回经 predicate 判断不是真值的属性的自身和继承的可枚举属性。
 {% codeblock lang:javascript %}
 const object = { 'a': 1, 'b': '2', 'c': 3 }
@@ -154,7 +154,7 @@ const object = { 'a': 1, 'b': '2', 'c': 3 }
 _.omitBy(object, _.isNumber)
 // => { 'b': '2' }
 {% endcodeblock %}
-#### padStart([string=''], [length=0], [chars=' '])
+### padStart([string=''], [length=0], [chars=' '])
 String方法，如果字符串长度小于 length 则在左侧填充字符。 如果超出长度则截断超出的部分。
 {% codeblock lang:javascript %}
 _.padStart('abc', 6)
@@ -166,7 +166,7 @@ _.padStart('abc', 6, '_-')
 _.padStart('abc', 3)
 // => 'abc'
 {% endcodeblock %}
-#### reduce(collection, [iteratee=_.identity], [accumulator])
+### reduce(collection, [iteratee=_.identity], [accumulator])
 Collection方法，通过 iteratee 遍历集合中的每个元素。 每次返回的值会作为下一次 iteratee 使用。 如果没有提供 accumulator，则集合中的第一个元素作为 accumulator。 iteratee 会传入4个参数：(accumulator, value, index|key, collection)。
 
 {% codeblock lang:javascript %}
@@ -179,7 +179,7 @@ _.reduce({ 'a': 1, 'b': 2, 'c': 1 }, (result, value, key) => {
 }, {});
 // => { '1': ['a', 'c'], '2': ['b'] } (无法保证遍历的顺序)
 {% endcodeblock %}
-#### isEqual(value, other)
+### isEqual(value, other)
 Lang方法，执行深比较来决定两者的值是否相等。
 {% codeblock lang:javascript %}
 const object = { 'user': 'fred' }
@@ -195,7 +195,7 @@ object === other
 
 ## 自己觉得很有用的函数
 
-#### times(n, [iteratee=_.identity])
+### times(n, [iteratee=_.identity])
 Util方法，调用 iteratee N 次，每次调用返回的结果存入到数组中。 iteratee 会传入1个参数：(index)。
 {% codeblock lang:javascript %}
 _.times(3, String)
@@ -205,7 +205,7 @@ _.times(3, String)
 // => [true, true, true, true]
 // _.constant：创建一个返回 value 的函数
 {% endcodeblock %}
-#### cloneDeep(value)
+### cloneDeep(value)
 Lang方法，深拷贝。
 {% codeblock lang:javascript %}
 const objects = [{ 'a': 1 }, { 'b': 2 }]
@@ -214,7 +214,7 @@ const deep = _.cloneDeep(objects)
 console.log(deep[0] === objects[0])
 // => false
 {% endcodeblock %}
-#### random([min=0], [max=1], [floating])
+### random([min=0], [max=1], [floating])
 Number方法，产生一个包括 min 与 max 之间的数。 如果只提供一个参数返回一个0到提供数之间的数。 如果 floating 设为 true，或者 min 或 max 是浮点数，结果返回浮点数。
 {% codeblock lang:javascript %}
 _.random(0, 5)
@@ -229,13 +229,13 @@ _.random(5, true)
 _.random(1.2, 5.2)
 // =>  1.2 和 5.2 之间的浮点数
 {% endcodeblock %}
-#### sample(collection)
+### sample(collection)
 Collection方法，从集合中随机获得元素
 {% codeblock lang:javascript %}
 _.sample([1, 2, 3, 4]);
 // => 2
 {% endcodeblock %}
-#### reject(collection, [predicate=_.identity])
+### reject(collection, [predicate=_.identity])
 反向版 _.filter，这个方法返回 predicate 检查为非真值的元素。
 {% codeblock lang:javascript %}
 const users = [
