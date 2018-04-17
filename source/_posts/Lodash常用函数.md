@@ -5,7 +5,7 @@ tags: 技术博客
 ---
 过了一遍`Lodash`的文档，现将项目中用到的函数和自己觉得很有用的函数分两部分整理如下：
 ## 项目中用到的函数
----
+
 #### omit(object, [props])
 Object方法，返回忽略属性之外的自身和继承的可枚举属性。
 {% codeblock lang:javascript %}
@@ -193,7 +193,7 @@ object === other
 
 
 ## 自己觉得很有用的函数
----
+
 #### times(n, [iteratee=_.identity])
 Util方法，调用 iteratee N 次，每次调用返回的结果存入到数组中。 iteratee 会传入1个参数：(index)。
 {% codeblock lang:javascript %}
