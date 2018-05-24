@@ -6,6 +6,3 @@ Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
-Disallow: /fancybox/
-Sitemap: blog.zain.red/sitemap.xml
-Sitemap: blog.zain.red/baidusitemap.xml
