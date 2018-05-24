@@ -127,7 +127,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: https://img1.zain.red/11.25/avatar.svg
+avatar: https://static.zain.red/11.25/avatar.svg
 
 # Table Of Contents in the Sidebar
 toc:
