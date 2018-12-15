@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="大丸子Zain, 前端技术, Web技术博客" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zain.red">
+<meta property="og:url" content="https://zain.red/blog/page/16/index.html">
+<meta property="og:site_name" content="Zain.red">
+<meta property="og:description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zain.red">
+<meta name="twitter:description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zain.red/blog/page/16/"/>
+
+
+
+
+
+  <title> 大丸子Zain, 前端技术, Web技术博客 - Zain.red - 在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com </title>
+  
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="LNOGTk4l0M" />
+  <meta name="google-site-verification" content="fVeC_F3GnkKN6N8uVxB-8jQtPZpm-ky2JxKwAJftNcc" />
+  <meta name="msvalidate.01" content="A2739EC7E3F06C7F2C84D491B39E026E" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="//zain.red"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zain.red</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">王子一的个人站点</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            博客首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/10/CSS基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/10/CSS基础/" itemprop="url">CSS基础</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T14:20:35+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS的全称是什么"><a href="#CSS的全称是什么" class="headerlink" title="CSS的全称是什么?"></a>CSS的全称是什么?</h2><p>层叠样式表（英语：Cascading Style Sheets，简写CSS），一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言，由W3C定义和维护。</p>
+<h2 id="CSS有几种引入方式-link-和-import-有什么区别"><a href="#CSS有几种引入方式-link-和-import-有什么区别" class="headerlink" title="CSS有几种引入方式? link 和@import 有什么区别?"></a>CSS有几种引入方式? link 和@import 有什么区别?</h2><h3 id="CSS有几种引入方式"><a href="#CSS有几种引入方式" class="headerlink" title="CSS有几种引入方式"></a>CSS有几种引入方式</h3><p>四种，分别为行内样式，内嵌样式和外联样式以及@import。</p>
+<h3 id="link-和-import-有什么区别"><a href="#link-和-import-有什么区别" class="headerlink" title="link 和@import 有什么区别"></a>link 和@import 有什么区别</h3><ol>
+<li>link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。</li>
+<li>link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。</li>
+<li>link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。</li>
+<li>link支持使用Javascript控制DOM去改变样式；而@import不支持。</li>
+</ol>
+<h2 id="以下这几种文件路径分别用在什么地方，代表什么意思"><a href="#以下这几种文件路径分别用在什么地方，代表什么意思" class="headerlink" title="以下这几种文件路径分别用在什么地方，代表什么意思?"></a>以下这几种文件路径分别用在什么地方，代表什么意思?</h2><ul>
+<li>css/a.css</li>
+</ul>
+<p>相对路径，当前目录下css文件夹内a.css文件</p>
+<ul>
+<li>./css/a.css</li>
+</ul>
+<p>相对路径，同级目录下css文件夹内a.css文件</p>
+<ul>
+<li>b.css</li>
+</ul>
+<p>相对路径，与当前文档同级目录下b.css文件</p>
+<ul>
+<li>../imgs/a.png</li>
+</ul>
+<p>相对路径，上级文件夹下imgs文件夹内a.png文件</p>
+<ul>
+<li>/Users/hunger/project/css/a.css</li>
+</ul>
+<p>绝对路径，根目录下对应路径的文件</p>
+<ul>
+<li>/static/css/a.css</li>
+</ul>
+<p>绝对路径，根目录下对应路径的文件</p>
+<ul>
+<li><a href="http://cdn.jirengu.com/kejian1/8-1.png" target="_blank" rel="noopener">http://cdn.jirengu.com/kejian1/8-1.png</a></li>
+</ul>
+<p>通过HTTP请求得到互联网上对应url的资源</p>
+<h2 id="如果我想在js-jirengu-com上展示一个图片，需要怎么操作"><a href="#如果我想在js-jirengu-com上展示一个图片，需要怎么操作" class="headerlink" title="如果我想在js.jirengu.com上展示一个图片，需要怎么操作?"></a>如果我想在js.jirengu.com上展示一个图片，需要怎么操作?</h2><ol>
+<li><p>上传图片到某个可以被互联网访问到的服务器</p>
+</li>
+<li><p>使用img标签，在src属性注明图片的url</p>
+</li>
+</ol>
+<h2 id="列出5条以上html和-css-的书写规范"><a href="#列出5条以上html和-css-的书写规范" class="headerlink" title="列出5条以上html和 css 的书写规范"></a>列出5条以上html和 css 的书写规范</h2><ol>
+<li>一次缩进2个空格，不要使用 tab 或者混合 tab 和空格的缩进。</li>
+<li>HTML 元素名称，属性，属性值（除非 text/CDATA），CSS 选择器，属性，属性值应该使用小写。</li>
+<li>结尾切勿加空格空格不仅多余，而且在比较代码时会更麻烦。</li>
+<li>在 HTML 中通过指定编码方式，CSS 中不需要指定，因为默认是 UTF-8。</li>
+<li>使用注释来解释代码：包含的模块，功能以及优点。</li>
+</ol>
+<h2 id="截图介绍-chrome-开发者工具的功能区"><a href="#截图介绍-chrome-开发者工具的功能区" class="headerlink" title="截图介绍 chrome 开发者工具的功能区"></a>截图介绍 chrome 开发者工具的功能区</h2><p><img src="http://ouqp9l9vp.bkt.clouddn.com/20170910144328.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/10/Form表单/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/10/Form表单/" itemprop="url">Form表单</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T12:31:36+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="form表单有什么作用？有哪些常用的input-标签，分别有什么作用？"><a href="#form表单有什么作用？有哪些常用的input-标签，分别有什么作用？" class="headerlink" title="form表单有什么作用？有哪些常用的input 标签，分别有什么作用？"></a>form表单有什么作用？有哪些常用的input 标签，分别有什么作用？</h2><h3 id="form表单的作用"><a href="#form表单的作用" class="headerlink" title="form表单的作用"></a>form表单的作用</h3><p>传送用户填写的数据到服务器</p>
+<h3 id="常用的input-标签"><a href="#常用的input-标签" class="headerlink" title="常用的input 标签"></a>常用的input 标签</h3><table> <tr> <td>input标签type属性</td> <td>作用</td> </tr> <tr> <td>text</td> <td>文本输入框</td> </tr> <tr> <td>password</td> <td>密码输入框</td> </tr> <tr> <td>radio</td> <td>单选输入框</td> </tr> <tr> <td>checkbox</td> <td>多选输入框</td> </tr> <tr> <td>submit</td> <td>提交按钮</td> </tr> <tr> <td>button</td> <td>按钮</td> </tr> <tr> <td>hidden</td> <td>隐藏数据</td> </tr> </table>
+
+<h2 id="post-和-get-方式的区别？"><a href="#post-和-get-方式的区别？" class="headerlink" title="post 和 get 方式的区别？"></a>post 和 get 方式的区别？</h2><ul>
+<li>GET提交，请求的数据会附在URL之后(就是把数据放置在HTTP协议头中)，以?分割URL和传输数据，多个参数用&amp;连接。如果数据是英文字母数字，原样发送，如果是空格，转换为+，如果是中文其他字符，则直接把字符串用BASE64加密，得出如： %E4%BD%A0%E5%A5%BD，其中%XX中的XX为该符号以16进制表示的ASCII。</li>
+<li>POST提交：把提交的数据放置在是HTTP包的包体中。</li>
+</ul>
+<p>因此，GET提交的数据会在地址栏中显示出来，而POST提交，地址栏不会改变。</p>
+<p>传输数据的大小：首先声明：HTTP协议没有对传输的数据大小进行限制，HTTP协议规范也没有对URL长度进行限制。</p>
+<p>而在实际开发中存在的限制主要有：</p>
+<p>GET:特定浏览器和服务器对URL长度有限制，例如IE对URL长度的限制是2083字节(2K+35。对于其他浏览器，如Netscape、FireFox等，理论上没有长度限制，其限制取决于操作系统的支持。</p>
+<p>因此对于GET提交时，传输数据就会受到URL长度的限制。</p>
+<p>POST:由于不是通过URL传值，理论上数据不受限。但实际各个WEB服务器会规定对post提交数据大小进行限制，Apache、IIS6都有各自的配置。</p>
+<h2 id="在input里，name-有什么作用？"><a href="#在input里，name-有什么作用？" class="headerlink" title="在input里，name 有什么作用？"></a>在input里，name 有什么作用？</h2><p>作为可与服务器交互数据的HTML元素的服务器端的标示，在某些特殊标签如radio里可作为分组依据。</p>
+<h2 id="radio-如何-分组"><a href="#radio-如何-分组" class="headerlink" title="radio 如何 分组?"></a>radio 如何 分组?</h2><p>通过标签中的name属性进行分组。</p>
+<h2 id="placeholder-属性有什么作用"><a href="#placeholder-属性有什么作用" class="headerlink" title="placeholder 属性有什么作用?"></a>placeholder 属性有什么作用?</h2><p>可以在文本输入框内显示默认的提示字符。</p>
+<h2 id="type-hidden隐藏域有什么作用-举例说明"><a href="#type-hidden隐藏域有什么作用-举例说明" class="headerlink" title="type=hidden隐藏域有什么作用? 举例说明"></a>type=hidden隐藏域有什么作用? 举例说明</h2><ol>
+<li>隐藏数据一起发送给服务器。</li>
+<li>作为Localstrange的替代品。</li>
+<li>当有多个submit按钮时，可以用于确认是哪个按钮提交的表单。</li>
+<li>可以用于联系多个表单。</li>
+<li>作为全局变量使用。</li>
+<li>作为父窗口的隐藏域，对小窗口传参。</li>
+</ol>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><form action="#"> <table> <tr> <td>姓名：</td> <td><input type="text" placeholder="请输入姓名"></td> </tr> <tr> <td>密码：</td> <td><input type="password" placeholder="请输入密码"></td> </tr> <tr> <td>性别：</td> <td><input type="radio" name="sex" value="male">男<input type="radio" name="sex" value="female">女</td> </tr> <tr> <td>取向：</td> <td><input type="radio" name="like" value="male">男<input type="radio" name="like" value="female">女</td> </tr> <tr> <td>爱好：</td> <td><input name="favorite" type="checkbox" value="dota">Dota<input name="favorite" type="checkbox" value="旅游">旅游<input name="favorite" type="checkbox" value="宠物">宠物</td> </tr> <tr> <td>评论：</td> <td><textarea name="comment" id="comment"></textarea></td> </tr> <tr> <td>我的car：</td> <td><select name="mycar" id="mycar"> <option value="奔驰">奔驰</option> <option value="宝马">宝马</option> </select><input type="submit" value="提交"></td> </tr> </table> </form>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/10/HTML知识点总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/10/HTML知识点总结/" itemprop="url">HTML知识点总结</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T12:02:04+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTML、XML、XHTML-有什么区别"><a href="#HTML、XML、XHTML-有什么区别" class="headerlink" title="HTML、XML、XHTML 有什么区别"></a>HTML、XML、XHTML 有什么区别</h2><p>HTML、XML和XHTML都是标准通用标记语言的一个子集。HTML被设计用来显示数据，其焦点是数据的外观；XML被设计用来传输和存储数据，其焦点是数据的内容；XHTML是更严格更纯净的 HTML 版本，是作为一种 XML 应用被重新定义的 HTML，设计的目的是为了取代HTML以适应未来网络更多的需求。它们都可以用来开发网页，但就目前来看，网页开发中HTML还是占绝对的主流，现在最新版本HTML5也备受推崇。可拓展标记语言XML广泛运用于各种应用程序中数据的存储（例如各种配置文件）和应用程序间的数据传输，可以说是一项必须掌握的技术。至于可扩展超文本标记语言XHTML，在2009年W3C已经宣布停止了对XHTML2的开发，转而大力支持HTML5。</p>
+<h2 id="怎样理解-HTML-语义化"><a href="#怎样理解-HTML-语义化" class="headerlink" title="怎样理解 HTML 语义化"></a>怎样理解 HTML 语义化</h2><p>语义化的HTML就是写出的HTML代码，符合内容的结构化（内容语义化），选择合适的标签（代码语义化），能够便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。<br>语义化有助于：</p>
+<ol>
+<li>有利于SEO，有利于搜索引擎爬虫更好的理解我们的网页，从而获取更多的有效信息，提升网页的权重。</li>
+<li>在没有CSS的时候能够清晰的看出网页的结构，增强可读性。</li>
+<li>便于团队开发和维护，语义化的HTML可以让开发者更容易的看明白，从而提高团队的效率和协调能力。</li>
+<li>支持多终端设备的浏览器渲染。</li>
+</ol>
+<h2 id="怎样理解内容与样式分离的原则"><a href="#怎样理解内容与样式分离的原则" class="headerlink" title="怎样理解内容与样式分离的原则"></a>怎样理解内容与样式分离的原则</h2><p>内容和样式不分离就是利用HTML标签和浏览器的默认样式来尝试控制显示出的内容模样，事实上大多数浏览器的默认样式都不相同，这样做也不利于统一修改样式。<br>内容和样式分离就是将文档的语义化内容用HTML表示，展示的模样用CSS表示，这样做既可以统一样式，又可以方便修改。</p>
+<h2 id="有哪些常见的meta标签"><a href="#有哪些常见的meta标签" class="headerlink" title="有哪些常见的meta标签"></a>有哪些常见的meta标签</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 关键字，搜所引擎 SEO --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"关键字1,关键字2,..."</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 页面描述 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"网页描述"</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- content的取值为webkit,ie-comp,ie-stand之一，区分大小写，分别代表用webkit内核，IE兼容内核，IE标准内核。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit|ie-comp|ie-stand"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 若页面需默认用极速核，增加标签： --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 若页面需默认用ie兼容内核，增加标签： --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"ie-comp"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 若页面需默认用ie标准内核，增加标签： --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"ie-stand"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 如果安装了GCF，则使用GCF来渲染页面，如果没有安装GCF，则使用最高版本的IE内核进行渲染。</span></span><br><span class="line"><span class="comment">X-UA-Compatible：这是个是IE8的专用标记,用来指定IE8浏览器去模拟某个特定版本的IE浏览器的渲染方式(比如人见人烦的IE6)，以此来解决部分兼容问题。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=Edge,chrome=1"</span> &gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 强制页面在当前窗口以独立页面显示。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Window-target"</span> <span class="attr">content</span>=<span class="string">"_top"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 自动刷新，并指向新的页面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Refresh"</span> <span class="attr">content</span>=<span class="string">"2；URL=http://"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 禁止浏览器缓存 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 是用于设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出</span></span><br><span class="line"><span class="comment">用法： --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"pragram"</span> <span class="attr">content</span>=<span class="string">"no-cache"</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 清除缓存（再访问这个网站要重新下载！） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"cache-control"</span> <span class="attr">content</span>=<span class="string">"no-cache, must-revalidate"</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 设定网页的到期时间 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"expires"</span> <span class="attr">content</span>=<span class="string">"0"</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 手机端 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telphone=no, email=no"</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 忽略页面中的数字识别为电话，忽略email识别 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black"</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 设置苹果工具栏颜色 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 不让百度转码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Cache-Control"</span> <span class="attr">content</span>=<span class="string">"no-siteapp"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 不缓存 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"cache-control"</span> <span class="attr">content</span>=<span class="string">"no-cache"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 初始化设备 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, user-scalable=no, minimal-ui"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 网站开启对iphone私有 web app 程序的支持 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"yes"</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 改变顶部状态条的颜色 iphone私有的属性--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"black"</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> /&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="文档声明的作用-严格模式和混杂模式指什么-lt-doctype-html-gt-的作用"><a href="#文档声明的作用-严格模式和混杂模式指什么-lt-doctype-html-gt-的作用" class="headerlink" title="文档声明的作用?严格模式和混杂模式指什么?&lt;!doctype html&gt; 的作用?"></a>文档声明的作用?严格模式和混杂模式指什么?&lt;!doctype html&gt; 的作用?</h2><h3 id="文档声明的作用"><a href="#文档声明的作用" class="headerlink" title="文档声明的作用"></a>文档声明的作用</h3><p>文档声明指出阅读程序应该用什么规则集来解释文档中的标记。在web文档的情况下，“阅读程序”通常是浏览器或者校验器这样的一个程序，“规则”则是w3c所发布的一个文档类型定义（dtd）中包含的规则。<br>每个dtd都包括一系列标记、attributes和properties，它们用于标记web文档的内容；此外还包括一些规则，它们规定了哪些标记能出现在其他哪些标记中。每个web建议标准（比如html 4 frameset和xhtml 1.0 transitional）都有自己的dtd。<br>假如文档中的标记不遵循doctype声明所指定的dtd，这个文档除了不能通过代码校验之外，还有可能无法在浏览器中正确显示。对于标记不一致的问题，浏览器相较于校验器来说更宽容。但是，不正确的doctype声明经常导致网页不正确显示，或者导致它们根本不能显示。</p>
+<h3 id="严格模式和混杂模式指什么"><a href="#严格模式和混杂模式指什么" class="headerlink" title="严格模式和混杂模式指什么"></a>严格模式和混杂模式指什么</h3><p>严格模式：又称标准模式，是指浏览器按照 W3C 标准解析代码。</p>
+<p>混杂模式：又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。</p>
+<p>如何区分：浏览器解析时到底使用严格模式还是混杂模式，与网页中的 DTD 直接相关。</p>
+<p>如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式）<br>包含过渡 DTD 和 URI 的 DOCTYPE ，也以严格模式呈现，但有过渡 DTD 而没有 URI （统一资源标识符，就是声明最后的地址）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式）<br>DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）<br>HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）<br>意义：严格模式与混杂模式存在的意义与其来源密切相关，如果说只存在严格模式，那么许多旧网站必然受到影响，如果只存在混杂模式，那么会回到当时浏览器大战时的混乱，每个浏览器都有自己的解析模式。</p>
+<h3 id="doctype-html-的作用"><a href="#doctype-html-的作用" class="headerlink" title="!doctype html 的作用"></a>!doctype html 的作用</h3><p>声明文档的解析类型(document.compatMode)，避免浏览器的怪异模式。</p>
+<p>document.compatMode：<br>BackCompat：怪异模式，浏览器使用自己的怪异模式解析渲染页面。<br>CSS1Compat：标准模式，浏览器使用W3C的标准解析渲染页面。</p>
+<p>这个属性会被浏览器识别并使用，但是如果你的页面没有DOCTYPE的声明，那么compatMode默认就是BackCompat,这也就是绝望和黑暗的开始 – 浏览器按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。<br>如果你的页面添加了&lt;!DOCTYPE html&gt;那么，那么就等同于开启了标准模式，那么浏览器就得老老实实的按照W3C的标准解析渲染页面，这样一来，你的页面在所有的浏览器里显示的就都是一个样子了。<br>这就是&lt;!DOCTYPE html&gt;的作用。</p>
+<h2 id="浏览器乱码的原因是什么？如何解决"><a href="#浏览器乱码的原因是什么？如何解决" class="headerlink" title="浏览器乱码的原因是什么？如何解决"></a>浏览器乱码的原因是什么？如何解决</h2><p>造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。但无论是哪种情况造成乱码解决方法都是在网页开始时候设置网页编码。</p>
+<h2 id="常见的浏览器有哪些，什么内核"><a href="#常见的浏览器有哪些，什么内核" class="headerlink" title="常见的浏览器有哪些，什么内核"></a>常见的浏览器有哪些，什么内核</h2><table><tbody><tr><td>浏览器</td><td>市场占有率</td><td>内核</td></tr><tr><td>Chrome</td><td>58.64%</td><td>WebKit/Chromium引擎</td></tr><tr><td>Internet Explorer</td><td>18.95%</td><td>Trident</td></tr><tr><td>Firefox</td><td>11.79%</td><td>Gecko</td></tr><tr><td>Edge</td><td>5.61%</td><td>Trident</td></tr><tr><td>Safari</td><td>3.37%</td><td>WebKit</td></tr><tr><td>Opera</td><td>1.18%</td><td>Presto</td></tr></tbody></table>
+
+<p><em>市场占有率数据为2017年4月世界内统计 数据来源于NetMarketShare</em></p>
+<h2 id="列出常见的标签，并简单介绍这些标签用在什么场景"><a href="#列出常见的标签，并简单介绍这些标签用在什么场景" class="headerlink" title="列出常见的标签，并简单介绍这些标签用在什么场景"></a>列出常见的标签，并简单介绍这些标签用在什么场景</h2><table> <thead> <tr> <th>标签</th> <th>场景</th> </tr> </thead> <tbody> <tr> <td>head</td> <td>页面头部，放置脚本，样式，设置等</td> </tr> <tr> <td>body</td> <td>页面内容</td> </tr> <tr> <td>h1~h6</td> <td>标题</td> </tr> <tr> <td>p</td> <td>段落标签</td> </tr> <tr> <td>br/</td> <td>换行</td> </tr> <tr> <td>div</td> <td>分块用标签</td> </tr> <tr> <td>ul</td> <td>无序列表</td> </tr> <tr> <td>ol</td> <td>有序列表</td> </tr> <tr> <td>form</td> <td>表单</td> </tr> <tr> <td>img</td> <td>设置一个图像</td> </tr> <tr> <td>a</td> <td>超链接</td> </tr> </tbody> </table>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/blog/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/blog/page/17/">17</a><a class="page-number" href="/blog/page/18/">18</a><a class="extend next" rel="next" href="/blog/page/17/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://static.zain.red/11.25/avatar.svg"
+               alt="Zain King" />
+          <p class="site-author-name" itemprop="name">Zain King</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zain King</span>
+  <span><a href="http://www.miitbeian.gov.cn/">湘ICP备18008942号</a></span>
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

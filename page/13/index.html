@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="大丸子Zain, 前端技术, Web技术博客" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zain.red">
+<meta property="og:url" content="https://zain.red/blog/page/13/index.html">
+<meta property="og:site_name" content="Zain.red">
+<meta property="og:description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zain.red">
+<meta name="twitter:description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zain.red/blog/page/13/"/>
+
+
+
+
+
+  <title> 大丸子Zain, 前端技术, Web技术博客 - Zain.red - 在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com </title>
+  
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="LNOGTk4l0M" />
+  <meta name="google-site-verification" content="fVeC_F3GnkKN6N8uVxB-8jQtPZpm-ky2JxKwAJftNcc" />
+  <meta name="msvalidate.01" content="A2739EC7E3F06C7F2C84D491B39E026E" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="//zain.red"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zain.red</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">王子一的个人站点</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            博客首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/22/函数声明和函数表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/22/函数声明和函数表达式/" itemprop="url">函数声明和函数表达式</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T15:03:06+08:00">
+                2017-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="函数声明和函数表达式有什么区别"><a href="#函数声明和函数表达式有什么区别" class="headerlink" title="函数声明和函数表达式有什么区别"></a>函数声明和函数表达式有什么区别</h2><p>函数声明和函数表达式都能够定义一个函数。<br>函数声明是指使用function关键字定义一个函数，不必放在调用的前面。<br>函数表达式则是将函数的指针赋值给声明变量，本质上是一个表达式，使用时必须放在调用的前面。</p>
+<h2 id="什么是变量的声明前置？什么是函数的声明前置"><a href="#什么是变量的声明前置？什么是函数的声明前置" class="headerlink" title="什么是变量的声明前置？什么是函数的声明前置"></a>什么是变量的声明前置？什么是函数的声明前置</h2><p>形如以下的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>在编译时会被分成如下所示的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a; <span class="comment">//（1）</span></span><br><span class="line">a = <span class="number">10</span>;<span class="comment">//（2）</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>而所有的形如（1）的代码会被编译器搜索，先于其他非声明语句执行。</p>
+<p>而函数声明的声明前置则是把任何以声明形式表达的函数定义提前到所有语句执行之前。</p>
+<h2 id="arguments-是什么"><a href="#arguments-是什么" class="headerlink" title="arguments 是什么"></a>arguments 是什么</h2><p>arguments代表你调用时候传递的参数集合成为的一个类数组对象。</p>
+<h2 id="函数的”重载”怎样实现"><a href="#函数的”重载”怎样实现" class="headerlink" title="函数的”重载”怎样实现"></a>函数的”重载”怎样实现</h2><p>事实上，JS语言不存在普通高级编程语言的“重载”,后定义的函数会覆盖先前定义的函数，<br><em>通过检查传入函数中参数的类型和数量并作出不同的反应，可以模仿方法的重载——《JS高级程序设计》第三版 P67</em></p>
+<h2 id="立即执行函数表达式是什么？有什么作用"><a href="#立即执行函数表达式是什么？有什么作用" class="headerlink" title="立即执行函数表达式是什么？有什么作用"></a>立即执行函数表达式是什么？有什么作用</h2><p>立即执行函数表达式（IIFE）通常是指将函数声明用小括号括起来，在其后加入立即执行运算符（即小括号），达到函数在声明之后立刻执行的目的。这种操作一般用于建立JS块级作用域。</p>
+<h2 id="求n-，用递归来实现"><a href="#求n-，用递归来实现" class="headerlink" title="求n!，用递归来实现"></a>求n!，用递归来实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//此处应有范围检测</span></span><br><span class="line">  <span class="keyword">return</span> num == <span class="number">0</span> ? <span class="number">1</span> : factorial(num<span class="number">-1</span>)*num</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="以下代码输出什么？"><a href="#以下代码输出什么？" class="headerlink" title="以下代码输出什么？"></a>以下代码输出什么？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfo</span>(<span class="params">name, age, sex</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'name:'</span>,name);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'age:'</span>, age);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'sex:'</span>, sex); <span class="comment">//分别输出对应的参数</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>); <span class="comment">//输出参数集合对象</span></span><br><span class="line">	<span class="built_in">arguments</span>[<span class="number">0</span>] = <span class="string">'valley'</span>; <span class="comment">//将参数集合对象的第1个值改为'valley'，因为arguments对象按引用传参，所以相当于name变量的值改为'valley'</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'name'</span>, name);<span class="comment">//输出name变量的值，这个时候一定是'valley'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">   getInfo(<span class="string">'饥人谷'</span>, <span class="number">2</span>, <span class="string">'男'</span>);</span><br><span class="line">   <span class="comment">/*</span></span><br><span class="line"><span class="comment">   * name: "饥人谷"</span></span><br><span class="line"><span class="comment">   * age: 2</span></span><br><span class="line"><span class="comment">   * sex: "男"</span></span><br><span class="line"><span class="comment">   * &#123;0:"饥人谷",1:2,2:"男",length:3,...&#125;</span></span><br><span class="line"><span class="comment">   * name: "valley"</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   getInfo(<span class="string">'小谷'</span>, <span class="number">3</span>);</span><br><span class="line">   <span class="comment">/*</span></span><br><span class="line"><span class="comment">   * name: "小谷"</span></span><br><span class="line"><span class="comment">   * age: 3</span></span><br><span class="line"><span class="comment">   * sex: undefined</span></span><br><span class="line"><span class="comment">   * &#123;0:"饥人谷",1:2,length:2,...&#125;</span></span><br><span class="line"><span class="comment">   * name: "valley"</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   getInfo(<span class="string">'男'</span>);</span><br><span class="line">   <span class="comment">/*</span></span><br><span class="line"><span class="comment">   * name: "男"</span></span><br><span class="line"><span class="comment">   * age: undefined</span></span><br><span class="line"><span class="comment">   * sex: undefined</span></span><br><span class="line"><span class="comment">   * &#123;0:"男",length:1,...&#125;</span></span><br><span class="line"><span class="comment">   * name: "valley"</span></span><br><span class="line"><span class="comment">   */</span></span><br></pre></td></tr></table></figure>
+<h2 id="写一个函数，返回参数的平方和？"><a href="#写一个函数，返回参数的平方和？" class="headerlink" title="写一个函数，返回参数的平方和？"></a>写一个函数，返回参数的平方和？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumOfSquares</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,res = <span class="number">0</span>;i &lt; <span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">   res += <span class="built_in">arguments</span>[i]*<span class="built_in">arguments</span>[i];</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> res;<span class="comment">//这同时证明了js没有块级作用域</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = sumOfSquares(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="keyword">var</span> result2 = sumOfSquares(<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result)  <span class="comment">//29</span></span><br><span class="line"><span class="built_in">console</span>.log(result2)  <span class="comment">//10</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="如下代码的输出？为什么"><a href="#如下代码的输出？为什么" class="headerlink" title="如下代码的输出？为什么"></a>如下代码的输出？为什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//输出undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//请参考 什么是变量的声明前置？ 一问</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">//报错 未定义b</span></span><br></pre></td></tr></table></figure>
+<h2 id="如下代码的输出？为什么-1"><a href="#如下代码的输出？为什么-1" class="headerlink" title="如下代码的输出？为什么"></a>如下代码的输出？为什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sayName(<span class="string">'world'</span>); <span class="comment">//hello world 使用函数声明做出的声明前置</span></span><br><span class="line">sayAge(<span class="number">10</span>); <span class="comment">//undefined 函数表达式赋值不会被前置</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'hello '</span>, name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> sayAge = <span class="function"><span class="keyword">function</span>(<span class="params">age</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(age);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="如下代码输出什么-写出作用域链查找过程伪代码"><a href="#如下代码输出什么-写出作用域链查找过程伪代码" class="headerlink" title="如下代码输出什么? 写出作用域链查找过程伪代码"></a>如下代码输出什么? 写出作用域链查找过程伪代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span></span><br><span class="line">bar() </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">30</span></span><br><span class="line">  foo()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  输出 10 ;</span></span><br><span class="line"><span class="comment">  globalContext = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;</span></span><br><span class="line"><span class="comment">    x : 10,</span></span><br><span class="line"><span class="comment">      foo :function()&#123;&#125;,</span></span><br><span class="line"><span class="comment">      bar :function()&#123;&#125;</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    Scope : null</span></span><br><span class="line"><span class="comment">  &#125;;</span></span><br><span class="line"><span class="comment">  foo.[[Scope]] = globalContext.AO;</span></span><br><span class="line"><span class="comment">  bar.[[Scope]] = globalContext.AO;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  fooContext = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;&#125;,</span></span><br><span class="line"><span class="comment">    Scope : foo.[[Scope]] //globalContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  barContext = &#123;</span></span><br><span class="line"><span class="comment">  AO : &#123;</span></span><br><span class="line"><span class="comment">      x : 30</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    Scope : bar.[[Scope]] = globalContext.AO //globalContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="如下代码输出什么-写出作用域链查找过程伪代码-1"><a href="#如下代码输出什么-写出作用域链查找过程伪代码-1" class="headerlink" title="如下代码输出什么? 写出作用域链查找过程伪代码"></a>如下代码输出什么? 写出作用域链查找过程伪代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line">bar() </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">30</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x) </span><br><span class="line">  &#125;</span><br><span class="line">  foo();</span><br><span class="line">&#125;	</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  输出 “30”</span></span><br><span class="line"><span class="comment">  globalContext = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;</span></span><br><span class="line"><span class="comment">    x : 10,</span></span><br><span class="line"><span class="comment">      bar :function()&#123;&#125;</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    Scope : null</span></span><br><span class="line"><span class="comment">  &#125;;</span></span><br><span class="line"><span class="comment">  bar.[[Scope]] = globalContext.AO;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  barContext = &#123;</span></span><br><span class="line"><span class="comment">  AO : &#123;</span></span><br><span class="line"><span class="comment">      x : 30,</span></span><br><span class="line"><span class="comment">      foo :function()&#123;&#125;</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    Scope : bar.[[Scope]] = globalContext.AO //globalContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  foo.[[Scope]] = barContext.AO;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  fooContext = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;&#125;,</span></span><br><span class="line"><span class="comment">    Scope : foo.[[Scope]] //barContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="以下代码输出什么-写出作用域链的查找过程伪代码"><a href="#以下代码输出什么-写出作用域链的查找过程伪代码" class="headerlink" title="以下代码输出什么? 写出作用域链的查找过程伪代码"></a>以下代码输出什么? 写出作用域链的查找过程伪代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line">bar() </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">30</span>;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;     <span class="comment">//暂且称作匿名函数A</span></span><br><span class="line">    <span class="built_in">console</span>.log(x)</span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  输出 “30”</span></span><br><span class="line"><span class="comment">  globalContext = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;</span></span><br><span class="line"><span class="comment">    x : 10,</span></span><br><span class="line"><span class="comment">      bar :function()&#123;&#125;</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    Scope : null</span></span><br><span class="line"><span class="comment">  &#125;;</span></span><br><span class="line"><span class="comment">  bar.[[Scope]] = globalContext.AO;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  barContext = &#123;</span></span><br><span class="line"><span class="comment">  AO : &#123;</span></span><br><span class="line"><span class="comment">      x : 30,</span></span><br><span class="line"><span class="comment">      匿名函数A :function()&#123;&#125;</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    Scope : bar.[[Scope]] = globalContext.AO //globalContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  匿名函数A.[[Scope]] = barContext.AO;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  匿名函数AContext = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;&#125;,</span></span><br><span class="line"><span class="comment">    Scope : foo.[[Scope]] //barContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="以下代码输出什么？-写出作用域链查找过程伪代码"><a href="#以下代码输出什么？-写出作用域链查找过程伪代码" class="headerlink" title="以下代码输出什么？ 写出作用域链查找过程伪代码"></a>以下代码输出什么？ 写出作用域链查找过程伪代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a) <span class="comment">//undefined</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">5</span></span><br><span class="line">  <span class="built_in">console</span>.log(a) <span class="comment">//5</span></span><br><span class="line">  a++</span><br><span class="line">  <span class="keyword">var</span> a</span><br><span class="line">  fn3() <span class="comment">//200</span></span><br><span class="line">  fn2() <span class="comment">//20</span></span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">    a = <span class="number">20</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  a = <span class="number">200</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn()</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">//1</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  globalContext = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;</span></span><br><span class="line"><span class="comment">      a : 5,</span></span><br><span class="line"><span class="comment">      fn2 :function()&#123;&#125;,</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    Scope : null</span></span><br><span class="line"><span class="comment">  &#125;;</span></span><br><span class="line"><span class="comment">  fn3.[[Scope]] = globalContext.AO;</span></span><br><span class="line"><span class="comment">  fn.[[Scope]] = globalContext.AO;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  fnContext = &#123;</span></span><br><span class="line"><span class="comment">  AO : &#123;</span></span><br><span class="line"><span class="comment">      x : 30,</span></span><br><span class="line"><span class="comment">      fn2 :function()&#123;&#125;</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    Scope : fn.[[Scope]] = globalContext.AO //globalContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">    fn2.[[Scope]] = fnContext.AO;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  fn3Context = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;</span></span><br><span class="line"><span class="comment">        a:200</span></span><br><span class="line"><span class="comment">      &#125;,</span></span><br><span class="line"><span class="comment">    Scope : fn3.[[Scope]] //globalContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  fn2Context = &#123;</span></span><br><span class="line"><span class="comment">    AO : &#123;</span></span><br><span class="line"><span class="comment">        a:20</span></span><br><span class="line"><span class="comment">      &#125;,</span></span><br><span class="line"><span class="comment">    Scope : fn2.[[Scope]] //fnContext.AO</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/21/数据类型运算符流程控制语句/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/21/数据类型运算符流程控制语句/" itemprop="url">数据类型运算符流程控制语句</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T15:27:12+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JavaScript-定义了几种数据类型-哪些是原始类型-哪些是复杂类型-原始类型和复杂类型的区别是什么"><a href="#JavaScript-定义了几种数据类型-哪些是原始类型-哪些是复杂类型-原始类型和复杂类型的区别是什么" class="headerlink" title="JavaScript 定义了几种数据类型? 哪些是原始类型?哪些是复杂类型?原始类型和复杂类型的区别是什么?"></a>JavaScript 定义了几种数据类型? 哪些是原始类型?哪些是复杂类型?原始类型和复杂类型的区别是什么?</h2><p>Js定义了六种数据类型，分别是：</p>
+<ul>
+<li>数值（number）：整数和小数（比如1和3.14）</li>
+<li>字符串（string）：字符组成的文本（比如”Hello World”）</li>
+<li>布尔值（boolean）：true（真）和false（假）两个特定值</li>
+<li>undefined：表示“未定义”或不存在，即此处目前没有任何值</li>
+<li>null：表示空缺，即此处应该有一个值，但目前为空</li>
+<li>对象（object）：各种值组成的集合<br>其中数值，字符串与布尔值一般被看作“原始类型”，而“对象”被看作复杂类型，null与undifined被看作特殊值。<br>原始类型不能再细分，而对象往往被看作多个原始类型的集合。</li>
+</ul>
+<h2 id="typeof和instanceof的作用和区别"><a href="#typeof和instanceof的作用和区别" class="headerlink" title="typeof和instanceof的作用和区别?"></a>typeof和instanceof的作用和区别?</h2><p>typeof运算符返回一个对象的类型，可能返回三种基本类型以及function，undefined，以及object，是一个一元运算符。<br>instanceof是一个二元运算符，左边连接需要判断的变量，右边连接预期的类型，如果相符则返回true，不符则返回false。instanceof可以判断数组和对象。</p>
+<h2 id="如何判断一个变量是否是数字、字符串、布尔、函数"><a href="#如何判断一个变量是否是数字、字符串、布尔、函数" class="headerlink" title="如何判断一个变量是否是数字、字符串、布尔、函数"></a>如何判断一个变量是否是数字、字符串、布尔、函数</h2><p>JavaScript有三种方法，可以确定一个值到底是什么类型。</p>
+<ul>
+<li>typeof运算符</li>
+<li>instanceof运算符</li>
+<li>Object.prototype.toString方法</li>
+</ul>
+<p>前两种方法上题已经有介绍，第三种方法原理如下：<br>Object.prototype.toString.call()获取对象的类名（对象类型），然后将[object、获取的类名、]组合并返回。可以看到一个结果为’[object Type]’的字符串。</p>
+<h2 id="NaN是什么-有什么特别之处"><a href="#NaN是什么-有什么特别之处" class="headerlink" title="NaN是什么? 有什么特别之处?"></a>NaN是什么? 有什么特别之处?</h2><p>NaN，是Not a Number的缩写，在IEEE浮点数算术标准（IEEE 754）中定义，表示一些特殊数值（无穷与非数值（NaN）），为许多CPU与浮点运算器所采用。特别之处在于NaN和任何值都不相等，包括自己。</p>
+<h2 id="如何把非数值转化为数值"><a href="#如何把非数值转化为数值" class="headerlink" title="如何把非数值转化为数值?"></a>如何把非数值转化为数值?</h2><p>三个函数可以把非数值转换为数值：</p>
+<ol>
+<li>Number()</li>
+<li>parseInt()</li>
+<li>parseFloat()<br>其中后两个函数都从头开始解析字符串，若第一个字符就是非数字则返回NaN，否则一直解析到第一个非数字的字符为止。</li>
+</ol>
+<h2 id="与-有什么区别"><a href="#与-有什么区别" class="headerlink" title="==与===有什么区别"></a>==与===有什么区别</h2><p>“==”包含了一个自动的隐式类型转换，规则如下：</p>
+<ul>
+<li>如果一个是null，一个是undefined，那么相等</li>
+<li>如果一个是数字，一个是字符串，先将字符串转为数字，然后比较</li>
+<li>如果一个值是true/false则将其转为1/0比较</li>
+<li>如果一个值是对象，一个是数字或字符串，则尝试使用valueOf和toString转换后比较</li>
+<li>其它就不相等了<br>而“===”则为严格相等，即类型与值必须全部相等。<br>事实上正如《JS语言精粹》中所言，应尽量避免使用“==”。</li>
+</ul>
+<h2 id="break与continue有什么区别"><a href="#break与continue有什么区别" class="headerlink" title="break与continue有什么区别"></a>break与continue有什么区别</h2><p>break为直接跳出循环，不再继续进行下一次循环。<br>continue为跳出本次循环，直接开始进行下一次循环。</p>
+<h2 id="void-0-和-undefined在使用场景上有什么区别"><a href="#void-0-和-undefined在使用场景上有什么区别" class="headerlink" title="void 0 和 undefined在使用场景上有什么区别"></a>void 0 和 undefined在使用场景上有什么区别</h2><p>void 会执行后面的表达式并返回 undefined，通常 void 0 会用来获取 undefined。<br>undefined 可能会被重写，但是 void 0 返回的值一定会是 undefined。</p>
+<h2 id="以下代码的输出结果是-为什么"><a href="#以下代码的输出结果是-为什么" class="headerlink" title="以下代码的输出结果是?为什么?"></a>以下代码的输出结果是?为什么?</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>+<span class="number">1</span>);    <span class="comment">//2，因为两个数字相加为2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"2"</span>+<span class="string">"4"</span>);  <span class="comment">//"24"，两个字符串中的加号为字符串连接运算符</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>+<span class="string">"4"</span>); <span class="comment">//"24"，数字被隐式类型转换为字符串</span></span><br><span class="line"><span class="built_in">console</span>.log(+<span class="string">"4"</span>);<span class="comment">//4，此时加号被认为是一个转换为数字的操作符</span></span><br></pre></td></tr></table></figure>
+<h2 id="以下代码的输出结果是"><a href="#以下代码的输出结果是" class="headerlink" title="以下代码的输出结果是?"></a>以下代码的输出结果是?</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;  </span><br><span class="line">a+++a;  </span><br><span class="line"><span class="keyword">typeof</span> a+<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>输出结果为”number2”，第一句，定义数值类型变量a，第二句，a++为后自增运算符，现值为1，后加了自增的a，整行结果为3。第三行，typeof运算符优先级高于+，所以其结果为字符串”number”，之后的+被认为是字符串连接符，故数字2被隐式类型转换为字符串”2”，最终输出字符串”number2”。</p>
+<h2 id="以下代码的输出结果是-为什么-1"><a href="#以下代码的输出结果是-为什么-1" class="headerlink" title="以下代码的输出结果是? 为什么"></a>以下代码的输出结果是? 为什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log( a+++b );</span><br></pre></td></tr></table></figure>
+<p>最终输出为数字4，a++被认为是后自增运算符优先计算，此行值不变为1，加值为3的变量b终值为4。</p>
+<h2 id="遍历数组，把数组里的打印数组每一项的平方"><a href="#遍历数组，把数组里的打印数组每一项的平方" class="headerlink" title="遍历数组，把数组里的打印数组每一项的平方"></a>遍历数组，把数组里的打印数组每一项的平方</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,len = arr.length;i &lt; len;i++)&#123;</span><br><span class="line"> 	<span class="built_in">console</span>.log(arr[i]*arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="遍历-JSON-打印里面的值"><a href="#遍历-JSON-打印里面的值" class="headerlink" title="遍历 JSON, 打印里面的值"></a>遍历 JSON, 打印里面的值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line"> name: <span class="string">'hunger'</span>, </span><br><span class="line"> sex: <span class="string">'male'</span>, </span><br><span class="line"> age: <span class="number">28</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">for</span>(key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(obj[key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/20/JS相关概念/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/20/JS相关概念/" itemprop="url">JS相关概念</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T17:18:49+08:00">
+                2017-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS和JS在网页中的放置顺序是怎样的？"><a href="#CSS和JS在网页中的放置顺序是怎样的？" class="headerlink" title="CSS和JS在网页中的放置顺序是怎样的？"></a>CSS和JS在网页中的放置顺序是怎样的？</h2><p>为了防止白屏与FOUC，CSS应放置于head标签内。<br>为防止JS阻塞加载，JS应放置于body标签末尾。</p>
+<h2 id="解释白屏和FOUC"><a href="#解释白屏和FOUC" class="headerlink" title="解释白屏和FOUC"></a>解释白屏和FOUC</h2><p>白屏是webkit内核浏览器和某些情况下IE浏览器在将CSS放置于文档内容之后导致的现象，由于浏览器渲染时以CSS渲染HTML文档之后才会绘制图形，所以将CSS后置延后了CSS的加载，导致文档加载完成CSS尚未加载完成，此时文档尚未被绘制，会出现白屏状况。<br>FOUC现象是Gecko内核浏览器和某些情况下IE浏览器将CSS放置于文档之后导致的现象，由于浏览器先绘制无样式的HTML文档再逐步加载样式，所以每加载一部分文档样式浏览器会将内容进行重绘，导致屏幕闪烁。<br>两种现象的解决方式都是将CSS放置于文档之前加载。</p>
+<h2 id="async和defer的作用是什么？有什么区别"><a href="#async和defer的作用是什么？有什么区别" class="headerlink" title="async和defer的作用是什么？有什么区别"></a>async和defer的作用是什么？有什么区别</h2><p>async是指将脚本定义为异步加载并加载完立即执行。<br>defer是指将脚本定义为异步加载，并等待文档全部加载完成后执行。<br>两者都会使脚本异步加载，但执行时间不同。</p>
+<h2 id="简述网页的渲染机制"><a href="#简述网页的渲染机制" class="headerlink" title="简述网页的渲染机制"></a>简述网页的渲染机制</h2><ol>
+<li>构建DOM树(DOM tree)：从上到下解析HTML文档生成DOM节点树（DOM tree），也叫内容树（content tree）</li>
+<li>构建CSSOM(CSS Object Model)树：加载解析样式生成CSSOM树</li>
+<li>执行JavaScript：加载并执行JavaScript代码（包括内联代码或外联JavaScript文件）</li>
+<li>构建渲染树(render tree)：根据DOM树和CSSOM树,生成渲染树(render tree)</li>
+<li>布局（layout）：根据渲染树将节点树的每一个节点布局在屏幕上的正确位置</li>
+<li>绘制（painting）：遍历渲染树绘制所有节点，为每一个节点适用对应的样式，这一过程是通过UI后端模块完成</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/blog/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/blog/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/18/">18</a><a class="extend next" rel="next" href="/blog/page/14/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://static.zain.red/11.25/avatar.svg"
+               alt="Zain King" />
+          <p class="site-author-name" itemprop="name">Zain King</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zain King</span>
+  <span><a href="http://www.miitbeian.gov.cn/">湘ICP备18008942号</a></span>
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

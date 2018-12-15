@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="大丸子Zain, 前端技术, Web技术博客" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zain.red">
+<meta property="og:url" content="https://zain.red/blog/page/14/index.html">
+<meta property="og:site_name" content="Zain.red">
+<meta property="og:description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zain.red">
+<meta name="twitter:description" content="在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zain.red/blog/page/14/"/>
+
+
+
+
+
+  <title> 大丸子Zain, 前端技术, Web技术博客 - Zain.red - 在这里发布一些我的个人文章，联系我请发邮件到zainking2016@hotmail.com </title>
+  
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="LNOGTk4l0M" />
+  <meta name="google-site-verification" content="fVeC_F3GnkKN6N8uVxB-8jQtPZpm-ky2JxKwAJftNcc" />
+  <meta name="msvalidate.01" content="A2739EC7E3F06C7F2C84D491B39E026E" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="//zain.red"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zain.red</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">王子一的个人站点</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            博客首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/15/CSS综合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/15/CSS综合/" itemprop="url">CSS综合</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T12:18:29+08:00">
+                2017-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="说一说你平时写代码遵守的编码规范"><a href="#说一说你平时写代码遵守的编码规范" class="headerlink" title="说一说你平时写代码遵守的编码规范"></a>说一说你平时写代码遵守的编码规范</h2><ol>
+<li><p>良好的命名规范<br>ID和class的命名尽可能短，并符合语义。多个单词的拼接用 ‘-‘ 符号链接，尽量使用小写字母。 </p>
+</li>
+<li><p>代码缩写<br>CSS代码缩写可以提高写代码的速度，精简代码量。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="selector-tag">li</span>&#123;<span class="attribute">font-family</span>:Arial, Helvetica, sans-serif; </span><br><span class="line"><span class="attribute">font-size</span>: <span class="number">1.2em</span>; </span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">1.4em</span>; </span><br><span class="line"><span class="attribute">padding-top</span>:<span class="number">5px</span>; </span><br><span class="line"><span class="attribute">padding-bottom</span>:<span class="number">10px</span>; </span><br><span class="line"><span class="attribute">padding-left</span>:<span class="number">5px</span>; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>可以缩写成 </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="selector-tag">li</span>&#123; </span><br><span class="line"><span class="attribute">font</span>: <span class="number">1.2em</span>/<span class="number">1.4em</span> Arial, Helvetica, sans-serif; </span><br><span class="line"><span class="attribute">padding</span>:<span class="number">5px</span> <span class="number">0</span> <span class="number">10px</span> <span class="number">5px</span>; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Reset但并非全局Reset<br>全局Reset不仅仅因为它是缓慢和低效率的方法，而且还会导致一些不必要的元素也重置了外边距和内边距。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">*&#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125; </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用CSS继承<br>如果页面中父元素的多个子元素使用相同的样式，那最好把他们相同的样式定 义在其父元素上，让它们继承这些CSS样式。这样可以很好的维护代码，并且还可以减少代码量。那么本来这样的代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="selector-id">#container</span> <span class="selector-tag">li</span>&#123; <span class="attribute">font-family</span>:Georgia, serif; &#125; </span><br><span class="line"><span class="selector-id">#container</span> <span class="selector-tag">p</span>&#123; <span class="attribute">font-family</span>:Georgia, serif; &#125; </span><br><span class="line"><span class="selector-id">#container</span> <span class="selector-tag">h1</span>&#123;<span class="attribute">font-family</span>:Georgia, serif; &#125; </span><br></pre></td></tr></table></figure>
+<p>就可以简写成： </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="selector-id">#container</span>&#123; <span class="attribute">font-family</span>:Georgia, serif; &#125; </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用多重选择器<br>可以合并多个CSS选择器为一个，如果他们有共同的样式的话。这样做不但代 码简洁且可节省时间和空间。如： </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="selector-tag">h1</span>&#123; <span class="attribute">font-family</span>:Arial, Helvetica, sans-serif; <span class="attribute">font-weight</span>:normal; &#125; </span><br><span class="line"><span class="selector-tag">h2</span>&#123; <span class="attribute">font-family</span>:Arial, Helvetica, sans-serif; <span class="attribute">font-weight</span>:normal; &#125; </span><br><span class="line"><span class="selector-tag">h3</span>&#123; <span class="attribute">font-family</span>:Arial, Helvetica, sans-serif; <span class="attribute">font-weight</span>:normal; &#125; </span><br></pre></td></tr></table></figure>
+<p>可以合并为 </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>&#123; <span class="attribute">font-family</span>:Arial, Helvetica, sans-serif; <span class="attribute">font-weight</span>:normal; &#125; </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>适当的代码注释<br>代码注释可以让别人更容易读懂代码，且合理的组织代码注释，可使得结构更加清晰。</p>
+</li>
+<li><p>给CSS代码排序<br>如果代码中的属性都能按照字母排序，那查找修改的时候就能更加快速。 </p>
+</li>
+<li><p>保持CSS的可读性<br>每个CSS样式属性单独写一行。 </p>
+</li>
+<li><p>选择更优的样式属性值<br>CSS中有些属性采用不同的属性值，虽然达到的效果差不多，当性能上却存在着差异，如：<br>区别在于border:0把border设为0px，虽然在页面上看不见，但按border默认值理解，浏览器依然对border-width/border-color进行了渲染，即已经占用了内存值。<br>而border:none把border设为“none”即没有，浏览器解析“none”时将不作出渲染动作，即不会消耗内存值。所以建议使用border:none;同样的，display:none隐藏对象浏览器不作渲染，不占用内存。而visibility:hidden则会。 </p>
+</li>
+<li><p>&lt;link&gt;代替@import<br>@import不属于XHTML标签，也不是Web标准的一部分，它对于较早期的浏览器兼容也不高，并且对于网站的性能有某些负面的影响。</p>
+</li>
+<li><p>使用外部样式表</p>
+</li>
+<li><p>代码压缩<br>决定把网站项目部署到网络上，那就要考虑对CSS进行压缩，出去注释和空 格，以使得网页加载得更快。</p>
+</li>
+<li><p>避免使用css hack </p>
+</li>
+<li><p>代码格式<br>（1） 每个css属性声明后都要使用一个分号，即使是最后的那个。<br>（2） 在紧跟属性名的冒号后使用一个空格。<br>（3） 每一个css选择器或是属性声明都要新起一行。<br>（4） 在每一个css规则之间应该空一行。 </p>
+</li>
+<li><p>如果css属性的值为0,则后面不要带上单位。</p>
+</li>
+</ol>
+<h2 id="垂直居中有几种实现方式，给出代码范例"><a href="#垂直居中有几种实现方式，给出代码范例" class="headerlink" title="垂直居中有几种实现方式，给出代码范例"></a>垂直居中有几种实现方式，给出代码范例</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="comment">/* 绝对定位居中 */</span></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: pink;</span><br><span class="line">  <span class="attribute">position</span>:absolute;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>:-<span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>:-<span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 内联元素居中 */</span></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">  <span class="attribute">display</span>:inline-block;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* tablecell */</span></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">display</span>:table-cell;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">  <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p><a href="https://github.com/Zainking/demos" target="_blank" rel="noopener">作业代码</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/14/浏览器兼容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/14/浏览器兼容/" itemprop="url">浏览器兼容</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T13:29:14+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是-CSS-hack"><a href="#什么是-CSS-hack" class="headerlink" title="什么是 CSS hack"></a>什么是 CSS hack</h2><p>Hack是针对不同的浏览器去写不同的CSS样式，从而让各浏览器能达到一致的渲染效果，那么针对不同的浏览器写不同的CSS CODE的过程，就叫CSS HACK，同时也叫写CSS Hack。</p>
+<h2 id="谈一谈浏览器兼容的思路"><a href="#谈一谈浏览器兼容的思路" class="headerlink" title="谈一谈浏览器兼容的思路"></a>谈一谈浏览器兼容的思路</h2><ol>
+<li><p>要不要做<br>产品的角度（产品的受众、受众的浏览器比例、效果优先还是基本功能优先）<br>成本的角度 (有无必要做某件事)<br>做到什么程度<br>让哪些浏览器支持哪些效果</p>
+</li>
+<li><p>如何做<br>根据兼容需求选择技术框架/库(jquery)<br>根据兼容需求选择兼容工具(html5shiv.js、respond.js、css reset、normalize.css、Modernizr)<br>postCSS<br>通过渐进增强或者优雅退化来实现浏览器兼容</p>
+</li>
+</ol>
+<h2 id="列举5种以上浏览器兼容的写法"><a href="#列举5种以上浏览器兼容的写法" class="headerlink" title="列举5种以上浏览器兼容的写法"></a>列举5种以上浏览器兼容的写法</h2><ol>
+<li><p>条件注释</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if IE 7]&gt;&lt;link rel="stylesheet" href="ie7.css" type="text/css"/&gt;&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>css hack，这其中又分为3种表现形式法，分别如下：<br>属性前缀法：ie6能识别下划线”_”和””，ie7能识别””，但是不能识别下划线。IE6~IE10都认识”\9”，但firefox前述三个都不能认识。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: red;</span><br><span class="line">	<span class="attribute">_color</span>: blue; <span class="comment">/*ie6*/</span></span><br><span class="line">	color: pink; /ie67*/</span><br><span class="line">	<span class="selector-tag">color</span>: <span class="selector-tag">yellow</span>\9; <span class="comment">/*ie/edge 6-8*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常见的属性兼容情况：inline-blcok:&gt;=ie8，min-width：&gt;=ie8，:before:after:&gt;=ie8 ,div:hover&gt;=ie8, background-size: &gt;=ie9,圆角：&gt;=ie9，阴影：&gt;=ie9，动画渐变：&gt;=ie10</p>
+</li>
+<li><p>选择器前缀法</p>
+</li>
+<li><p>IE条件注释法结合选择器整体优化</p>
+</li>
+<li><p>利用normalize.css,统一所有浏览器样式</p>
+</li>
+</ol>
+<h2 id="以下工具-名词是做什么的"><a href="#以下工具-名词是做什么的" class="headerlink" title="以下工具/名词是做什么的"></a>以下工具/名词是做什么的</h2><ul>
+<li><p>条件注释<br>条件注释是一种安全的区分IE浏览器版本的语法，通过形如</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if IE]&gt;用于 IE &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 6]&gt;用于 IE6 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 7]&gt;用于 IE7 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 8]&gt;用于 IE8 &lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>的代码来区分IE版本。</p>
+</li>
+<li><p>IE Hack<br>针对IE浏览器使用独有的CSS语法来实现兼容的手段称作IE Hack。</p>
+</li>
+<li><p>js 能力检测<br>利用js检测浏览器是否支持某种能力的手段。</p>
+</li>
+<li><p>html5shiv.js<br>html5shiv.js是一个js库，用于解决IE9以下版本浏览器对HTML5新增标签不识别，并导致CSS不起作用的问题。</p>
+</li>
+<li><p>respond.js<br>Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width 特性，实现响应式网页设计（Responsive Web Design）。</p>
+</li>
+<li><p>css reset<br>先定义好一些CSS样式，来让所有浏览器都按照同样的规则解释CSS。</p>
+</li>
+<li><p>normalize.css<br>先定义好一些CSS样式的同时保护有用的原生CSS样式，来让所有浏览器都按照同样的规则解释CSS。</p>
+</li>
+<li><p>Modernizr<br>Modernizr 是一个用来检测浏览器功能支持情况的 JavaScript 库。通过这个库我们可以检测不同的浏览器对于HTML5特性的支持情况。并以类标识的方式添加到标签中。</p>
+</li>
+<li><p>postCSS<br>PostCSS是一个使用JavaScript插件来转换CSS的工具。能够达到兼容各种不同浏览器的效果，同时拥有很多插件。</p>
+</li>
+</ul>
+<h2 id="一般在哪个网站查询属性兼容性？"><a href="#一般在哪个网站查询属性兼容性？" class="headerlink" title="一般在哪个网站查询属性兼容性？"></a>一般在哪个网站查询属性兼容性？</h2><p><a href="http://caniuse.com/" target="_blank" rel="noopener">caniuse</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/11/浮动定位BFC边距合并/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/11/浮动定位BFC边距合并/" itemprop="url">浮动定位BFC边距合并</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-11T11:59:31+08:00">
+                2017-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响"><a href="#浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响" class="headerlink" title="浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响?"></a>浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响?</h2><h3 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h3><p>浮动元素会脱离正常的文档流，按照其外边距指定的位置相对于它的上一个块级元素（或父元素）显示<br>浮动元素后面的块级元素的内容会向此浮动元素的外边距靠齐，但是边框和背景却忽略浮动元素而向上一个任意非浮动元素靠齐<br>浮动元素后面的内联元素会向此浮动元素的外边距靠齐</p>
+<h3 id="float造成的影响："><a href="#float造成的影响：" class="headerlink" title="float造成的影响："></a>float造成的影响：</h3><h4 id="对其父元素的影响"><a href="#对其父元素的影响" class="headerlink" title="对其父元素的影响"></a>对其父元素的影响</h4><p>对于其父元素来说，元素浮动之后，它脱离当前正常的文档流，所以它也无法撑开其父元素，造成父元素的塌陷</p>
+<h4 id="对其兄弟元素（非浮动）的影响"><a href="#对其兄弟元素（非浮动）的影响" class="headerlink" title="对其兄弟元素（非浮动）的影响"></a>对其兄弟元素（非浮动）的影响</h4><p>如果兄弟元素为块级元素，该元素会忽视浮动元素的而占据它的位置，并且元素会处在浮动元素的下层（并且无法通过z-index属性改变他们的层叠位置），但它的内部文字和其他行内元素都会环绕浮动元素。<br>如果如果兄弟元素为内联元素，则元素会环绕浮动元素排列。</p>
+<h4 id="对其兄弟元素（浮动）的影响"><a href="#对其兄弟元素（浮动）的影响" class="headerlink" title="对其兄弟元素（浮动）的影响"></a>对其兄弟元素（浮动）的影响</h4><p>同一个方向的浮动元素：当一个浮动元素在浮动过程中碰到同一个方向的浮动元素时，它会紧跟在它们后面<br>反方向的浮动元素：互不影响，位于同一条水平线上，当空间不够时会被挤下</p>
+<h4 id="对子元素的影响"><a href="#对子元素的影响" class="headerlink" title="对子元素的影响"></a>对子元素的影响</h4><p>当一个元素浮动时，在没有清除浮动的情况下，它无法撑开其父元素，但它可以让自己的浮动子元素撑开它自身，并且在没有定义具体宽度情况下，使自身的宽度从100%变为自适应（浮动元素display:block）。其高度和宽度均为浮动元素高度和非浮动元素高度之间的最大值</p>
+<h2 id="清除浮动指什么-如何清除浮动-两种以上方法"><a href="#清除浮动指什么-如何清除浮动-两种以上方法" class="headerlink" title="清除浮动指什么? 如何清除浮动? 两种以上方法"></a>清除浮动指什么? 如何清除浮动? 两种以上方法</h2><p>浮动会导致：<br>（1）背景不能显示 （2）边框不能撑开 （3）margin 设置值不能正确显示<br>清除浮动就是消除这些不良影响<br>清除浮动可以通过设置父级元素overflow:auto;或者display:inline-block;等方法来实现。</p>
+<h2 id="有几种定位方式，分别是如何实现定位的，参考点是什么，使用场景是什么？"><a href="#有几种定位方式，分别是如何实现定位的，参考点是什么，使用场景是什么？" class="headerlink" title="有几种定位方式，分别是如何实现定位的，参考点是什么，使用场景是什么？"></a>有几种定位方式，分别是如何实现定位的，参考点是什么，使用场景是什么？</h2><p>absolute生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。fixed生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。relative生成相对定位的元素，相对于其正常位置进行定位。因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。static默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</p>
+<h2 id="z-index-有什么作用-如何使用"><a href="#z-index-有什么作用-如何使用" class="headerlink" title="z-index 有什么作用? 如何使用?"></a>z-index 有什么作用? 如何使用?</h2><p>相当于photoshop中“图层”的概念，上面的图层覆盖下面的图层，此属性的数值越大相当于图层越上。</p>
+<h2 id="position-relative和负margin都可以使元素位置发生偏移-二者有什么区别"><a href="#position-relative和负margin都可以使元素位置发生偏移-二者有什么区别" class="headerlink" title="position:relative和负margin都可以使元素位置发生偏移?二者有什么区别"></a>position:relative和负margin都可以使元素位置发生偏移?二者有什么区别</h2><p>position：relative可以使元素发生偏移，但是在文档流中，它仍然占据着原来的位置，所以其他同级元素的位置不会发生变化。<br>负margin：通过负margin进行偏移的元素，它会放弃偏移前占据的空间，所以其他同级元素的位置发生了变化。</p>
+<h2 id="BFC-是什么？如何生成-BFC？BFC-有什么作用？举例说明"><a href="#BFC-是什么？如何生成-BFC？BFC-有什么作用？举例说明" class="headerlink" title="BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明"></a>BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明</h2><p>BFC：块级格式化上下文，它是指一个独立的块级渲染区域，只有Block-level BOX参与，该区域拥有一套渲染规则来约束块级盒子的布局，且与区域外部无关。</p>
+<p>CSS2.1中规定满足下列CSS声明之一的元素便会生成BFC。</p>
+<ul>
+<li>根元素</li>
+<li>float的值不为none</li>
+<li>overflow的值不为visible</li>
+<li>display的值为inline-block、table-cell、table-caption</li>
+<li>position的值为absolute或fixed</li>
+</ul>
+<ol>
+<li><p>不和浮动元素重叠 如果一个浮动元素后面跟着一个非浮动的元素，那么就会产生一个覆盖的现象，很多自适应的两栏布局就是这么做的。</p>
+</li>
+<li><p>清除元素内部浮动 只要把父元素设为BFC就可以清理子元素的浮动了，最常见的用法就是在父元素上设置overflow: hidden样式，对于IE6加上zoom:1就可以了(IE Haslayout)。</p>
+</li>
+<li><p>嵌套元素Margin边距折叠问题的解决 按照BFC的定义，只有同属于一个BFC时，两个元素才有可能发生垂直Margin的重叠，这个包括相邻元素，嵌套元素，只要他们之间没有阻挡(例如没有边框，非空内容，padding等)就会发生margin重叠。 因此要解决margin重叠问题，只要让它们不在同一个BFC就行了，只要把父元素设为BFC就可以了。这样子元素的margin就不会和父元素的margin发生重叠了。</p>
+</li>
+</ol>
+<h2 id="在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例"><a href="#在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例" class="headerlink" title="在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例"></a>在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例</h2><p>同一BFC下会产生外边距合并；合并存在两种情况，分别是内外嵌套元素的外边距合并和元素的上下外边距合并；<br>合并规则：<br>margin都为正值，取较大值。<br>margin都为是负值，取较小值。<br>margin有正有负，先取出负margin中较小的，然后和正margin最大值相加。<br>所有相邻的margin一起参与运算，不能分部分进行。<br>使两个元素处于不同BFC或者在内外嵌套情况时，在外元素加border或者padding即可。</p>
+<p>举例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin: 20px;"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin: 20px;"</span>&gt;</span>222<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 内外嵌套边距合并的情况 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin: 20px"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin: 20px"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 上下外边距合并的情况 --&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p><a href="https://github.com/Zainking/demos" target="_blank" rel="noopener">作业代码</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/blog/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/blog/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/18/">18</a><a class="extend next" rel="next" href="/blog/page/15/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://static.zain.red/11.25/avatar.svg"
+               alt="Zain King" />
+          <p class="site-author-name" itemprop="name">Zain King</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zain King</span>
+  <span><a href="http://www.miitbeian.gov.cn/">湘ICP备18008942号</a></span>
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

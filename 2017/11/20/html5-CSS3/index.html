@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="技术博客," />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的 IE 支持 HTML5新标签 HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到匹配当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内">
+<meta name="keywords" content="技术博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5_CSS3">
+<meta property="og:url" content="https://zain.red/blog/2017/11/20/html5-CSS3/index.html">
+<meta property="og:site_name" content="Zain.red">
+<meta property="og:description" content="HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的 IE 支持 HTML5新标签 HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到匹配当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-15T15:43:08.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5_CSS3">
+<meta name="twitter:description" content="HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的 IE 支持 HTML5新标签 HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到匹配当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zain.red/blog/2017/11/20/html5-CSS3/"/>
+
+
+
+
+
+  <title>html5_CSS3 | Zain.red</title>
+  
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="LNOGTk4l0M" />
+  <meta name="google-site-verification" content="fVeC_F3GnkKN6N8uVxB-8jQtPZpm-ky2JxKwAJftNcc" />
+  <meta name="msvalidate.01" content="A2739EC7E3F06C7F2C84D491B39E026E" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="//zain.red"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zain.red</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">王子一的个人站点</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            博客首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/11/20/html5-CSS3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">html5_CSS3</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T14:16:50+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的-IE-支持-HTML5新标签"><a href="#HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的-IE-支持-HTML5新标签" class="headerlink" title="HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的 IE 支持 HTML5新标签"></a>HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的 IE 支持 HTML5新标签</h2><blockquote>
+<p>HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到匹配当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Based Rich Internet Application，RIA），例如：AdobeFlash、Microsoft Silverlight与Oracle JavaFX的需求，并且提供更多能有效加强网络应用的标准集。<br>——————Wikipedia</p>
+</blockquote>
+<p>HTML5 中的一些有趣的新特性：</p>
+<ul>
+<li>用于绘画的 canvas 元素</li>
+<li>用于媒介回放的 video 和 audio 元素</li>
+<li>对本地离线存储的更好的支持</li>
+<li>新的特殊内容元素，比如 article、footer、header、nav、section</li>
+<li>新的表单控件，比如 calendar、date、time、email、url、search</li>
+</ul>
+<p>单就html而言，新增标签有：</p>
+<table>
+<thead>
+<tr>
+<th>html5标签</th>
+<th>标签含义</th>
+<th>完整标签</th>
+<th>html4.01实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;article&gt;</td>
+<td>外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。</td>
+<td>&lt;article&gt;&lt;/article&gt;</td>
+<td>&lt;div class=’article’&gt;&lt;/div&gt;</td>
+</tr>
+<tr>
+<td>&lt;aside&gt;</td>
+<td>article 以外的内容。aside 的内容应该与 article 的内容相关。</td>
+<td>&lt;aside&gt;Aside 的内容是独立的内容，但应与文档内容相关。&lt;/aside&gt;</td>
+<td>&lt;div&gt;Aside 的内容是独立的内容，但应与文档内容相关。&lt;/div&gt;</td>
+</tr>
+<tr>
+<td>&lt;audio&gt;</td>
+<td>声音，比如音乐或其他音频流。</td>
+<td>&lt;audio src=”someaudio.wav”&gt;您的浏览器不支持 audio 标签。&lt;/audio&gt;</td>
+<td>&lt;object type=”application/ogg” data=”someaudio.wav”&gt;&lt;param name=”src” value=”someaudio.wav”&gt;&lt;/object&gt;</td>
+</tr>
+<tr>
+<td>&lt;canvas&gt;</td>
+<td>图形，比如图表和其他图像。这个 HTML 元素是为了客户端矢量图形而设计的。它自己没有行为，但却把一个绘图 API 展现给客户端 JavaScript 以使脚本能够把想绘制的东西都绘制到一块画布上。</td>
+<td>&lt;canvas id=”myCanvas” width=”200” height=”200”&gt;&lt;/canvas&gt;</td>
+<td>&lt;object data=”inc/hdr.svg” type=”image/svg+xml” width=”200” height=”200”&gt;&lt;/object&gt;</td>
+</tr>
+<tr>
+<td>&lt;command&gt;</td>
+<td>命令按钮，比如单选按钮、复选框或按钮。</td>
+<td>&lt;command onclick=cut()” label=”cut”&gt;</td>
+<td>none</td>
+</tr>
+<tr>
+<td>&lt;datalist&gt;</td>
+<td>可选数据的列表。与 input 元素配合使用，就可以制作出输入值的下拉列表。</td>
+<td>&lt;datalist&gt;&lt;/datalist&gt;</td>
+<td>see combobox.</td>
+</tr>
+<tr>
+<td>&lt;details&gt;</td>
+<td>元素的细节，用户可进行查看，或通过点击进行隐藏。与 &lt;legend&gt; 一起使用，来制作 detail 的标题。该标题对用户是可见的，当在其上点击时可打开或关闭 detail。</td>
+<td>&lt;details&gt;&lt;/details&gt;</td>
+<td>&lt;dl style=”display:hidden”&gt;&lt;/dl&gt;</td>
+</tr>
+<tr>
+<td>&lt;embed&gt;</td>
+<td>嵌入的内容，比如插件。</td>
+<td>&lt;embed src=”horse.wav” /&gt;</td>
+<td>&lt;object data=”flash.swf”  type=”application/x-shockwave-flash”&gt;&lt;/object&gt;</td>
+</tr>
+<tr>
+<td>&lt;figcaption&gt;</td>
+<td>figure 元素的标题。”figcaption” 元素应该被置于 “figure” 元素的第一个或最后一个子元素的位置。</td>
+<td>&lt;figure&gt;&lt;figcaption&gt;PRC&lt;/figcaption&gt;&lt;/figure&gt;</td>
+<td>none</td>
+</tr>
+<tr>
+<td>&lt;figure&gt;</td>
+<td>标签用于对元素进行组合。使用 &lt;figcaption&gt; 元素为元素组添加标题。</td>
+<td>&lt;figure&gt;&lt;figcaption&gt;PRC&lt;/figcaption&gt;&lt;p&gt;The People’s Republic of China was born in 1949…&lt;/p&gt;&lt;/figure&gt;</td>
+<td>&lt;dl&gt;&lt;h1&gt;PRC&lt;/h1&gt;&lt;p&gt;The People’s Republic of China was born in 1949…&lt;/p&gt;&lt;/dl&gt;</td>
+</tr>
+<tr>
+<td>&lt;footer&gt;</td>
+<td>section 或 document 的页脚。典型地，它会包含创作者的姓名、文档的创作日期以及/或者联系信息。</td>
+<td>&lt;footer&gt;&lt;/footer&gt;</td>
+<td>&lt;div&gt;&lt;/div&gt;</td>
+</tr>
+<tr>
+<td>&lt;header&gt;</td>
+<td>section 或 document 的页眉。</td>
+<td>&lt;header&gt;&lt;/header&gt;</td>
+<td>&lt;div&gt;&lt;/div&gt;</td>
+</tr>
+<tr>
+<td>&lt;hgroup&gt;</td>
+<td>标签用于对网页或区段（section）的标题进行组合。</td>
+<td>&lt;hgroup&gt;&lt;/hgroup&gt;</td>
+<td>&lt;div&gt;&lt;/div&gt;</td>
+</tr>
+<tr>
+<td>&lt;keygen&gt;</td>
+<td>生成密钥。</td>
+<td>&lt;keygen&gt;</td>
+<td>none</td>
+</tr>
+<tr>
+<td>&lt;mark&gt;</td>
+<td>主要用来在视觉上向用户呈现那些需要突出的文字。&lt;mark&gt;标签的一个比较典型的应用就是在搜索结果中向用户高亮显示搜索关键词。</td>
+<td>&lt;mark&gt;&lt;/mark&gt;</td>
+<td>&lt;span&gt;&lt;/span&gt;</td>
+</tr>
+<tr>
+<td>&lt;meter&gt;</td>
+<td>度量衡。仅用于已知最大和最小值的度量。必须定义度量的范围，既可以在元素的文本中，也可以在 min/max 属性中定义。</td>
+<td>&lt;meter&gt;&lt;/meter&gt;</td>
+<td>none</td>
+</tr>
+<tr>
+<td>&lt;nav&gt;</td>
+<td>导航链接的部分。</td>
+<td>&lt;nav&gt;&lt;/nav&gt;</td>
+<td>&lt;ul&gt;&lt;/ul&gt;</td>
+</tr>
+<tr>
+<td>&lt;output&gt;</td>
+<td>不同类型的输出，比如脚本的输出。</td>
+<td>&lt;output&gt;&lt;/output&gt;</td>
+<td>&lt;span&gt;&lt;/span&gt;</td>
+</tr>
+<tr>
+<td>&lt;progress&gt;</td>
+<td>标签运行中的进程。可以使用 &lt;progress&gt; 标签来显示 JavaScript 中耗费时间的函数的进程。</td>
+<td>&lt;progress&gt;&lt;/progress&gt;</td>
+<td>none</td>
+</tr>
+<tr>
+<td>&lt;ruby&gt;</td>
+<td>ruby 注释（中文注音或字符）。</td>
+<td>&lt;ruby&gt;漢 &lt;rt&gt;&lt;rp&gt;(&lt;/rp&gt;ㄏㄢˋ&lt;rp&gt;)&lt;/rp&gt;&lt;/rt&gt;&lt;/ruby&gt;</td>
+<td>none</td>
+</tr>
+<tr>
+<td>&lt;section&gt;</td>
+<td>文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。</td>
+<td>&lt;section&gt;&lt;/section&gt;</td>
+<td>&lt;div&gt;&lt;/div&gt;</td>
+</tr>
+<tr>
+<td>&lt;source&gt;</td>
+<td>标签为媒介元素（比如 &lt;video&gt; 和 &lt;audio&gt;）定义媒介资源。</td>
+<td>&lt;source&gt;</td>
+<td>&lt;param&gt;</td>
+</tr>
+<tr>
+<td>&lt;summary&gt;</td>
+<td>标签包含 details 元素的标题，”details” 元素用于描述有关文档或文档片段的详细信息。”summary” 元素应该是 “details” 元素的第一个子元素。</td>
+<td>&lt;details&gt;&lt;summary&gt;HTML 5&lt;/summary&gt;This document teaches you everything you have to learn about HTML 5.&lt;/details&gt;</td>
+<td>none</td>
+</tr>
+<tr>
+<td>&lt;time&gt;</td>
+<td>日期或时间，或者两者。</td>
+<td>&lt;time&gt;&lt;/time&gt;</td>
+<td>&lt;span&gt;&lt;/span&gt;</td>
+</tr>
+<tr>
+<td>&lt;video&gt;</td>
+<td>视频，比如电影片段或其他视频流。</td>
+<td>&lt;video src=”movie.ogg” controls=”controls”&gt;您的浏览器不支持 video 标签。&lt;/video&gt;</td>
+<td>&lt;object type=”video/ogg” data=”movie.ogv”&gt;&lt;param name=”src” value=”movie.ogv”&gt;&lt;/object&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>可以使用 <em>html5shiv.js</em> 这个库使得以前版本的浏览器支持html5.</p>
+<h2 id="input-有哪些新增类型？"><a href="#input-有哪些新增类型？" class="headerlink" title="input 有哪些新增类型？"></a>input 有哪些新增类型？</h2><ul>
+<li>email</li>
+<li>url</li>
+<li>number</li>
+<li>range</li>
+<li>Date pickers (date, month, week, time, datetime, datetime-local)</li>
+<li>search</li>
+<li>color</li>
+</ul>
+<h2 id="浏览器本地存储中-cookie-和-localStorage-有什么区别？-localStorage-如何存储删除数据。"><a href="#浏览器本地存储中-cookie-和-localStorage-有什么区别？-localStorage-如何存储删除数据。" class="headerlink" title="浏览器本地存储中 cookie 和 localStorage 有什么区别？ localStorage 如何存储删除数据。"></a>浏览器本地存储中 cookie 和 localStorage 有什么区别？ localStorage 如何存储删除数据。</h2><ul>
+<li>cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。</li>
+<li>存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。而localStorage不会自动把数据发给服务器，仅在本地保存。localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。</li>
+<li>数据有效期不同，localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。</li>
+<li>作用域不同，localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。Web Storage 支持事件通知机制，可以将数据更新的通知发送给监听者。Web Storage 的 api 接口使用更方便。</li>
+</ul>
+<h3 id="localStorage-CURD"><a href="#localStorage-CURD" class="headerlink" title="localStorage CURD"></a>localStorage CURD</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增改</span></span><br><span class="line">localStorage.setItem(<span class="string">'myCat'</span>, <span class="string">'Tom'</span>);</span><br><span class="line"><span class="comment">//删</span></span><br><span class="line">localStorage.removeItem(<span class="string">"myCat"</span>);</span><br><span class="line"><span class="comment">//查</span></span><br><span class="line"><span class="keyword">var</span> cat = localStorage.getItem(<span class="string">"myCat"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="代码作业"><a href="#代码作业" class="headerlink" title="代码作业"></a>代码作业</h2><ul>
+<li>写出如下 CSS3效果的简单事例<ol>
+<li>圆角， 圆形</li>
+<li>div 阴影</li>
+<li>2D 转换：放大、缩小、偏移、旋转</li>
+<li>3D 转换：移动、旋转</li>
+<li>背景色渐变</li>
+<li>过渡效果</li>
+<li>动画</li>
+</ol>
+</li>
+<li>实现如下全屏图加过渡色的效果（具体效果随意）<a href="http://book.jirengu.com/jirengu-inc/js-works/css3/big-cover.html" target="_blank" rel="noopener">DEMO</a></li>
+<li>写出如下 loading 动画效果 <a href="http://book.jirengu.com/jirengu-inc/js-works/css3/loading1.html" target="_blank" rel="noopener">DEMO1</a> <a href="http://book.jirengu.com/jirengu-inc/js-works/css3/loading2.html" target="_blank" rel="noopener">DEMO2</a><br><a href="https://github.com/Zainking/demos/tree/master/%E9%AB%98%E7%BA%A77" target="_blank" rel="noopener">高级7</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/技术博客/" rel="tag"># 技术博客</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2017/11/19/常见前端设计模式/" rel="next" title="常见前端设计模式">
+                <i class="fa fa-chevron-left"></i> 常见前端设计模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2017/11/23/http/" rel="prev" title="http">
+                http <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://static.zain.red/11.25/avatar.svg"
+               alt="Zain King" />
+          <p class="site-author-name" itemprop="name">Zain King</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的-IE-支持-HTML5新标签"><span class="nav-number">1.</span> <span class="nav-text">HTML5是什么？有哪些新特性？有哪些新增标签？如何让低版本的 IE 支持 HTML5新标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input-有哪些新增类型？"><span class="nav-number">2.</span> <span class="nav-text">input 有哪些新增类型？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器本地存储中-cookie-和-localStorage-有什么区别？-localStorage-如何存储删除数据。"><span class="nav-number">3.</span> <span class="nav-text">浏览器本地存储中 cookie 和 localStorage 有什么区别？ localStorage 如何存储删除数据。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage-CURD"><span class="nav-number">3.1.</span> <span class="nav-text">localStorage CURD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码作业"><span class="nav-number">4.</span> <span class="nav-text">代码作业</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zain King</span>
+  <span><a href="http://www.miitbeian.gov.cn/">湘ICP备18008942号</a></span>
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

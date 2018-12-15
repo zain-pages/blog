@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="技术博客," />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="过了一遍Lodash的文档，现将项目中用到的函数和自己觉得很有用的函数分两部分整理如下： 项目中用到的函数omit(object, [props])Object方法，返回忽略属性之外的自身和继承的可枚举属性。1234const object = &amp;#123; &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 &amp;#125;_.omit(object, [&apos;a&apos;, &apos;c&apos;])// =&amp;gt; &amp;#12">
+<meta name="keywords" content="技术博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lodash常用函数">
+<meta property="og:url" content="https://zain.red/blog/2018/04/18/Lodash常用函数/index.html">
+<meta property="og:site_name" content="Zain.red">
+<meta property="og:description" content="过了一遍Lodash的文档，现将项目中用到的函数和自己觉得很有用的函数分两部分整理如下： 项目中用到的函数omit(object, [props])Object方法，返回忽略属性之外的自身和继承的可枚举属性。1234const object = &amp;#123; &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 &amp;#125;_.omit(object, [&apos;a&apos;, &apos;c&apos;])// =&amp;gt; &amp;#12">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-15T15:43:08.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lodash常用函数">
+<meta name="twitter:description" content="过了一遍Lodash的文档，现将项目中用到的函数和自己觉得很有用的函数分两部分整理如下： 项目中用到的函数omit(object, [props])Object方法，返回忽略属性之外的自身和继承的可枚举属性。1234const object = &amp;#123; &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 &amp;#125;_.omit(object, [&apos;a&apos;, &apos;c&apos;])// =&amp;gt; &amp;#12">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zain.red/blog/2018/04/18/Lodash常用函数/"/>
+
+
+
+
+
+  <title>Lodash常用函数 | Zain.red</title>
+  
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="LNOGTk4l0M" />
+  <meta name="google-site-verification" content="fVeC_F3GnkKN6N8uVxB-8jQtPZpm-ky2JxKwAJftNcc" />
+  <meta name="msvalidate.01" content="A2739EC7E3F06C7F2C84D491B39E026E" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="//zain.red"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zain.red</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">王子一的个人站点</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            博客首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2018/04/18/Lodash常用函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Lodash常用函数</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T00:01:26+08:00">
+                2018-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>过了一遍<code>Lodash</code>的文档，现将项目中用到的函数和自己觉得很有用的函数分两部分整理如下：</p>
+<h2 id="项目中用到的函数"><a href="#项目中用到的函数" class="headerlink" title="项目中用到的函数"></a>项目中用到的函数</h2><h3 id="omit-object-props"><a href="#omit-object-props" class="headerlink" title="omit(object, [props])"></a>omit(object, [props])</h3><p>Object方法，返回忽略属性之外的自身和继承的可枚举属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123; <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="string">'2'</span>, <span class="string">'c'</span>: <span class="number">3</span> &#125;</span><br><span class="line"></span><br><span class="line">_.omit(object, [<span class="string">'a'</span>, <span class="string">'c'</span>])</span><br><span class="line"><span class="comment">// =&gt; &#123; 'b': '2' &#125;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="get-object-path-defaultValue"><a href="#get-object-path-defaultValue" class="headerlink" title="get(object, path, [defaultValue])"></a>get(object, path, [defaultValue])</h3><p>Object方法，根据对象路径获取值，如果解析<code>value</code>是<code>undefined</code>会以<code>defaultValue</code>取代。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123; <span class="string">'a'</span>: [&#123; <span class="string">'b'</span>: &#123; <span class="string">'c'</span>: <span class="number">3</span> &#125; &#125;] &#125;</span><br><span class="line"></span><br><span class="line">_.get(object, <span class="string">'a[0].b.c'</span>);</span><br><span class="line"><span class="comment">// =&gt; 3</span></span><br><span class="line"></span><br><span class="line">_.get(object, [<span class="string">'a'</span>, <span class="string">'0'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line"><span class="comment">// =&gt; 3</span></span><br><span class="line"></span><br><span class="line">_.get(object, <span class="string">'a.b.c'</span>, <span class="string">'default'</span>)</span><br><span class="line"><span class="comment">// =&gt; 'default'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="pick-object-props"><a href="#pick-object-props" class="headerlink" title="pick(object, [props])"></a>pick(object, [props])</h3><p>Object方法，创建一个从 object 中选中的属性的对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123; <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="string">'2'</span>, <span class="string">'c'</span>: <span class="number">3</span> &#125;</span><br><span class="line"></span><br><span class="line">_.pick(object, [<span class="string">'a'</span>, <span class="string">'c'</span>])</span><br><span class="line"><span class="comment">// =&gt; &#123; 'a': 1, 'c': 3 &#125;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="noop"><a href="#noop" class="headerlink" title="noop"></a>noop</h3><p>Util方法，无论传递什么参数，都返回 undefined。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123; <span class="string">'user'</span>: <span class="string">'fred'</span> &#125;</span><br><span class="line"></span><br><span class="line">_.noop(object) === <span class="literal">undefined</span></span><br><span class="line"><span class="comment">// =&gt; true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="sortBy-collection-iteratees-identity"><a href="#sortBy-collection-iteratees-identity" class="headerlink" title="sortBy(collection, [iteratees=[_.identity]])"></a>sortBy(collection, [iteratees=[_.identity]])</h3><p>Collection方法，创建一个元素数组。 以 iteratee 处理的结果升序排序。 这个方法执行稳定排序。 iteratees 会传入1个参数：(value)。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>,   <span class="string">'age'</span>: <span class="number">48</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>, <span class="string">'age'</span>: <span class="number">36</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>,   <span class="string">'age'</span>: <span class="number">42</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>, <span class="string">'age'</span>: <span class="number">34</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">_.sortBy(users, o =&gt; o.user)</span><br><span class="line"><span class="comment">// =&gt; 排序结果 [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]</span></span><br><span class="line"></span><br><span class="line">_.sortBy(users, [<span class="string">'user'</span>, <span class="string">'age'</span>])</span><br><span class="line"><span class="comment">// =&gt; 排序结果 [['barney', 34], ['barney', 36], ['fred', 42], ['fred', 48]]</span></span><br><span class="line"><span class="comment">// 先按照user升序，再按照age升序</span></span><br><span class="line"></span><br><span class="line">_.sortBy(users, <span class="string">'user'</span>, o =&gt; <span class="built_in">Math</span>.floor(o.age / <span class="number">10</span>))</span><br><span class="line"><span class="comment">// =&gt; 排序结果 [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 42]]</span></span><br><span class="line"><span class="comment">// 先按照user排序，再按照Math.floor(o.age / 10)排序，因为稳定排序，所以age顺序不变。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="isArray-value"><a href="#isArray-value" class="headerlink" title="isArray(value)"></a>isArray(value)</h3><p>Lang方法，检查 value 是否是 Array 类对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">_.isArray([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="comment">// =&gt; true</span></span><br><span class="line"></span><br><span class="line">_.isArray(<span class="built_in">document</span>.body.children)</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br><span class="line"></span><br><span class="line">_.isArray(<span class="string">'abc'</span>)</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br><span class="line"></span><br><span class="line">_.isArray(_.noop)</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="without-array-values"><a href="#without-array-values" class="headerlink" title="without(array, [values])"></a>without(array, [values])</h3><p>Array方法，创建一个移除了所有提供的 values 。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.without([<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>], <span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="comment">// =&gt; [3]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="identity-value"><a href="#identity-value" class="headerlink" title="identity(value)"></a>identity(value)</h3><p>Util方法，这个方法返回首个提供的参数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123; <span class="string">'user'</span>: <span class="string">'fred'</span> &#125;</span><br><span class="line"></span><br><span class="line">_.identity(object) === object</span><br><span class="line"><span class="comment">// =&gt; true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="filter-collection-predicate-identity"><a href="#filter-collection-predicate-identity" class="headerlink" title="filter(collection, [predicate=_.identity])"></a>filter(collection, [predicate=_.identity])</h3><p>Collection方法，遍历集合中的元素，筛选出一个经过 predicate 检查结果为真值的数组，predicate 会传入3个参数：(value, index|key, collection)。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> resolve = _.partial(_.map, _, <span class="string">'user'</span>)</span><br><span class="line"><span class="comment">// _.partial: 创建一个函数。 该函数调用 func，并传入预设的参数。 这个方法类似 _.bind，除了它不会绑定 this。 这个 _.partial.placeholder 的值，默认是以 _ 作为附加部分参数的占位符。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>, <span class="string">'age'</span>: <span class="number">36</span>, <span class="string">'active'</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>,   <span class="string">'age'</span>: <span class="number">40</span>, <span class="string">'active'</span>: <span class="literal">false</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">resolve( _.filter(users, o =&gt; !o.active) )</span><br><span class="line"><span class="comment">// =&gt; ['fred']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.matches` 的回调结果</span></span><br><span class="line">resolve( _.filter(users, &#123; <span class="string">'age'</span>: <span class="number">36</span>, <span class="string">'active'</span>: <span class="literal">true</span> &#125;) )</span><br><span class="line"><span class="comment">// =&gt; ['barney']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.matchesProperty` 的回调结果</span></span><br><span class="line">resolve( _.filter(users, [<span class="string">'active'</span>, <span class="literal">false</span>]) )</span><br><span class="line"><span class="comment">// =&gt; ['fred']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.property` 的回调结果</span></span><br><span class="line">resolve( _.filter(users, <span class="string">'active'</span>) )</span><br><span class="line"><span class="comment">// =&gt; ['barney']</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="find-collection-predicate-identity"><a href="#find-collection-predicate-identity" class="headerlink" title="find(collection, [predicate=_.identity])"></a>find(collection, [predicate=_.identity])</h3><p>Collection方法，遍历集合中的元素，返回最先经 predicate 检查为真值的元素，如无匹配，返回undefined。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>,  <span class="string">'age'</span>: <span class="number">36</span>, <span class="string">'active'</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>,    <span class="string">'age'</span>: <span class="number">40</span>, <span class="string">'active'</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'pebbles'</span>, <span class="string">'age'</span>: <span class="number">1</span>,  <span class="string">'active'</span>: <span class="literal">true</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">_.find(users, o =&gt; (o.age &lt; <span class="number">40</span>))</span><br><span class="line"><span class="comment">// =&gt; 结果: 'barney'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.matches` 的回调结果</span></span><br><span class="line">_.find(users, &#123; <span class="string">'age'</span>: <span class="number">1</span>, <span class="string">'active'</span>: <span class="literal">true</span> &#125;)</span><br><span class="line"><span class="comment">// =&gt; 结果: 'pebbles'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.matchesProperty` 的回调结果</span></span><br><span class="line">_.find(users, [<span class="string">'active'</span>, <span class="literal">false</span>])</span><br><span class="line"><span class="comment">// =&gt; 结果: 'fred'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.property` 的回调结果</span></span><br><span class="line">_.find(users, <span class="string">'active'</span>)</span><br><span class="line"><span class="comment">// =&gt; 结果: 'barney'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="omitBy-object-predicate-identity"><a href="#omitBy-object-predicate-identity" class="headerlink" title="omitBy(object, [predicate=_.identity])"></a>omitBy(object, [predicate=_.identity])</h3><p>Object方法，返回经 predicate 判断不是真值的属性的自身和继承的可枚举属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123; <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="string">'2'</span>, <span class="string">'c'</span>: <span class="number">3</span> &#125;</span><br><span class="line"></span><br><span class="line">_.omitBy(object, _.isNumber)</span><br><span class="line"><span class="comment">// =&gt; &#123; 'b': '2' &#125;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="padStart-string-’’-length-0-chars-’-‘"><a href="#padStart-string-’’-length-0-chars-’-‘" class="headerlink" title="padStart([string=’’], [length=0], [chars=’ ‘])"></a>padStart([string=’’], [length=0], [chars=’ ‘])</h3><p>String方法，如果字符串长度小于 length 则在左侧填充字符。 如果超出长度则截断超出的部分。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">_.padStart(<span class="string">'abc'</span>, <span class="number">6</span>)</span><br><span class="line"><span class="comment">// =&gt; '   abc'</span></span><br><span class="line"></span><br><span class="line">_.padStart(<span class="string">'abc'</span>, <span class="number">6</span>, <span class="string">'_-'</span>)</span><br><span class="line"><span class="comment">// =&gt; '_-_abc'</span></span><br><span class="line"></span><br><span class="line">_.padStart(<span class="string">'abc'</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// =&gt; 'abc'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="reduce-collection-iteratee-identity-accumulator"><a href="#reduce-collection-iteratee-identity-accumulator" class="headerlink" title="reduce(collection, [iteratee=_.identity], [accumulator])"></a>reduce(collection, [iteratee=_.identity], [accumulator])</h3><p>Collection方法，通过 iteratee 遍历集合中的每个元素。 每次返回的值会作为下一次 iteratee 使用。 如果没有提供 accumulator，则集合中的第一个元素作为 accumulator。 iteratee 会传入4个参数：(accumulator, value, index|key, collection)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">_.reduce([<span class="number">1</span>, <span class="number">2</span>], (sum, n) =&gt; (sum + n), <span class="number">0</span>);</span><br><span class="line"><span class="comment">// =&gt; 3</span></span><br><span class="line"></span><br><span class="line">_.reduce(&#123; <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">1</span> &#125;, (result, value, key) =&gt; &#123;</span><br><span class="line">  (result[value] || (result[value] = [])).push(key);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;, &#123;&#125;);</span><br><span class="line"><span class="comment">// =&gt; &#123; '1': ['a', 'c'], '2': ['b'] &#125; (无法保证遍历的顺序)</span></span><br></pre></td></tr></table></figure>
+<h3 id="isEqual-value-other"><a href="#isEqual-value-other" class="headerlink" title="isEqual(value, other)"></a>isEqual(value, other)</h3><p>Lang方法，执行深比较来决定两者的值是否相等。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object = &#123; <span class="string">'user'</span>: <span class="string">'fred'</span> &#125;</span><br><span class="line"><span class="keyword">const</span> other = &#123; <span class="string">'user'</span>: <span class="string">'fred'</span> &#125;</span><br><span class="line"></span><br><span class="line">_.isEqual(object, other)</span><br><span class="line"><span class="comment">// =&gt; true</span></span><br><span class="line"></span><br><span class="line">object === other</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="自己觉得很有用的函数"><a href="#自己觉得很有用的函数" class="headerlink" title="自己觉得很有用的函数"></a>自己觉得很有用的函数</h2><h3 id="times-n-iteratee-identity"><a href="#times-n-iteratee-identity" class="headerlink" title="times(n, [iteratee=_.identity])"></a>times(n, [iteratee=_.identity])</h3><p>Util方法，调用 iteratee N 次，每次调用返回的结果存入到数组中。 iteratee 会传入1个参数：(index)。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">_.times(<span class="number">3</span>, <span class="built_in">String</span>)</span><br><span class="line"><span class="comment">// =&gt; ['0', '1', '2']</span></span><br><span class="line"></span><br><span class="line"> _.times(<span class="number">4</span>, _.constant(<span class="literal">true</span>))</span><br><span class="line"><span class="comment">// =&gt; [true, true, true, true]</span></span><br><span class="line"><span class="comment">// _.constant：创建一个返回 value 的函数</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="cloneDeep-value"><a href="#cloneDeep-value" class="headerlink" title="cloneDeep(value)"></a>cloneDeep(value)</h3><p>Lang方法，深拷贝。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> objects = [&#123; <span class="string">'a'</span>: <span class="number">1</span> &#125;, &#123; <span class="string">'b'</span>: <span class="number">2</span> &#125;]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> deep = _.cloneDeep(objects)</span><br><span class="line"><span class="built_in">console</span>.log(deep[<span class="number">0</span>] === objects[<span class="number">0</span>])</span><br><span class="line"><span class="comment">// =&gt; false</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="random-min-0-max-1-floating"><a href="#random-min-0-max-1-floating" class="headerlink" title="random([min=0], [max=1], [floating])"></a>random([min=0], [max=1], [floating])</h3><p>Number方法，产生一个包括 min 与 max 之间的数。 如果只提供一个参数返回一个0到提供数之间的数。 如果 floating 设为 true，或者 min 或 max 是浮点数，结果返回浮点数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">_.random(<span class="number">0</span>, <span class="number">5</span>)</span><br><span class="line"><span class="comment">// =&gt;  0 和 5 之间的数</span></span><br><span class="line"></span><br><span class="line">_.random(<span class="number">5</span>)</span><br><span class="line"><span class="comment">// =&gt; 同样是 0 和 5 之间的数</span></span><br><span class="line"></span><br><span class="line">_.random(<span class="number">5</span>, <span class="literal">true</span>)</span><br><span class="line"><span class="comment">// =&gt; 0 和 5 之间的浮点数</span></span><br><span class="line"></span><br><span class="line">_.random(<span class="number">1.2</span>, <span class="number">5.2</span>)</span><br><span class="line"><span class="comment">// =&gt;  1.2 和 5.2 之间的浮点数</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="sample-collection"><a href="#sample-collection" class="headerlink" title="sample(collection)"></a>sample(collection)</h3><p>Collection方法，从集合中随机获得元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.sample([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="comment">// =&gt; 2</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="reject-collection-predicate-identity"><a href="#reject-collection-predicate-identity" class="headerlink" title="reject(collection, [predicate=_.identity])"></a>reject(collection, [predicate=_.identity])</h3><p>反向版 _.filter，这个方法返回 predicate 检查为非真值的元素。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = [</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>, <span class="string">'age'</span>: <span class="number">36</span>, <span class="string">'active'</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>,   <span class="string">'age'</span>: <span class="number">40</span>, <span class="string">'active'</span>: <span class="literal">true</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">_.reject(users, o =&gt; !o.active)</span><br><span class="line"><span class="comment">// =&gt; 结果: ['fred']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.matches` 的回调结果</span></span><br><span class="line">_.reject(users, &#123; <span class="string">'age'</span>: <span class="number">40</span>, <span class="string">'active'</span>: <span class="literal">true</span> &#125;)</span><br><span class="line"><span class="comment">// =&gt; 结果: ['barney']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.matchesProperty` 的回调结果</span></span><br><span class="line">_.reject(users, [<span class="string">'active'</span>, <span class="literal">false</span>])</span><br><span class="line"><span class="comment">// =&gt; 结果: ['fred']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用了 `_.property` 的回调结果</span></span><br><span class="line">_.reject(users, <span class="string">'active'</span>)</span><br><span class="line"><span class="comment">// =&gt; 结果: ['barney']</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/技术博客/" rel="tag"># 技术博客</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/04/01/基于githooks和node的自动部署环境构建/" rel="next" title="基于githooks和node的自动部署环境搭建">
+                <i class="fa fa-chevron-left"></i> 基于githooks和node的自动部署环境搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://static.zain.red/11.25/avatar.svg"
+               alt="Zain King" />
+          <p class="site-author-name" itemprop="name">Zain King</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives/">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目中用到的函数"><span class="nav-number">1.</span> <span class="nav-text">项目中用到的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#omit-object-props"><span class="nav-number">1.1.</span> <span class="nav-text">omit(object, [props])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-object-path-defaultValue"><span class="nav-number">1.2.</span> <span class="nav-text">get(object, path, [defaultValue])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pick-object-props"><span class="nav-number">1.3.</span> <span class="nav-text">pick(object, [props])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#noop"><span class="nav-number">1.4.</span> <span class="nav-text">noop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sortBy-collection-iteratees-identity"><span class="nav-number">1.5.</span> <span class="nav-text">sortBy(collection, [iteratees=[_.identity]])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isArray-value"><span class="nav-number">1.6.</span> <span class="nav-text">isArray(value)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#without-array-values"><span class="nav-number">1.7.</span> <span class="nav-text">without(array, [values])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#identity-value"><span class="nav-number">1.8.</span> <span class="nav-text">identity(value)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter-collection-predicate-identity"><span class="nav-number">1.9.</span> <span class="nav-text">filter(collection, [predicate=_.identity])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find-collection-predicate-identity"><span class="nav-number">1.10.</span> <span class="nav-text">find(collection, [predicate=_.identity])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#omitBy-object-predicate-identity"><span class="nav-number">1.11.</span> <span class="nav-text">omitBy(object, [predicate=_.identity])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#padStart-string-’’-length-0-chars-’-‘"><span class="nav-number">1.12.</span> <span class="nav-text">padStart([string=’’], [length=0], [chars=’ ‘])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce-collection-iteratee-identity-accumulator"><span class="nav-number">1.13.</span> <span class="nav-text">reduce(collection, [iteratee=_.identity], [accumulator])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isEqual-value-other"><span class="nav-number">1.14.</span> <span class="nav-text">isEqual(value, other)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自己觉得很有用的函数"><span class="nav-number">2.</span> <span class="nav-text">自己觉得很有用的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#times-n-iteratee-identity"><span class="nav-number">2.1.</span> <span class="nav-text">times(n, [iteratee=_.identity])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cloneDeep-value"><span class="nav-number">2.2.</span> <span class="nav-text">cloneDeep(value)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random-min-0-max-1-floating"><span class="nav-number">2.3.</span> <span class="nav-text">random([min=0], [max=1], [floating])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sample-collection"><span class="nav-number">2.4.</span> <span class="nav-text">sample(collection)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reject-collection-predicate-identity"><span class="nav-number">2.5.</span> <span class="nav-text">reject(collection, [predicate=_.identity])</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zain King</span>
+  <span><a href="http://www.miitbeian.gov.cn/">湘ICP备18008942号</a></span>
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
