@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/09/轮播/">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/05/jQuery选择器-Dom操作-样式-事件处理-动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zain King">
@@ -285,7 +285,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2017/10/09/轮播/" itemprop="url">轮播</a></h2>
+                <a class="post-title-link" href="/blog/2017/10/05/jQuery选择器-Dom操作-样式-事件处理-动画/" itemprop="url">jQuery选择器_Dom操作_样式_事件处理_动画</a></h2>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T13:49:26+08:00">
-                2017-10-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T13:08:10+08:00">
+                2017-10-05
               </time>
             
 
@@ -337,8 +337,16 @@
       
         
           
-            <h2 id="轮播的实现原理是怎样的？如果让你来实现，你会抽象出哪些函数-or接口-供使用？（比如-play-）"><a href="#轮播的实现原理是怎样的？如果让你来实现，你会抽象出哪些函数-or接口-供使用？（比如-play-）" class="headerlink" title="轮播的实现原理是怎样的？如果让你来实现，你会抽象出哪些函数(or接口)供使用？（比如 play()）"></a>轮播的实现原理是怎样的？如果让你来实现，你会抽象出哪些函数(or接口)供使用？（比如 play()）</h2><p>左右滚动轮播的实现原理就是将图片横排后，通过绝对定位改变其css left值，以overflow hidden的容器圈定它的显示范围来实现，如果让我来实现，我会定义next()，previous()，goto(currentPage)三个方法。具体实现见代码。<br>而透明度变换轮播因为没有左右动画界限问题，只需要定义一个goto(currentPage)方法即可解决。</p>
-<h2 id="实现左右滚动无限循环轮播效果以及一个渐变轮播效果"><a href="#实现左右滚动无限循环轮播效果以及一个渐变轮播效果" class="headerlink" title="实现左右滚动无限循环轮播效果以及一个渐变轮播效果"></a>实现左右滚动无限循环轮播效果以及一个渐变轮播效果</h2><p><a href="https://github.com/Zainking/demos/tree/master/%E8%BF%9B%E9%98%B617" target="_blank" rel="external">进阶17</a></p>
+            <h2 id="jQuery-能做什么？"><a href="#jQuery-能做什么？" class="headerlink" title="jQuery 能做什么？"></a>jQuery 能做什么？</h2><p>jQuery提供了一个简洁的元素选择器，用简单的函数名称和语法封装了原生DOMAPI，提供了DOM增改删查操作，Ajax，动画，事件操作等功能，并提供了拓展自身功能的接口。</p>
+<h2 id="jQuery-对象和-DOM-原生对象有什么区别？如何转化？"><a href="#jQuery-对象和-DOM-原生对象有什么区别？如何转化？" class="headerlink" title="jQuery 对象和 DOM 原生对象有什么区别？如何转化？"></a>jQuery 对象和 DOM 原生对象有什么区别？如何转化？</h2><p>jQuery对象只可以使用jQuery封装的API，DOM原生对象只可以使用DOM原生API。<br>jQuery对象加数组下标即可转化为DOM原生对象，DOM原生对象以$()包裹即可转化为jQuery对象。</p>
+<h2 id="jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？"><a href="#jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？" class="headerlink" title="jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？"></a>jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(selector).bind(type,[data],<span class="function"><span class="keyword">function</span>(<span class="params">eventObject</span>)); //<span class="title">jQuery3</span>.0已经删除此方法</span></div><div class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">unbind</span>(<span class="params">type,[data|fn]]</span>); //<span class="title">jQuery3</span>.0已经删除此方法</span></div><div class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">delegate</span>(<span class="params">selector,[type],[data],fn</span>); //<span class="title">jQuery3</span>.0已经删除此方法，代理用参数中<span class="title">selector</span>为<span class="title">principal</span>，<span class="title">$</span>选择器中<span class="title">selector</span>为<span class="title">agent</span></span></div><div class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">live</span>(<span class="params">type, [data], fn</span>); //<span class="title">jQuery1</span>.7已经删除此方法，给所有匹配的元素附加一个事件处理函数，即使这个元素是以后再添加进来的也有效。</span></div><div class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">on</span>(<span class="params">events,[selector],[data],fn</span>); //在选择元素上绑定一个或多个事件的事件处理函数。当参数中<span class="title">selector</span>不为空时，此函数则为其做事件代理。其中<span class="title">events</span>之后可以加“.<span class="title">id</span>”来标定某一个点击事件</span></div><div class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">off</span>(<span class="params">events,[selector],[fn]</span>); //在选择元素上移除一个或多个事件的事件处理函数。特定的事件处理程序可以被移除元素上提供事件的名称，命名空间，选择器，或处理函数名称的组合。当有多个过滤参数，所提供的参数都必须匹配的事件处理程序被删除。</span></div></pre></td></tr></table></figure>
+<p>在jQuery1.7之后，建议使用on/off方法，jQuery3.0以后，已经删除bind、unbind、delegate方法。<br>使用on绑定事件使用事件代理的写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'agent'</span>).on(<span class="string">'event'</span>,<span class="string">'principal'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="comment">//callback</span></div><div class="line">    <span class="keyword">this</span> === <span class="built_in">document</span>.querySelector(<span class="string">'principal'</span>); <span class="comment">//true</span></div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="jQuery-如何展示-隐藏元素？"><a href="#jQuery-如何展示-隐藏元素？" class="headerlink" title="jQuery 如何展示/隐藏元素？"></a>jQuery 如何展示/隐藏元素？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* jQuery展示/隐藏元素 */</span></div><div class="line">$(selector).show();<span class="comment">//展示</span></div><div class="line">$(selector).hide();<span class="comment">//隐藏</span></div></pre></td></tr></table></figure>
+<h2 id="jQuery-动画如何使用？"><a href="#jQuery-动画如何使用？" class="headerlink" title="jQuery 动画如何使用？"></a>jQuery 动画如何使用？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;params&#125;,speed,callback);</div></pre></td></tr></table></figure>
+<p>其中{params}为之后的CSS样式，（事实上jQuery不支持某些css样式渐变如background-color，这个时候用css3的transition属性更为好用），speed为动画时间，callback为动画执行完毕时候产生的回调函数。animate支持链式调用，支持动画队列。动画会依次执行。<br>另有一堆封装好的动画方法，还有两个特殊的方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(selector).finish();<span class="comment">//停止动画于最终样式</span></div><div class="line">$(selector).stop();<span class="comment">//停止动画于此序列最终样式</span></div></pre></td></tr></table></figure></p>
+<h2 id="如何设置和获取元素内部-HTML-内容？如何设置和获取元素内部文本？"><a href="#如何设置和获取元素内部-HTML-内容？如何设置和获取元素内部文本？" class="headerlink" title="如何设置和获取元素内部 HTML 内容？如何设置和获取元素内部文本？"></a>如何设置和获取元素内部 HTML 内容？如何设置和获取元素内部文本？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 获取元素的html与设置元素的html */</span></div><div class="line">$(selector).html();<span class="comment">//获取</span></div><div class="line">$(selector).html(value);<span class="comment">//设置</span></div><div class="line"><span class="comment">/* 获取元素的text与设置元素的text */</span></div><div class="line">$(selector).text();<span class="comment">//获取</span></div><div class="line">$(selector).text(value);<span class="comment">//设置</span></div></pre></td></tr></table></figure>
+<h2 id="如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？"><a href="#如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？" class="headerlink" title="如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？"></a>如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 获取元素的值与设置元素的值 */</span></div><div class="line">$(selector).val();<span class="comment">//获取</span></div><div class="line">$(selector).val(value);<span class="comment">//设置</span></div><div class="line"><span class="comment">/* 获取和设置元素属性 */</span></div><div class="line">$(selector).attr(<span class="string">'Arrtibute'</span>);<span class="comment">//获取</span></div><div class="line">$(selector).attr(<span class="string">'Arrtibute'</span>,<span class="string">'value'</span>);<span class="comment">//设置</span></div></pre></td></tr></table></figure>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p><a href="https://github.com/Zainking/demos/tree/master/%E8%BF%9B%E9%98%B614" target="_blank" rel="external">进阶14</a></p>
 
           
         
@@ -387,7 +395,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/08/懒加载/">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/04/跨域/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zain King">
@@ -406,7 +414,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2017/10/08/懒加载/" itemprop="url">懒加载</a></h2>
+                <a class="post-title-link" href="/blog/2017/10/04/跨域/" itemprop="url">跨域</a></h2>
         
 
         <div class="post-meta">
@@ -418,8 +426,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-08T19:19:44+08:00">
-                2017-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-04T15:32:33+08:00">
+                2017-10-04
               </time>
             
 
@@ -458,11 +466,27 @@
       
         
           
-            <h2 id="如何判断一个元素是否出现在窗口可视范围（浏览器的上边缘和下边缘之间，肉眼可视）。写一个函数-isVisible实现"><a href="#如何判断一个元素是否出现在窗口可视范围（浏览器的上边缘和下边缘之间，肉眼可视）。写一个函数-isVisible实现" class="headerlink" title="如何判断一个元素是否出现在窗口可视范围（浏览器的上边缘和下边缘之间，肉眼可视）。写一个函数 isVisible实现"></a>如何判断一个元素是否出现在窗口可视范围（浏览器的上边缘和下边缘之间，肉眼可视）。写一个函数 isVisible实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isVisible</span>(<span class="params">$node</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> ($node.offset().top &gt; $(<span class="built_in">window</span>).scrollTop() &amp;&amp; $node.offset().top &lt; ($(<span class="built_in">window</span>).scrollTop() + $(<span class="built_in">window</span>).height()));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印-true-。用代码实现"><a href="#当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印-true-。用代码实现" class="headerlink" title="当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印 true 。用代码实现"></a>当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印 true 。用代码实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//结合题目1函数实现</span></div><div class="line">$(<span class="built_in">window</span>).on(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(isVisible($node))&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h2 id="当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印-true，以后再次出现不做任何处理。用代码实现"><a href="#当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印-true，以后再次出现不做任何处理。用代码实现" class="headerlink" title="当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印 true，以后再次出现不做任何处理。用代码实现"></a>当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印 true，以后再次出现不做任何处理。用代码实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//结合题目1函数实现</span></div><div class="line">$(<span class="built_in">window</span>).on(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(isVisible($node) &amp;&amp; !$(node).attr(<span class="string">'data-isSeen'</span>))&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">      $(node).attr(<span class="string">'data-isSeen'</span>,<span class="string">'true'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h2 id="图片懒加载的原理是什么？"><a href="#图片懒加载的原理是什么？" class="headerlink" title="图片懒加载的原理是什么？"></a>图片懒加载的原理是什么？</h2><p>定义 ‘图片被加载’ 为 展示图片的img标签的src属性为相应的图片地址。<br>页面初始状态，将所有图片的src属性定为统一的预加载图片地址，并将图片真实地址存储于标签属性，数组或者后端数据库内。<br>如题目三与题目一原理，在页面滚动时判断图片是否处于视域内，如果是则从存储中将图片真实src载入。<br>此时浏览器引擎将加载图片。</p>
-<h2 id="实现视频中的图片懒加载效果"><a href="#实现视频中的图片懒加载效果" class="headerlink" title="实现视频中的图片懒加载效果"></a>实现视频中的图片懒加载效果</h2><p><a href="https://github.com/Zainking/demos/tree/master/%E8%BF%9B%E9%98%B616" target="_blank" rel="external">进阶16</a></p>
+            <h2 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h2><p>同源策略是指浏览器为了防止非同源网址使用Ajax导致的安全隐患而采取的禁止调用非同源网址的Ajax请求的策略。<br>同源网址有三大特征：</p>
+<ol>
+<li>协议相同</li>
+<li>网址相同</li>
+<li>端口相同</li>
+</ol>
+<h2 id="什么是跨域？跨域有几种实现形式"><a href="#什么是跨域？跨域有几种实现形式" class="headerlink" title="什么是跨域？跨域有几种实现形式"></a>什么是跨域？跨域有几种实现形式</h2><p>跨域是指绕过同源策略，使得不同源间的网址可以相互做出Ajax请求（或者达到类似Ajax请求的效果）的方式。<br>跨域一般有四种实现方式。</p>
+<ol>
+<li>JSONP</li>
+<li>CORS</li>
+<li>降域</li>
+<li>PostMessage</li>
+</ol>
+<h2 id="JSONP-的原理是什么"><a href="#JSONP-的原理是什么" class="headerlink" title="JSONP 的原理是什么"></a>JSONP 的原理是什么</h2><p>JSONP是指将请求返回的数据包装成JS可执行函数的形式，将真实数据作为参数传入此函数中，从而使用script标签来获取数据的方式。本质上来讲script标签获取脚本并非Ajax，所以不受同源策略影响。<br>具体步骤为：先创造一个 script 标签，然后把 src 赋值为后端的地址再加上 ?callback=doJSONP，其中 doJSONP 为自定义的函数的名字，再利用 script 标签向目标发送跨域请求。目标接收到请求后，解析里面的 callback 参数，然后返回函数包含数据的格式，例如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.send(callback+<span class="string">'('</span>+<span class="built_in">JSON</span>.stringify(data)+<span class="string">')'</span>) <span class="comment">// data为要返回的数据</span></div></pre></td></tr></table></figure>
+<p>等到脚本加载完毕后，doJSONP 函数就会自动执行，从而能够处理跨域请求的数据</p>
+<h2 id="CORS是什么"><a href="#CORS是什么" class="headerlink" title="CORS是什么"></a>CORS是什么</h2><p>CORS是指在后端对请求添加Access-Control-Allow-Origin头，在现代浏览器中，只要Access-Control-Allow-Origin头包含发起请求的域，则将此次请求视为“跨域资源共享”，允许跨域。<br>当使用 XMLHttpRequest 发送请求时，浏览器发现该请求不符合同源策略，会给该请求加一个请求头：Origin，后台进行一系列处理，如果确定接受请求则在返回结果中加入一个响应头：Access-Control-Allow-Origin; 浏览器判断该相应头中是否包含 Origin 的值，如果有则浏览器会处理响应，我们就可以拿到响应数据，如果不包含则会报跨域错误。所以 CORS 的表象与同源的 ajax 请求没区别，代码完全一样。</p>
+<h2 id="演示三种以上跨域的解决方式"><a href="#演示三种以上跨域的解决方式" class="headerlink" title="演示三种以上跨域的解决方式"></a>演示三种以上跨域的解决方式</h2><h3 id="CORS跨域"><a href="#CORS跨域" class="headerlink" title="CORS跨域"></a>CORS跨域</h3><p>以我的曾经一个小Demo“十条评论区”的后端PHP代码为例：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  header(<span class="string">'Access-Control-Allow-Origin:http://comment.zain.red'</span>);header(<span class="string">"Content-Type: text/html;charset=utf-8"</span>);</div></pre></td></tr></table></figure><br>只要在代码头加入Access-Control-Allow-Origin，值为允许的网址，即可实现跨域资源共享。</p>
+<h3 id="JSONP跨域"><a href="#JSONP跨域" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 前端代码 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> printfData = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(data);</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://a.zain.red/data?callback=printfData"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 后端代码 */</span></div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$result = <span class="string">"我是数据"</span>;  </div><div class="line">$callback = $_GET[<span class="string">'callback'</span>];  </div><div class="line"><span class="keyword">echo</span> $callback.<span class="string">"($result)"</span>;  </div></pre></td></tr></table></figure>
+<h3 id="降域实现iframe跨域"><a href="#降域实现iframe跨域" class="headerlink" title="降域实现iframe跨域"></a>降域实现iframe跨域</h3><p>在使用iframe时，可通过定义document.domain实现降域。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- http://zain.red/index.html--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://a.zain.red/data.html"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- http://a.zain.red/index.html--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>12342234<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.domain = <span class="string">"zain.red"</span>;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 
           
         
@@ -511,7 +535,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/07/10-6日晚-某手抖线稿/">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/03/Ajax实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zain King">
@@ -530,7 +554,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2017/10/07/10-6日晚-某手抖线稿/" itemprop="url">10.6日晚 某手抖线稿</a></h2>
+                <a class="post-title-link" href="/blog/2017/10/03/Ajax实践/" itemprop="url">Ajax实践</a></h2>
         
 
         <div class="post-meta">
@@ -542,8 +566,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T03:28:34+08:00">
-                2017-10-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T17:34:58+08:00">
+                2017-10-03
               </time>
             
 
@@ -582,7 +606,17 @@
       
         
           
-            <p><img src="https://static.zain.red/10.7/1.jpg" alt="手抖得不行 以后多练习线稿"></p>
+            <h2 id="ajax-是什么？有什么作用？"><a href="#ajax-是什么？有什么作用？" class="headerlink" title="ajax 是什么？有什么作用？"></a>ajax 是什么？有什么作用？</h2><p>ajax 全称Async Javascript And XML（异步Javascript和XML脚本），可以在不刷新页面的情况下发送网络请求，并在不影响其他操作的情况下等网络请求回传时执行操作。</p>
+<h2 id="前后端开发联调需要注意哪些事情？后端接口完成前如何-mock-数据？"><a href="#前后端开发联调需要注意哪些事情？后端接口完成前如何-mock-数据？" class="headerlink" title="前后端开发联调需要注意哪些事情？后端接口完成前如何 mock 数据？"></a>前后端开发联调需要注意哪些事情？后端接口完成前如何 mock 数据？</h2><p>前后端开发联调要约定四点：</p>
+<ol>
+<li>请求路径</li>
+<li>请求方法</li>
+<li>请求参数</li>
+<li>回传数据格式</li>
+</ol>
+<p>后端接口完成前可以使用server-mock等工具进行mock，也可以使用easymock等在线接口进行mock。</p>
+<h2 id="点击按钮，使用-ajax-获取数据，如何在数据到来之前防止重复点击"><a href="#点击按钮，使用-ajax-获取数据，如何在数据到来之前防止重复点击" class="headerlink" title="点击按钮，使用 ajax 获取数据，如何在数据到来之前防止重复点击?"></a>点击按钮，使用 ajax 获取数据，如何在数据到来之前防止重复点击?</h2><p>在点击事件的作用域定义一个“状态锁“变量，在click事件中做一个状态锁是否为开的判断。<br>如果状态锁为开，则把状态锁关上后执行网络请求，在网络请求的回调函数把状态锁打开。<br>如果状态锁为关，则不执行语句。</p>
+<h2 id="实现加载更多的功能，后端在本地使用server-mock来模拟数据"><a href="#实现加载更多的功能，后端在本地使用server-mock来模拟数据" class="headerlink" title="实现加载更多的功能，后端在本地使用server-mock来模拟数据"></a>实现加载更多的功能，后端在本地使用server-mock来模拟数据</h2><p><a href="https://github.com/Zainking/demos/tree/master/%E8%BF%9B%E9%98%B612" target="_blank" rel="external">进阶12作业</a></p>
 
           
         
@@ -622,7 +656,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/blog/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/18/">18</a><a class="extend next" rel="next" href="/blog/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/blog/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/13/">13</a><a class="extend next" rel="next" href="/blog/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -668,7 +702,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -681,7 +715,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
