@@ -399,20 +399,20 @@
 </li>
 <li><p>封装HTTP请求数据包<br>把以上部分结合本机自己的信息，封装成一个HTTP请求数据包</p>
 </li>
-<li><p>封装成TCP包，建立TCP连接（<a href="http://blog.csdn.net/oney139/article/details/8103223" target="_blank" rel="noopener">TCP的三次握手</a>）<br>在HTTP工作开始之前，客户机（Web浏览器）首先要通过网络与服务器建立连接，HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能，才能进行更层协议的连接，因此，首先要建立TCP连接。</p>
+<li><p>封装成TCP包，建立TCP连接（<a href="http://blog.csdn.net/oney139/article/details/8103223" target="_blank" rel="external">TCP的三次握手</a>）<br>在HTTP工作开始之前，客户机（Web浏览器）首先要通过网络与服务器建立连接，HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能，才能进行更层协议的连接，因此，首先要建立TCP连接。</p>
 </li>
 <li><p>客户机发送请求命令<br>建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可选内容。</p>
 </li>
 <li><p>服务器响应<br>服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。<br>实体消息是服务器向浏览器发送头信息后，它会发送一个空白行来表示头信息的发送到此为结束，接着，它就以Content-Type应答头信息所描述的格式发送用户所请求的实际数据</p>
 </li>
-<li><p>服务器关闭TCP连接（<a href="http://blog.csdn.net/oney139/article/details/8103223" target="_blank" rel="noopener">TCP的四次挥手</a>）<br>一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接，然后如果浏览器或者服务器在其头信息加入了这行代码</p>
+<li><p>服务器关闭TCP连接（<a href="http://blog.csdn.net/oney139/article/details/8103223" target="_blank" rel="external">TCP的四次挥手</a>）<br>一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接，然后如果浏览器或者服务器在其头信息加入了这行代码</p>
 <pre><code>Connection:keep-alive
 </code></pre><p>TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。</p>
 </li>
 </ol>
-<p>(附：<a href="http://blog.csdn.net/clh604/article/details/22179907" target="_blank" rel="noopener">HTTPS加密原理</a>)</p>
+<p>(附：<a href="http://blog.csdn.net/clh604/article/details/22179907" target="_blank" rel="external">HTTPS加密原理</a>)</p>
 <h2 id="URI-的格式是什么？常见的协议有哪些"><a href="#URI-的格式是什么？常见的协议有哪些" class="headerlink" title="URI 的格式是什么？常见的协议有哪些"></a>URI 的格式是什么？常见的协议有哪些</h2><p>URI是采用一种特定语法标识一个资源的字符串，称之为“统一资源标识符”</p>
-<p>格式：协议//用户名:密码@授权机构:端口号/路径?查询字符串#哈希<br>例如：<br>        <a href="ftp://mp3:mp3@ci43198-a.ashvill.nc.home.com:33/VanHalen-Jump.mp3" target="_blank" rel="noopener">ftp://mp3:mp3@ci43198-a.ashvill.nc.home.com:33/VanHalen-Jump.mp3</a><br>所有其他字符及内容中需用到的定界符也应用%转义（空格%20 /%2F）</p>
+<p>格式：协议//用户名:密码@授权机构:端口号/路径?查询字符串#哈希<br>例如：<br>        ftp://mp3:mp3@ci43198-a.ashvill.nc.home.com:33/VanHalen-Jump.mp3<br>所有其他字符及内容中需用到的定界符也应用%转义（空格%20 /%2F）</p>
 <p>常见的协议：</p>
 <table>
 <thead>
@@ -475,7 +475,7 @@
 <h2 id="报文有哪几部分组成？"><a href="#报文有哪几部分组成？" class="headerlink" title="报文有哪几部分组成？"></a>报文有哪几部分组成？</h2><p><img src="https://static.zain.red/11.23/2.png" alt="题目"><br>如图所示，由请求行，头部，空行，内容四部分组成</p>
 <h2 id="请求头-首部-主体的的格式和作用"><a href="#请求头-首部-主体的的格式和作用" class="headerlink" title="请求头 首部 主体的的格式和作用"></a>请求头 首部 主体的的格式和作用</h2><p><img src="https://static.zain.red/11.23/3.jpg" alt="题目"><br>如图所示，为一个完整的请求报文。格式已经在上题中写明，下面列出作用。</p>
 <ul>
-<li>HTTP请求头规定了请求的方法，地址，协议版本，本例中使用POST方法请求<a href="http://host_name/path地址，协议版本为HTTP1.1。" target="_blank" rel="noopener">http://host_name/path地址，协议版本为HTTP1.1。</a></li>
+<li>HTTP请求头规定了请求的方法，地址，协议版本，本例中使用POST方法请求<a href="http://host_name/path地址，协议版本为HTTP1.1。" target="_blank" rel="external">http://host_name/path地址，协议版本为HTTP1.1。</a></li>
 <li>HTTP首部规定了一个请求的约束和规则，以键值对的形式呈现。本例中的头部键值对分别表达了以下意思：<ol>
 <li>Host: host_name 访问的宿主服务器是host_name</li>
 <li>Content-Type: text/xml 定义文件接收类型为text/xml格式接收</li>
@@ -679,7 +679,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

