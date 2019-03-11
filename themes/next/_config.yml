@@ -131,7 +131,7 @@ avatar: https://static.zain.red/11.25/avatar.svg
 
 # Table Of Contents in the Sidebar
 toc:
-  enable: true
+  enable: false
 
   # Automatically add list number to toc.
   number: true
