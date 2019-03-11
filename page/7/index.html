@@ -266,6 +266,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/12/对象-原型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/10/12/对象-原型/" itemprop="url">对象_原型</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-12T10:32:16+08:00">
+                2017-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="OOP-指什么？有哪些特性"><a href="#OOP-指什么？有哪些特性" class="headerlink" title="OOP 指什么？有哪些特性"></a>OOP 指什么？有哪些特性</h2><blockquote>
+<p>Object-oriented programming (OOP) is a programming paradigm based on the concept of “objects”, which may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods. A feature of objects is that an object’s procedures can access and often modify the data fields of the object with which they are associated (objects have a notion of “this” or “self”). In OOP, computer programs are designed by making them out of objects that interact with one another. There is significant diversity of OOP languages, but the most popular ones are class-based, meaning that objects are instances of classes, which typically also determine their type.[1]</p>
+</blockquote>
+<p>从维基百科对面向对象编程的论述不难看出，所谓“面向对象”是一种编程范式，与它相对的在web领域常用编程范式有“面向过程”，“函数式编程”等。<br>面向对象编程常把各个编程单元抽象成不同的对象，对他们附加属性和方法（在函数式编程时这两个名词常被称之为变量和函数），通过各个对象间相互调用来达成最终目标。<br>同时上述引文中提到</p>
+<blockquote>
+<p>There is significant diversity of OOP languages, but the most popular ones are class-based, meaning that objects are instances of classes, which typically also determine their type.</p>
+</blockquote>
+<p>很幸运…Javascript就不是一门class-based面向对象语言，而是一门像是loke、ink之类的prototype-based编程语言。<br>就本题目而言，基于类的面向对象语言如Java，C#等往往拥有继承，封装，多态三大特性。而Javascript则拥有基于原型链的继承（事实上还有另外两种著名的继承方式），基于原型模式和构造函数模式或工厂模式创建的对象实现的封装，以及以参数数组或者判断结构实现的多态[2]。</p>
+<h2 id="如何通过构造函数的方式创建一个拥有属性和方法的对象"><a href="#如何通过构造函数的方式创建一个拥有属性和方法的对象" class="headerlink" title="如何通过构造函数的方式创建一个拥有属性和方法的对象?"></a>如何通过构造函数的方式创建一个拥有属性和方法的对象?</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> xiaoming = <span class="keyword">new</span> Person(<span class="string">'小明'</span>,<span class="string">'16'</span>,<span class="string">'student'</span>);</div><div class="line"><span class="keyword">var</span> xiaogang = <span class="keyword">new</span> Person(<span class="string">'小刚'</span>,<span class="string">'28'</span>,<span class="string">'designer'</span>);</div></pre></td></tr></table></figure>
+<p>上述代码就以构造函数的方式创建了一个拥有属性和方法的对象。<br>构造函数的重点就是new运算符的作用,它做了以下四件事：</p>
+<ol>
+<li>创建了一个新对象</li>
+<li>将构造函数的作用域赋值给新对象（注意：此时this指针指向了这个新对象）</li>
+<li>执行函数中的代码</li>
+<li>返回新对象</li>
+</ol>
+<p>往往写构造函数时有以下约定俗成的规则：</p>
+<ul>
+<li>没有return</li>
+<li>以大写字母开头以区分其他函数</li>
+</ul>
+<p>它有以下特点：</p>
+<ul>
+<li>相对于工厂模式创建对象，它拥有constructor属性指向初始构造函数，可以明确认出他们的类型与祖先</li>
+<li>相对于原型链模式创建对象，它每次创建对象都创建所有属性方法的实例，对内存不友好</li>
+</ul>
+<p>这就是以构造函数方式新建对象的方法。[2]</p>
+<h2 id="prototype-是什么？有什么特性"><a href="#prototype-是什么？有什么特性" class="headerlink" title="prototype 是什么？有什么特性"></a>prototype 是什么？有什么特性</h2><p>我们创建的每一个函数都有prototype属性，这个属性的值是一个指针，指向这个函数的“原型对象”。<br>构造函数中原型对象的作用是让他的实例共享此原型公有的属性和方法。<br>原型对象有一个constructor属性，这个属性的值是一个指针，指向构造函数。<br>每个实例对象都有一个<strong>proto</strong>属性，这个属性的值和他的构造函数的prototype属性的值相同，指向原型对象。<br>正如原型对象的作用所言，当我们在某个构造函数的实例对象中寻找属性A的时候，如果本实例对象内不存在属性A，则会向其原型对象中寻找，直到Object对象。即使通过一个实例对象修改原型对象中的某个属性的值，所有的实例对象访问原型对象时候这个值都会被改变。<br><img src="https://static.zain.red/10.12/1.jpg" alt="原型"></p>
+<h2 id="画出如下代码的原型图"><a href="#画出如下代码的原型图" class="headerlink" title="画出如下代码的原型图"></a>画出如下代码的原型图</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span> (<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'my name is:'</span> + <span class="keyword">this</span>.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">People.prototype.walk = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' is walking'</span>);  </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> People(<span class="string">'饥人谷'</span>);</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> People(<span class="string">'前端'</span>);</div></pre></td></tr></table></figure>
+<p><img src="https://static.zain.red/10.13/1.jpg" alt="原型图"></p>
+<h2 id="创建一个-Car-对象，拥有属性name、color、status；拥有方法run，stop，getStatus"><a href="#创建一个-Car-对象，拥有属性name、color、status；拥有方法run，stop，getStatus" class="headerlink" title="创建一个 Car 对象，拥有属性name、color、status；拥有方法run，stop，getStatus"></a>创建一个 Car 对象，拥有属性name、color、status；拥有方法run，stop，getStatus</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">name, color</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.color = color;</div><div class="line">  <span class="keyword">this</span>.status = <span class="string">"stop"</span>;</div><div class="line">&#125;</div><div class="line">Car.prototype.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.status = <span class="string">"run"</span>;</div><div class="line">&#125;</div><div class="line">Car.prototype.stop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.status = <span class="string">"stop"</span>;</div><div class="line">&#125;</div><div class="line">Car.prototype.getStatus = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.status;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> bmw = <span class="keyword">new</span> Car(<span class="string">'BMW 1系运动轿车'</span>,<span class="string">'blue'</span>);</div></pre></td></tr></table></figure>
+<h2 id="创建一个-GoTop-对象，当-new-一个-GoTop-对象则会在页面上创建一个回到顶部的元素，点击页面滚动到顶部。拥有以下属性和方法"><a href="#创建一个-GoTop-对象，当-new-一个-GoTop-对象则会在页面上创建一个回到顶部的元素，点击页面滚动到顶部。拥有以下属性和方法" class="headerlink" title="创建一个 GoTop 对象，当 new 一个 GoTop 对象则会在页面上创建一个回到顶部的元素，点击页面滚动到顶部。拥有以下属性和方法"></a>创建一个 GoTop 对象，当 new 一个 GoTop 对象则会在页面上创建一个回到顶部的元素，点击页面滚动到顶部。拥有以下属性和方法</h2><ul>
+<li><code>ct</code>属性，GoTop 对应的 DOM 元素的容器</li>
+<li><code>target</code>属性， GoTop 对应的 DOM 元素</li>
+<li><code>bindEvent</code> 方法， 用于绑定事件</li>
+<li><code>createNode</code> 方法， 用于在容器内创建节点</li>
+</ul>
+<p>html代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>GoTop<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">      <span class="selector-class">.ct</span>&#123;</span></div><div class="line"><span class="undefined">        height: 1900px;</span></div><div class="line"><span class="css">        <span class="selector-tag">background-color</span>: <span class="selector-id">#ccc</span>;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="css">        <span class="selector-class">.target</span>&#123;</span></div><div class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:50px</span>;</span></div><div class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:50px</span>;</span></div><div class="line"><span class="css">        <span class="selector-tag">background-color</span>: <span class="selector-id">#eee</span>;</span></div><div class="line"><span class="undefined">        line-height: 50px;</span></div><div class="line"><span class="undefined">        text-align: center;</span></div><div class="line"><span class="undefined">        font-size: 35px;</span></div><div class="line"><span class="undefined">        font-weight: 700;</span></div><div class="line"><span class="undefined">        position: fixed;</span></div><div class="line"><span class="undefined">        bottom: 50px;</span></div><div class="line"><span class="undefined">        right: 50px;</span></div><div class="line"><span class="undefined">        cursor: pointer;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="css">        <span class="selector-class">.target</span><span class="selector-pseudo">:hover</span>&#123;</span></div><div class="line"><span class="css">        <span class="selector-tag">background-color</span>: <span class="selector-id">#000</span>;</span></div><div class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ct"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure><br>js代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">GoTop</span>(<span class="params">ct</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.ct = ct;</div><div class="line">  <span class="keyword">this</span>.target = &#123;&#125;;</div><div class="line">  <span class="keyword">this</span>.createNode();</div><div class="line">  <span class="keyword">this</span>.bindEvent();</div><div class="line">&#125;</div><div class="line">GoTop.prototype.bindEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.target.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">window</span>.scrollTo(<span class="number">0</span>,<span class="number">0</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div><div class="line">GoTop.prototype.createNode = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.target = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">  <span class="keyword">this</span>.target.classList.add(<span class="string">'target'</span>);</div><div class="line">  <span class="keyword">this</span>.target.innerText = <span class="string">'↑'</span>;</div><div class="line">  <span class="keyword">this</span>.ct.appendChild(<span class="keyword">this</span>.target);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">new</span> GoTop(<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>));</div></pre></td></tr></table></figure></p>
+<h2 id="使用木桶布局实现一个图片墙"><a href="#使用木桶布局实现一个图片墙" class="headerlink" title="使用木桶布局实现一个图片墙"></a>使用木桶布局实现一个图片墙</h2><p><a href="https://github.com/Zainking/demos/tree/master/%E9%AB%98%E7%BA%A71" target="_blank" rel="external">高级1</a><br>（改进了原课程的算法）</p>
+<p><em>[1] Wikipedia.Object-oriented programming[EB/OL].<a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank" rel="external">https://en.wikipedia.org/wiki/Object-oriented_programming</a>, 2017–10–02/2005–08–11.</em><br><em>[2]Nicholas C.Zakas. Professional JavaScript for Web Developers 3rd Edition [M]. John Wiley &amp; Sons,Inc, 2012: 138 – 174.</em></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/09/轮播/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -498,139 +657,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/06/jQuery动画与ajax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/10/06/jQuery动画与ajax/" itemprop="url">jQuery动画与ajax</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-06T22:48:36+08:00">
-                2017-10-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="jQuery-中，-document-ready-是什么意思？"><a href="#jQuery-中，-document-ready-是什么意思？" class="headerlink" title="jQuery 中， $(document).ready()是什么意思？"></a>jQuery 中， $(document).ready()是什么意思？</h2><p>当 DOM（文档对象模型） 已经加载，并且页面（包括图像）已经完全呈现时，会发生 ready 函数中的回调函数。</p>
-<h2 id="node-html-和-node-text-的区别"><a href="#node-html-和-node-text-的区别" class="headerlink" title="$node.html()和$node.text()的区别?"></a>$node.html()和$node.text()的区别?</h2><ol>
-<li>html与.text的方法操作是一样，只是在具体针对处理对象不同</li>
-<li>html处理的是元素内容，.text处理的是文本内容</li>
-<li>html只能使用在HTML文档中，.text 在XML 和 HTML 文档中都能使用, 如果处理的对象只有一个子文本节点，那么html处理的结果与text是一样的;</li>
-</ol>
-<p>也就是说，当处理的对象有两个以上的子节点时，.html()只会替换第一个子节点的内容（也可以通过选择器指定替换的子节点），.text则会将对象中的所有文本替换</p>
-<h2 id="extend-的作用和用法"><a href="#extend-的作用和用法" class="headerlink" title="$.extend 的作用和用法?"></a>$.extend 的作用和用法?</h2><p>jQuery.extend(object)扩展jQuery对象本身。<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 此时min和max方法拓展到jq全局对象上 */</span></div><div class="line">jQuery.extend(&#123;</div><div class="line">min: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &lt; b ? a : b; &#125;,</div><div class="line">max: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &gt; b ? a : b; &#125;</div><div class="line">&#125;);</div><div class="line">jQuery.min(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2</span></div><div class="line">jQuery.max(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">// 5</span></div></pre></td></tr></table></figure><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 此时min和max方法拓展到jq实例对象上 */</span></div><div class="line">jQuery.fn.extend(&#123;</div><div class="line">min: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &lt; b ? a : b; &#125;,</div><div class="line">max: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &gt; b ? a : b; &#125;</div><div class="line">&#125;);</div><div class="line">$(<span class="string">"div"</span>).min(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2</span></div><div class="line">$(<span class="string">"div"</span>).max(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">// 5</span></div><div class="line"><span class="comment">/* 此时b和c拓展到a上 */</span></div><div class="line"><span class="keyword">var</span> a = &#123;&#125;,b=&#123;<span class="attr">name</span>:<span class="string">'zain'</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,<span class="attr">c</span>:&#123;<span class="attr">sex</span>:<span class="string">'man'</span>&#125;</div><div class="line">jQuery.extend(a,b,c);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;name:'zain',age:'18',sex:'man'&#125;</span></div></pre></td></tr></table></figure></p>
-<h2 id="jQuery-的链式调用是什么？"><a href="#jQuery-的链式调用是什么？" class="headerlink" title="jQuery 的链式调用是什么？"></a>jQuery 的链式调用是什么？</h2><p>jQuery中的链式调用是指形如$(selector).append(‘hello’).css(‘line-height’,’1.5’)的直接把下一个操作写在上一个操作后的写法，原理是jQuery的非求值函数调用返回其自身。</p>
-<h2 id="jQuery-中-data-函数的作用"><a href="#jQuery-中-data-函数的作用" class="headerlink" title="jQuery 中 data 函数的作用"></a>jQuery 中 data 函数的作用</h2><p>用于存取当前匹配jQuery对象上的数据。可以通过jQueryObject.data( [ key [, value ] ])的形式存取数据或者直接传入一个对象以设置多个键值对。</p>
-<h2 id="写出以下功能对应的-jQuery-方法："><a href="#写出以下功能对应的-jQuery-方法：" class="headerlink" title="写出以下功能对应的 jQuery 方法："></a>写出以下功能对应的 jQuery 方法：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*给元素 $node 添加 class active，给元素 $noed 删除 class active*/</span></div><div class="line">$node.addClass(<span class="string">'active'</span>);</div><div class="line">$node.removeClass(<span class="string">'active'</span>);</div><div class="line"><span class="comment">/*展示元素$node, 隐藏元素$node*/</span></div><div class="line">$node.show();</div><div class="line">$node.hide();</div><div class="line"><span class="comment">/*获取元素$node 的 属性: id、src、title， 修改以上属性*/</span></div><div class="line"><span class="comment">//获取</span></div><div class="line"><span class="keyword">var</span> nodeid = $node.attr(<span class="string">'id'</span>);</div><div class="line"><span class="keyword">var</span> nodesrc = $node.attr(<span class="string">'src'</span>);</div><div class="line"><span class="keyword">var</span> nodetitle = $node.attr(<span class="string">'title'</span>);</div><div class="line"><span class="comment">//设置</span></div><div class="line">$node.attr(<span class="string">'id'</span>,<span class="string">'node'</span>).attr(<span class="string">'src'</span>,<span class="string">'http://baidu.com'</span>).attr(<span class="string">'title'</span>,<span class="string">'baidu'</span>);</div><div class="line"><span class="comment">/*给$node 添加自定义属性data-src*/</span></div><div class="line">$node.attr(<span class="string">'data-src'</span>,<span class="string">'//zain.red'</span>);</div><div class="line"><span class="comment">/*在$ct 内部最开头添加元素$node*/</span></div><div class="line">$ct.prepend($node);</div><div class="line"><span class="comment">/*在$ct 内部最末尾添加元素$node*/</span></div><div class="line">$ct.append($node);</div><div class="line"><span class="comment">/*删除$node*/</span></div><div class="line">$node.remove();</div><div class="line"><span class="comment">/*把$ct里内容清空*/</span></div><div class="line">$ct.empty();</div><div class="line"><span class="comment">/*在$ct 里设置 html &lt;div class="btn"&gt;&lt;/div&gt;*/</span></div><div class="line">$ct.html(<span class="string">'&lt;div class="btn"&gt;&lt;/div&gt;'</span>);</div><div class="line"><span class="comment">/*获取、设置$node 的宽度、高度(分别不包括内边距、包括内边距、包括边框、包括外边距)*/</span></div><div class="line"><span class="comment">//宽度</span></div><div class="line">$node.width();<span class="comment">//获取：区块的本身宽度</span></div><div class="line">$node.outerWidth();<span class="comment">//获取：区块的宽度+padding宽度+border宽度</span></div><div class="line">$node.outerWidth(<span class="literal">true</span>);<span class="comment">//获取：区块的宽度+padding宽度+border宽度+margin的宽度</span></div><div class="line"><span class="comment">//高度</span></div><div class="line">$node.height();<span class="comment">//获取：区块的本身高度</span></div><div class="line">$node.outerHeight();<span class="comment">//获取：区块的高度+padding高度+border高度</span></div><div class="line">$node.outerHeight(<span class="literal">true</span>);<span class="comment">//获取：区块的高度+padding高度+border高度+margin的高度</span></div><div class="line"><span class="comment">/*获取窗口滚动条垂直滚动距离*/</span></div><div class="line">$(<span class="built_in">document</span>).scrollTop();  </div><div class="line"><span class="comment">/*获取$node 到根节点水平、垂直偏移距离*/</span></div><div class="line">$node.offset();</div><div class="line"><span class="comment">/*修改$node 的样式，字体颜色设置红色，字体大小设置14px*/</span></div><div class="line">$node.css(<span class="string">'color'</span>,<span class="string">'#f00'</span>).css(<span class="string">'font-size'</span>,<span class="string">'14px'</span>);</div><div class="line"><span class="comment">/*遍历节点，把每个节点里面的文本内容重复一遍*/</span></div><div class="line">$(<span class="string">'*'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).text($(<span class="keyword">this</span>).text()+$(<span class="keyword">this</span>).text())</div><div class="line">  &#125;);</div><div class="line"><span class="comment">/*从$ct 里查找 class 为 .item的子元素*/</span></div><div class="line">$ct.children(<span class="string">'.item'</span>);</div><div class="line"><span class="comment">/*获取$ct 里面的所有孩子*/</span></div><div class="line">$ct.children();</div><div class="line"><span class="comment">/*对于$node，向上找到 class 为'.ct'的父亲，在从该父亲找到'.panel'的孩子*/</span></div><div class="line">$node.parents(<span class="string">'.ct'</span>).children(<span class="string">'.panel'</span>);</div><div class="line"><span class="comment">/*获取选择元素的数量*/</span></div><div class="line">$node.length;</div><div class="line"><span class="comment">/*获取当前元素在兄弟中的排行*/</span></div><div class="line">$node.index();</div></pre></td></tr></table></figure>
-<h2 id="用jQuery实现以下操作"><a href="#用jQuery实现以下操作" class="headerlink" title="用jQuery实现以下操作"></a>用jQuery实现以下操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*当点击$btn 时，让 $btn 的背景色变为红色再变为蓝色*/</span></div><div class="line">$btn.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).animate(&#123;<span class="string">'background-color'</span>:<span class="string">'#f00'</span>&#125;,<span class="number">1000</span>).animate(&#123;<span class="string">'background-color'</span>:<span class="string">'#00f'</span>&#125;,<span class="number">1000</span>)</div><div class="line">  &#125;)</div><div class="line"><span class="comment">/*当窗口滚动时，获取垂直滚动距离*/</span></div><div class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log($(<span class="keyword">this</span>).scrollTop())</div><div class="line">&#125;)</div><div class="line"><span class="comment">/*当鼠标放置到$div 上，把$div 背景色改为红色，移出鼠标背景色变为白色*/</span></div><div class="line">$div.on(<span class="string">'mouseenter'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).css(<span class="string">'background-color'</span>,<span class="string">'#f00'</span>);</div><div class="line">  &#125;);</div><div class="line">$div.on(<span class="string">'mouseleave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).css(<span class="string">'background-color'</span>,<span class="string">'#00f'</span>);</div><div class="line">  &#125;);</div><div class="line"><span class="comment">/*当鼠标激活 input 输入框时让输入框边框变为蓝色，当输入框内容改变时把输入框里的文字小写变为大写，当输入框失去焦点时去掉边框蓝色，控制台展示输入框里的文字*/</span></div><div class="line">$input.on(<span class="string">'focus'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).css(<span class="string">'border'</span>,<span class="string">'1px solid #00f'</span>);</div><div class="line">  &#125;);</div><div class="line">$input.on(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).val($<span class="keyword">this</span>.cal().toUpperCase());</div><div class="line">  &#125;);</div><div class="line">$input.on(<span class="string">'blur'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).css(<span class="string">'border'</span>,<span class="string">'none'</span>);</div><div class="line">  &#125;);</div><div class="line"><span class="comment">/*当选择 select 后，获取用户选择的内容*/</span></div><div class="line">$select.on(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log($(<span class="keyword">this</span>).val());</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
-<h2 id="用-jQuery-ajax-实现当点击加载更多会加载数据展示到页面效果预览效果。"><a href="#用-jQuery-ajax-实现当点击加载更多会加载数据展示到页面效果预览效果。" class="headerlink" title="用 jQuery ajax 实现当点击加载更多会加载数据展示到页面效果预览效果。"></a>用 jQuery ajax 实现当点击加载更多会加载数据展示到页面效果预览效果。</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isLoading = <span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> pageNum = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> pageSize = <span class="number">5</span>;</div><div class="line">$btn.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(isLoading)&#123;</div><div class="line">      isLoading = <span class="literal">false</span>;</div><div class="line">      $.get(<span class="string">'/getNews'</span>,&#123;<span class="string">'page'</span> : pageNum,<span class="string">'pageSize'</span> :pageSize&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">          isLoading = <span class="literal">true</span>;</div><div class="line">          <span class="keyword">if</span>(data.status.statusCode = <span class="number">1</span>)&#123;</div><div class="line">            <span class="keyword">for</span>(key <span class="keyword">in</span> data)&#123;</div><div class="line">              $ul.append(&lt;li&gt; + 'data[key]' + &lt;/li&gt;);</div><div class="line">              pageNum++;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">              alert(data.status.errorMessage);</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h3 id="APIDoc"><a href="#APIDoc" class="headerlink" title="APIDoc"></a>APIDoc</h3><p>/getNews GET<br>params:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  page : <span class="number">1</span>,</div><div class="line">  pageSize : <span class="number">5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><br>Success:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">'data'</span>:&#123;</div><div class="line">    <span class="string">'0'</span> : <span class="string">'新闻1'</span>，</div><div class="line">    <span class="string">'1'</span> : <span class="string">'新闻2'</span>，</div><div class="line">    <span class="string">'2'</span> : <span class="string">'新闻3'</span>，</div><div class="line">    <span class="string">'3'</span> : <span class="string">'新闻4'</span>，</div><div class="line">    <span class="string">'4'</span> : <span class="string">'新闻5'</span>，</div><div class="line">  &#125;,</div><div class="line">  <span class="string">'status'</span>:&#123;</div><div class="line">    <span class="string">'statusCode'</span> : <span class="number">1</span>,</div><div class="line">    <span class="string">'errorMessage'</span> : <span class="string">'Success'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>Error:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">'data'</span>:&#123;&#125;,</div><div class="line">  <span class="string">'status'</span>:&#123;</div><div class="line">    <span class="string">'statusCode'</span> : <span class="number">0</span>,</div><div class="line">    <span class="string">'errorMessage'</span> : <span class="string">'Error'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -681,7 +707,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -694,7 +720,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

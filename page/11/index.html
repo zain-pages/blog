@@ -266,6 +266,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/26/引用类型对象拷贝/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/26/引用类型对象拷贝/" itemprop="url">引用类型对象拷贝</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T11:05:12+08:00">
+                2017-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="引用类型有哪些？非引用类型有哪些"><a href="#引用类型有哪些？非引用类型有哪些" class="headerlink" title="引用类型有哪些？非引用类型有哪些"></a>引用类型有哪些？非引用类型有哪些</h2><p>引用类型有数组，对象。非引用类型有布尔，数值，字符串，undefined,null。</p>
+<h2 id="如下代码输出什么？为什么"><a href="#如下代码输出什么？为什么" class="headerlink" title="如下代码输出什么？为什么"></a>如下代码输出什么？为什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(obj1 == obj2); <span class="comment">//false</span></div><div class="line"><span class="built_in">console</span>.log(obj1 = obj2); <span class="comment">//&#123;a:1,b:2&#125;(事实上是obj2的内容，实际传的值为obj2的指针)</span></div><div class="line"><span class="built_in">console</span>.log(obj1 == obj2);<span class="comment">//true 两者变量内存储的指针相等</span></div></pre></td></tr></table></figure>
+<h2 id="如下代码输出什么-为什么"><a href="#如下代码输出什么-为什么" class="headerlink" title="如下代码输出什么? 为什么"></a>如下代码输出什么? 为什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span></div><div class="line"><span class="keyword">var</span> b = <span class="number">2</span></div><div class="line"><span class="keyword">var</span> c = &#123; <span class="attr">name</span>: <span class="string">'饥人谷'</span>, <span class="attr">age</span>: <span class="number">2</span> &#125;</div><div class="line"><span class="keyword">var</span> d = [a, b, c]</div><div class="line"></div><div class="line"><span class="keyword">var</span> aa = a</div><div class="line"><span class="keyword">var</span> bb = b</div><div class="line"><span class="keyword">var</span> cc = c</div><div class="line"><span class="keyword">var</span> dd = d</div><div class="line"></div><div class="line">a = <span class="number">11</span></div><div class="line">b = <span class="number">22</span></div><div class="line">c.name = <span class="string">'hello'</span></div><div class="line">d[<span class="number">2</span>][<span class="string">'age'</span>] = <span class="number">3</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(aa)  <span class="comment">//1，传值赋值</span></div><div class="line"><span class="built_in">console</span>.log(bb)  <span class="comment">//2，传值赋值</span></div><div class="line"><span class="built_in">console</span>.log(cc)  <span class="comment">//&#123;name:"hello",age:3&#125;,传引用赋值</span></div><div class="line"><span class="built_in">console</span>.log(dd)  <span class="comment">//[1, 2, &#123;name:"hello",age:3&#125;],前两个数组元素传值，第三个传引用</span></div></pre></td></tr></table></figure>
+<h2 id="如下代码输出什么-为什么-1"><a href="#如下代码输出什么-为什么-1" class="headerlink" title="如下代码输出什么? 为什么"></a>如下代码输出什么? 为什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span></div><div class="line"><span class="keyword">var</span> c = &#123; <span class="attr">name</span>: <span class="string">'jirengu'</span>, <span class="attr">age</span>: <span class="number">2</span> &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">  ++n</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  ++obj.age</div><div class="line">&#125;</div><div class="line"></div><div class="line">f1(a) </div><div class="line">f2(c) </div><div class="line">f1(c.age) </div><div class="line"><span class="built_in">console</span>.log(a) <span class="comment">//1,函数传值调用</span></div><div class="line"><span class="built_in">console</span>.log(c) <span class="comment">//&#123;name: 'jirengu',age: 3&#125;，fn1传值调用，fn2传引用调用</span></div></pre></td></tr></table></figure>
+<h2 id="过滤如下数组，只保留正数，直接在原数组上操作"><a href="#过滤如下数组，只保留正数，直接在原数组上操作" class="headerlink" title="过滤如下数组，只保留正数，直接在原数组上操作"></a>过滤如下数组，只保留正数，直接在原数组上操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-3</span>,<span class="number">2</span>,<span class="number">-5</span>]</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">	<span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(arr[i] &lt;= <span class="number">0</span>)&#123;</div><div class="line">			arr.splice(i,<span class="number">1</span>);</div><div class="line">			i = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">filter(arr)</div><div class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [3,1,2]</span></div></pre></td></tr></table></figure>
+<h2 id="过滤如下数组，只保留正数，原数组不变，生成新数组"><a href="#过滤如下数组，只保留正数，原数组不变，生成新数组" class="headerlink" title="过滤如下数组，只保留正数，原数组不变，生成新数组"></a>过滤如下数组，只保留正数，原数组不变，生成新数组</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-3</span>,<span class="number">2</span>,<span class="number">-5</span>]</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> temp = [];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(arr[i]&gt;<span class="number">0</span>)&#123;</div><div class="line">			temp.push(arr[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> temp;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arr2 = filter(arr)</div><div class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">// [3,1,2]</span></div><div class="line"><span class="built_in">console</span>.log(arr)  <span class="comment">// [3,1,0,-1,-2,2,-5]</span></div><div class="line"></div></pre></td></tr></table></figure>
+<h2 id="写一个深拷贝函数，用两种方式实现"><a href="#写一个深拷贝函数，用两种方式实现" class="headerlink" title="写一个深拷贝函数，用两种方式实现"></a>写一个深拷贝函数，用两种方式实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy1</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result=&#123;&#125;;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</div><div class="line">		<span class="keyword">if</span>(!obj.hasOwnProperty(key))&#123;<span class="keyword">continue</span>;&#125;</div><div class="line">	    result[key] = (<span class="keyword">typeof</span> obj[key]===<span class="string">'object'</span> &amp;&amp; obj[key]!=<span class="literal">null</span>)? deepCopy1(obj[key]): obj[key];</div><div class="line">	&#125; </div><div class="line">	<span class="keyword">return</span> result; </div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy2</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/22/函数声明和函数表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -551,136 +677,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/20/JS相关概念/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/09/20/JS相关概念/" itemprop="url">JS相关概念</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T17:18:49+08:00">
-                2017-09-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="CSS和JS在网页中的放置顺序是怎样的？"><a href="#CSS和JS在网页中的放置顺序是怎样的？" class="headerlink" title="CSS和JS在网页中的放置顺序是怎样的？"></a>CSS和JS在网页中的放置顺序是怎样的？</h2><p>为了防止白屏与FOUC，CSS应放置于head标签内。<br>为防止JS阻塞加载，JS应放置于body标签末尾。</p>
-<h2 id="解释白屏和FOUC"><a href="#解释白屏和FOUC" class="headerlink" title="解释白屏和FOUC"></a>解释白屏和FOUC</h2><p>白屏是webkit内核浏览器和某些情况下IE浏览器在将CSS放置于文档内容之后导致的现象，由于浏览器渲染时以CSS渲染HTML文档之后才会绘制图形，所以将CSS后置延后了CSS的加载，导致文档加载完成CSS尚未加载完成，此时文档尚未被绘制，会出现白屏状况。<br>FOUC现象是Gecko内核浏览器和某些情况下IE浏览器将CSS放置于文档之后导致的现象，由于浏览器先绘制无样式的HTML文档再逐步加载样式，所以每加载一部分文档样式浏览器会将内容进行重绘，导致屏幕闪烁。<br>两种现象的解决方式都是将CSS放置于文档之前加载。</p>
-<h2 id="async和defer的作用是什么？有什么区别"><a href="#async和defer的作用是什么？有什么区别" class="headerlink" title="async和defer的作用是什么？有什么区别"></a>async和defer的作用是什么？有什么区别</h2><p>async是指将脚本定义为异步加载并加载完立即执行。<br>defer是指将脚本定义为异步加载，并等待文档全部加载完成后执行。<br>两者都会使脚本异步加载，但执行时间不同。</p>
-<h2 id="简述网页的渲染机制"><a href="#简述网页的渲染机制" class="headerlink" title="简述网页的渲染机制"></a>简述网页的渲染机制</h2><ol>
-<li>构建DOM树(DOM tree)：从上到下解析HTML文档生成DOM节点树（DOM tree），也叫内容树（content tree）</li>
-<li>构建CSSOM(CSS Object Model)树：加载解析样式生成CSSOM树</li>
-<li>执行JavaScript：加载并执行JavaScript代码（包括内联代码或外联JavaScript文件）</li>
-<li>构建渲染树(render tree)：根据DOM树和CSSOM树,生成渲染树(render tree)</li>
-<li>布局（layout）：根据渲染树将节点树的每一个节点布局在屏幕上的正确位置</li>
-<li>绘制（painting）：遍历渲染树绘制所有节点，为每一个节点适用对应的样式，这一过程是通过UI后端模块完成</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -731,7 +727,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -744,7 +740,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

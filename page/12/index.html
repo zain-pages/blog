@@ -266,6 +266,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/20/JS相关概念/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/20/JS相关概念/" itemprop="url">JS相关概念</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T17:18:49+08:00">
+                2017-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS和JS在网页中的放置顺序是怎样的？"><a href="#CSS和JS在网页中的放置顺序是怎样的？" class="headerlink" title="CSS和JS在网页中的放置顺序是怎样的？"></a>CSS和JS在网页中的放置顺序是怎样的？</h2><p>为了防止白屏与FOUC，CSS应放置于head标签内。<br>为防止JS阻塞加载，JS应放置于body标签末尾。</p>
+<h2 id="解释白屏和FOUC"><a href="#解释白屏和FOUC" class="headerlink" title="解释白屏和FOUC"></a>解释白屏和FOUC</h2><p>白屏是webkit内核浏览器和某些情况下IE浏览器在将CSS放置于文档内容之后导致的现象，由于浏览器渲染时以CSS渲染HTML文档之后才会绘制图形，所以将CSS后置延后了CSS的加载，导致文档加载完成CSS尚未加载完成，此时文档尚未被绘制，会出现白屏状况。<br>FOUC现象是Gecko内核浏览器和某些情况下IE浏览器将CSS放置于文档之后导致的现象，由于浏览器先绘制无样式的HTML文档再逐步加载样式，所以每加载一部分文档样式浏览器会将内容进行重绘，导致屏幕闪烁。<br>两种现象的解决方式都是将CSS放置于文档之前加载。</p>
+<h2 id="async和defer的作用是什么？有什么区别"><a href="#async和defer的作用是什么？有什么区别" class="headerlink" title="async和defer的作用是什么？有什么区别"></a>async和defer的作用是什么？有什么区别</h2><p>async是指将脚本定义为异步加载并加载完立即执行。<br>defer是指将脚本定义为异步加载，并等待文档全部加载完成后执行。<br>两者都会使脚本异步加载，但执行时间不同。</p>
+<h2 id="简述网页的渲染机制"><a href="#简述网页的渲染机制" class="headerlink" title="简述网页的渲染机制"></a>简述网页的渲染机制</h2><ol>
+<li>构建DOM树(DOM tree)：从上到下解析HTML文档生成DOM节点树（DOM tree），也叫内容树（content tree）</li>
+<li>构建CSSOM(CSS Object Model)树：加载解析样式生成CSSOM树</li>
+<li>执行JavaScript：加载并执行JavaScript代码（包括内联代码或外联JavaScript文件）</li>
+<li>构建渲染树(render tree)：根据DOM树和CSSOM树,生成渲染树(render tree)</li>
+<li>布局（layout）：根据渲染树将节点树的每一个节点布局在屏幕上的正确位置</li>
+<li>绘制（painting）：遍历渲染树绘制所有节点，为每一个节点适用对应的样式，这一过程是通过UI后端模块完成</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/14/浏览器兼容/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -565,151 +695,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/10/Form表单/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/09/10/Form表单/" itemprop="url">Form表单</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T12:31:36+08:00">
-                2017-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="form表单有什么作用？有哪些常用的input-标签，分别有什么作用？"><a href="#form表单有什么作用？有哪些常用的input-标签，分别有什么作用？" class="headerlink" title="form表单有什么作用？有哪些常用的input 标签，分别有什么作用？"></a>form表单有什么作用？有哪些常用的input 标签，分别有什么作用？</h2><h3 id="form表单的作用"><a href="#form表单的作用" class="headerlink" title="form表单的作用"></a>form表单的作用</h3><p>传送用户填写的数据到服务器</p>
-<h3 id="常用的input-标签"><a href="#常用的input-标签" class="headerlink" title="常用的input 标签"></a>常用的input 标签</h3><table> <tr> <td>input标签type属性</td> <td>作用</td> </tr> <tr> <td>text</td> <td>文本输入框</td> </tr> <tr> <td>password</td> <td>密码输入框</td> </tr> <tr> <td>radio</td> <td>单选输入框</td> </tr> <tr> <td>checkbox</td> <td>多选输入框</td> </tr> <tr> <td>submit</td> <td>提交按钮</td> </tr> <tr> <td>button</td> <td>按钮</td> </tr> <tr> <td>hidden</td> <td>隐藏数据</td> </tr> </table>
-
-<h2 id="post-和-get-方式的区别？"><a href="#post-和-get-方式的区别？" class="headerlink" title="post 和 get 方式的区别？"></a>post 和 get 方式的区别？</h2><ul>
-<li>GET提交，请求的数据会附在URL之后(就是把数据放置在HTTP协议头中)，以?分割URL和传输数据，多个参数用&amp;连接。如果数据是英文字母数字，原样发送，如果是空格，转换为+，如果是中文其他字符，则直接把字符串用BASE64加密，得出如： %E4%BD%A0%E5%A5%BD，其中%XX中的XX为该符号以16进制表示的ASCII。</li>
-<li>POST提交：把提交的数据放置在是HTTP包的包体中。</li>
-</ul>
-<p>因此，GET提交的数据会在地址栏中显示出来，而POST提交，地址栏不会改变。</p>
-<p>传输数据的大小：首先声明：HTTP协议没有对传输的数据大小进行限制，HTTP协议规范也没有对URL长度进行限制。</p>
-<p>而在实际开发中存在的限制主要有：</p>
-<p>GET:特定浏览器和服务器对URL长度有限制，例如IE对URL长度的限制是2083字节(2K+35。对于其他浏览器，如Netscape、FireFox等，理论上没有长度限制，其限制取决于操作系统的支持。</p>
-<p>因此对于GET提交时，传输数据就会受到URL长度的限制。</p>
-<p>POST:由于不是通过URL传值，理论上数据不受限。但实际各个WEB服务器会规定对post提交数据大小进行限制，Apache、IIS6都有各自的配置。</p>
-<h2 id="在input里，name-有什么作用？"><a href="#在input里，name-有什么作用？" class="headerlink" title="在input里，name 有什么作用？"></a>在input里，name 有什么作用？</h2><p>作为可与服务器交互数据的HTML元素的服务器端的标示，在某些特殊标签如radio里可作为分组依据。</p>
-<h2 id="radio-如何-分组"><a href="#radio-如何-分组" class="headerlink" title="radio 如何 分组?"></a>radio 如何 分组?</h2><p>通过标签中的name属性进行分组。</p>
-<h2 id="placeholder-属性有什么作用"><a href="#placeholder-属性有什么作用" class="headerlink" title="placeholder 属性有什么作用?"></a>placeholder 属性有什么作用?</h2><p>可以在文本输入框内显示默认的提示字符。</p>
-<h2 id="type-hidden隐藏域有什么作用-举例说明"><a href="#type-hidden隐藏域有什么作用-举例说明" class="headerlink" title="type=hidden隐藏域有什么作用? 举例说明"></a>type=hidden隐藏域有什么作用? 举例说明</h2><ol>
-<li>隐藏数据一起发送给服务器。</li>
-<li>作为Localstrange的替代品。</li>
-<li>当有多个submit按钮时，可以用于确认是哪个按钮提交的表单。</li>
-<li>可以用于联系多个表单。</li>
-<li>作为全局变量使用。</li>
-<li>作为父窗口的隐藏域，对小窗口传参。</li>
-</ol>
-<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><form action="#"> <table> <tr> <td>姓名：</td> <td><input type="text" placeholder="请输入姓名"></td> </tr> <tr> <td>密码：</td> <td><input type="password" placeholder="请输入密码"></td> </tr> <tr> <td>性别：</td> <td><input type="radio" name="sex" value="male">男<input type="radio" name="sex" value="female">女</td> </tr> <tr> <td>取向：</td> <td><input type="radio" name="like" value="male">男<input type="radio" name="like" value="female">女</td> </tr> <tr> <td>爱好：</td> <td><input name="favorite" type="checkbox" value="dota">Dota<input name="favorite" type="checkbox" value="旅游">旅游<input name="favorite" type="checkbox" value="宠物">宠物</td> </tr> <tr> <td>评论：</td> <td><textarea name="comment" id="comment"></textarea></td> </tr> <tr> <td>我的car：</td> <td><select name="mycar" id="mycar"> <option value="奔驰">奔驰</option> <option value="宝马">宝马</option> </select><input type="submit" value="提交"></td> </tr> </table> </form>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -760,7 +745,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -773,7 +758,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

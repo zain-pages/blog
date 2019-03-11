@@ -266,6 +266,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/06/jQuery动画与ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/10/06/jQuery动画与ajax/" itemprop="url">jQuery动画与ajax</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-06T22:48:36+08:00">
+                2017-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jQuery-中，-document-ready-是什么意思？"><a href="#jQuery-中，-document-ready-是什么意思？" class="headerlink" title="jQuery 中， $(document).ready()是什么意思？"></a>jQuery 中， $(document).ready()是什么意思？</h2><p>当 DOM（文档对象模型） 已经加载，并且页面（包括图像）已经完全呈现时，会发生 ready 函数中的回调函数。</p>
+<h2 id="node-html-和-node-text-的区别"><a href="#node-html-和-node-text-的区别" class="headerlink" title="$node.html()和$node.text()的区别?"></a>$node.html()和$node.text()的区别?</h2><ol>
+<li>html与.text的方法操作是一样，只是在具体针对处理对象不同</li>
+<li>html处理的是元素内容，.text处理的是文本内容</li>
+<li>html只能使用在HTML文档中，.text 在XML 和 HTML 文档中都能使用, 如果处理的对象只有一个子文本节点，那么html处理的结果与text是一样的;</li>
+</ol>
+<p>也就是说，当处理的对象有两个以上的子节点时，.html()只会替换第一个子节点的内容（也可以通过选择器指定替换的子节点），.text则会将对象中的所有文本替换</p>
+<h2 id="extend-的作用和用法"><a href="#extend-的作用和用法" class="headerlink" title="$.extend 的作用和用法?"></a>$.extend 的作用和用法?</h2><p>jQuery.extend(object)扩展jQuery对象本身。<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 此时min和max方法拓展到jq全局对象上 */</span></div><div class="line">jQuery.extend(&#123;</div><div class="line">min: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &lt; b ? a : b; &#125;,</div><div class="line">max: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &gt; b ? a : b; &#125;</div><div class="line">&#125;);</div><div class="line">jQuery.min(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2</span></div><div class="line">jQuery.max(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">// 5</span></div></pre></td></tr></table></figure><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 此时min和max方法拓展到jq实例对象上 */</span></div><div class="line">jQuery.fn.extend(&#123;</div><div class="line">min: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &lt; b ? a : b; &#125;,</div><div class="line">max: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &gt; b ? a : b; &#125;</div><div class="line">&#125;);</div><div class="line">$(<span class="string">"div"</span>).min(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2</span></div><div class="line">$(<span class="string">"div"</span>).max(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">// 5</span></div><div class="line"><span class="comment">/* 此时b和c拓展到a上 */</span></div><div class="line"><span class="keyword">var</span> a = &#123;&#125;,b=&#123;<span class="attr">name</span>:<span class="string">'zain'</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,<span class="attr">c</span>:&#123;<span class="attr">sex</span>:<span class="string">'man'</span>&#125;</div><div class="line">jQuery.extend(a,b,c);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;name:'zain',age:'18',sex:'man'&#125;</span></div></pre></td></tr></table></figure></p>
+<h2 id="jQuery-的链式调用是什么？"><a href="#jQuery-的链式调用是什么？" class="headerlink" title="jQuery 的链式调用是什么？"></a>jQuery 的链式调用是什么？</h2><p>jQuery中的链式调用是指形如$(selector).append(‘hello’).css(‘line-height’,’1.5’)的直接把下一个操作写在上一个操作后的写法，原理是jQuery的非求值函数调用返回其自身。</p>
+<h2 id="jQuery-中-data-函数的作用"><a href="#jQuery-中-data-函数的作用" class="headerlink" title="jQuery 中 data 函数的作用"></a>jQuery 中 data 函数的作用</h2><p>用于存取当前匹配jQuery对象上的数据。可以通过jQueryObject.data( [ key [, value ] ])的形式存取数据或者直接传入一个对象以设置多个键值对。</p>
+<h2 id="写出以下功能对应的-jQuery-方法："><a href="#写出以下功能对应的-jQuery-方法：" class="headerlink" title="写出以下功能对应的 jQuery 方法："></a>写出以下功能对应的 jQuery 方法：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*给元素 $node 添加 class active，给元素 $noed 删除 class active*/</span></div><div class="line">$node.addClass(<span class="string">'active'</span>);</div><div class="line">$node.removeClass(<span class="string">'active'</span>);</div><div class="line"><span class="comment">/*展示元素$node, 隐藏元素$node*/</span></div><div class="line">$node.show();</div><div class="line">$node.hide();</div><div class="line"><span class="comment">/*获取元素$node 的 属性: id、src、title， 修改以上属性*/</span></div><div class="line"><span class="comment">//获取</span></div><div class="line"><span class="keyword">var</span> nodeid = $node.attr(<span class="string">'id'</span>);</div><div class="line"><span class="keyword">var</span> nodesrc = $node.attr(<span class="string">'src'</span>);</div><div class="line"><span class="keyword">var</span> nodetitle = $node.attr(<span class="string">'title'</span>);</div><div class="line"><span class="comment">//设置</span></div><div class="line">$node.attr(<span class="string">'id'</span>,<span class="string">'node'</span>).attr(<span class="string">'src'</span>,<span class="string">'http://baidu.com'</span>).attr(<span class="string">'title'</span>,<span class="string">'baidu'</span>);</div><div class="line"><span class="comment">/*给$node 添加自定义属性data-src*/</span></div><div class="line">$node.attr(<span class="string">'data-src'</span>,<span class="string">'//zain.red'</span>);</div><div class="line"><span class="comment">/*在$ct 内部最开头添加元素$node*/</span></div><div class="line">$ct.prepend($node);</div><div class="line"><span class="comment">/*在$ct 内部最末尾添加元素$node*/</span></div><div class="line">$ct.append($node);</div><div class="line"><span class="comment">/*删除$node*/</span></div><div class="line">$node.remove();</div><div class="line"><span class="comment">/*把$ct里内容清空*/</span></div><div class="line">$ct.empty();</div><div class="line"><span class="comment">/*在$ct 里设置 html &lt;div class="btn"&gt;&lt;/div&gt;*/</span></div><div class="line">$ct.html(<span class="string">'&lt;div class="btn"&gt;&lt;/div&gt;'</span>);</div><div class="line"><span class="comment">/*获取、设置$node 的宽度、高度(分别不包括内边距、包括内边距、包括边框、包括外边距)*/</span></div><div class="line"><span class="comment">//宽度</span></div><div class="line">$node.width();<span class="comment">//获取：区块的本身宽度</span></div><div class="line">$node.outerWidth();<span class="comment">//获取：区块的宽度+padding宽度+border宽度</span></div><div class="line">$node.outerWidth(<span class="literal">true</span>);<span class="comment">//获取：区块的宽度+padding宽度+border宽度+margin的宽度</span></div><div class="line"><span class="comment">//高度</span></div><div class="line">$node.height();<span class="comment">//获取：区块的本身高度</span></div><div class="line">$node.outerHeight();<span class="comment">//获取：区块的高度+padding高度+border高度</span></div><div class="line">$node.outerHeight(<span class="literal">true</span>);<span class="comment">//获取：区块的高度+padding高度+border高度+margin的高度</span></div><div class="line"><span class="comment">/*获取窗口滚动条垂直滚动距离*/</span></div><div class="line">$(<span class="built_in">document</span>).scrollTop();  </div><div class="line"><span class="comment">/*获取$node 到根节点水平、垂直偏移距离*/</span></div><div class="line">$node.offset();</div><div class="line"><span class="comment">/*修改$node 的样式，字体颜色设置红色，字体大小设置14px*/</span></div><div class="line">$node.css(<span class="string">'color'</span>,<span class="string">'#f00'</span>).css(<span class="string">'font-size'</span>,<span class="string">'14px'</span>);</div><div class="line"><span class="comment">/*遍历节点，把每个节点里面的文本内容重复一遍*/</span></div><div class="line">$(<span class="string">'*'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).text($(<span class="keyword">this</span>).text()+$(<span class="keyword">this</span>).text())</div><div class="line">  &#125;);</div><div class="line"><span class="comment">/*从$ct 里查找 class 为 .item的子元素*/</span></div><div class="line">$ct.children(<span class="string">'.item'</span>);</div><div class="line"><span class="comment">/*获取$ct 里面的所有孩子*/</span></div><div class="line">$ct.children();</div><div class="line"><span class="comment">/*对于$node，向上找到 class 为'.ct'的父亲，在从该父亲找到'.panel'的孩子*/</span></div><div class="line">$node.parents(<span class="string">'.ct'</span>).children(<span class="string">'.panel'</span>);</div><div class="line"><span class="comment">/*获取选择元素的数量*/</span></div><div class="line">$node.length;</div><div class="line"><span class="comment">/*获取当前元素在兄弟中的排行*/</span></div><div class="line">$node.index();</div></pre></td></tr></table></figure>
+<h2 id="用jQuery实现以下操作"><a href="#用jQuery实现以下操作" class="headerlink" title="用jQuery实现以下操作"></a>用jQuery实现以下操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*当点击$btn 时，让 $btn 的背景色变为红色再变为蓝色*/</span></div><div class="line">$btn.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).animate(&#123;<span class="string">'background-color'</span>:<span class="string">'#f00'</span>&#125;,<span class="number">1000</span>).animate(&#123;<span class="string">'background-color'</span>:<span class="string">'#00f'</span>&#125;,<span class="number">1000</span>)</div><div class="line">  &#125;)</div><div class="line"><span class="comment">/*当窗口滚动时，获取垂直滚动距离*/</span></div><div class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log($(<span class="keyword">this</span>).scrollTop())</div><div class="line">&#125;)</div><div class="line"><span class="comment">/*当鼠标放置到$div 上，把$div 背景色改为红色，移出鼠标背景色变为白色*/</span></div><div class="line">$div.on(<span class="string">'mouseenter'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).css(<span class="string">'background-color'</span>,<span class="string">'#f00'</span>);</div><div class="line">  &#125;);</div><div class="line">$div.on(<span class="string">'mouseleave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).css(<span class="string">'background-color'</span>,<span class="string">'#00f'</span>);</div><div class="line">  &#125;);</div><div class="line"><span class="comment">/*当鼠标激活 input 输入框时让输入框边框变为蓝色，当输入框内容改变时把输入框里的文字小写变为大写，当输入框失去焦点时去掉边框蓝色，控制台展示输入框里的文字*/</span></div><div class="line">$input.on(<span class="string">'focus'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).css(<span class="string">'border'</span>,<span class="string">'1px solid #00f'</span>);</div><div class="line">  &#125;);</div><div class="line">$input.on(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).val($<span class="keyword">this</span>.cal().toUpperCase());</div><div class="line">  &#125;);</div><div class="line">$input.on(<span class="string">'blur'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).css(<span class="string">'border'</span>,<span class="string">'none'</span>);</div><div class="line">  &#125;);</div><div class="line"><span class="comment">/*当选择 select 后，获取用户选择的内容*/</span></div><div class="line">$select.on(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log($(<span class="keyword">this</span>).val());</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<h2 id="用-jQuery-ajax-实现当点击加载更多会加载数据展示到页面效果预览效果。"><a href="#用-jQuery-ajax-实现当点击加载更多会加载数据展示到页面效果预览效果。" class="headerlink" title="用 jQuery ajax 实现当点击加载更多会加载数据展示到页面效果预览效果。"></a>用 jQuery ajax 实现当点击加载更多会加载数据展示到页面效果预览效果。</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isLoading = <span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> pageNum = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> pageSize = <span class="number">5</span>;</div><div class="line">$btn.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(isLoading)&#123;</div><div class="line">      isLoading = <span class="literal">false</span>;</div><div class="line">      $.get(<span class="string">'/getNews'</span>,&#123;<span class="string">'page'</span> : pageNum,<span class="string">'pageSize'</span> :pageSize&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">          isLoading = <span class="literal">true</span>;</div><div class="line">          <span class="keyword">if</span>(data.status.statusCode = <span class="number">1</span>)&#123;</div><div class="line">            <span class="keyword">for</span>(key <span class="keyword">in</span> data)&#123;</div><div class="line">              $ul.append(&lt;li&gt; + 'data[key]' + &lt;/li&gt;);</div><div class="line">              pageNum++;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">              alert(data.status.errorMessage);</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h3 id="APIDoc"><a href="#APIDoc" class="headerlink" title="APIDoc"></a>APIDoc</h3><p>/getNews GET<br>params:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  page : <span class="number">1</span>,</div><div class="line">  pageSize : <span class="number">5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><br>Success:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">'data'</span>:&#123;</div><div class="line">    <span class="string">'0'</span> : <span class="string">'新闻1'</span>，</div><div class="line">    <span class="string">'1'</span> : <span class="string">'新闻2'</span>，</div><div class="line">    <span class="string">'2'</span> : <span class="string">'新闻3'</span>，</div><div class="line">    <span class="string">'3'</span> : <span class="string">'新闻4'</span>，</div><div class="line">    <span class="string">'4'</span> : <span class="string">'新闻5'</span>，</div><div class="line">  &#125;,</div><div class="line">  <span class="string">'status'</span>:&#123;</div><div class="line">    <span class="string">'statusCode'</span> : <span class="number">1</span>,</div><div class="line">    <span class="string">'errorMessage'</span> : <span class="string">'Success'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>Error:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">'data'</span>:&#123;&#125;,</div><div class="line">  <span class="string">'status'</span>:&#123;</div><div class="line">    <span class="string">'statusCode'</span> : <span class="number">0</span>,</div><div class="line">    <span class="string">'errorMessage'</span> : <span class="string">'Error'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/05/jQuery选择器-Dom操作-样式-事件处理-动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -522,136 +655,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/03/Ajax实践/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/10/03/Ajax实践/" itemprop="url">Ajax实践</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T17:34:58+08:00">
-                2017-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="ajax-是什么？有什么作用？"><a href="#ajax-是什么？有什么作用？" class="headerlink" title="ajax 是什么？有什么作用？"></a>ajax 是什么？有什么作用？</h2><p>ajax 全称Async Javascript And XML（异步Javascript和XML脚本），可以在不刷新页面的情况下发送网络请求，并在不影响其他操作的情况下等网络请求回传时执行操作。</p>
-<h2 id="前后端开发联调需要注意哪些事情？后端接口完成前如何-mock-数据？"><a href="#前后端开发联调需要注意哪些事情？后端接口完成前如何-mock-数据？" class="headerlink" title="前后端开发联调需要注意哪些事情？后端接口完成前如何 mock 数据？"></a>前后端开发联调需要注意哪些事情？后端接口完成前如何 mock 数据？</h2><p>前后端开发联调要约定四点：</p>
-<ol>
-<li>请求路径</li>
-<li>请求方法</li>
-<li>请求参数</li>
-<li>回传数据格式</li>
-</ol>
-<p>后端接口完成前可以使用server-mock等工具进行mock，也可以使用easymock等在线接口进行mock。</p>
-<h2 id="点击按钮，使用-ajax-获取数据，如何在数据到来之前防止重复点击"><a href="#点击按钮，使用-ajax-获取数据，如何在数据到来之前防止重复点击" class="headerlink" title="点击按钮，使用 ajax 获取数据，如何在数据到来之前防止重复点击?"></a>点击按钮，使用 ajax 获取数据，如何在数据到来之前防止重复点击?</h2><p>在点击事件的作用域定义一个“状态锁“变量，在click事件中做一个状态锁是否为开的判断。<br>如果状态锁为开，则把状态锁关上后执行网络请求，在网络请求的回调函数把状态锁打开。<br>如果状态锁为关，则不执行语句。</p>
-<h2 id="实现加载更多的功能，后端在本地使用server-mock来模拟数据"><a href="#实现加载更多的功能，后端在本地使用server-mock来模拟数据" class="headerlink" title="实现加载更多的功能，后端在本地使用server-mock来模拟数据"></a>实现加载更多的功能，后端在本地使用server-mock来模拟数据</h2><p><a href="https://github.com/Zainking/demos/tree/master/%E8%BF%9B%E9%98%B612" target="_blank" rel="external">进阶12作业</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -702,7 +705,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -715,7 +718,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -266,6 +266,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2018/03/27/文件编码探幽/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/03/27/文件编码探幽/" itemprop="url">文件编码探幽</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T17:17:25+08:00">
+                2018-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>写这篇文章，是因为在阅读《深入理解计算机系统》时候，在它的第一章第一节看到这么一段话</p>
+<blockquote>
+<p>Files such as hello.c that consist exclusively of ASCII characters are known as text files. All other files are known as binary files.</p>
+</blockquote>
+<p>这句话核心逻辑就是：<code>ANSI</code>编码的文件叫做<code>文本文件</code>，其他所有文件都叫做<code>二进制文件</code>。<br>初读这句话感觉十分不可思议，因为对界定逻辑比较敏感所以觉得<code>文本文件</code>、<code>二进制文件</code>与<code>ANSI</code>文件、<code>非ANSI文件</code>无论是定义还是应用语境皆有不同，于是我开始了下面的详细探寻。</p>
+<p>首先思考，<code>ANSI文件</code>、<code>非ANSI文件</code>的界定是很清晰的——以<code>ANSI</code>为编码格式存储的文件称之为ANSI文件，反之称之为非ANSI文件。应用场景也很清晰：需要辨明文件编码格式的时候。</p>
+<p>那么问题就出在了<code>文本文件</code>、<code>二进制文件</code>的定义和应用范围问题上。</p>
+<p>首先上维基百科二者定义：</p>
+<blockquote>
+<p>文本文件一般指只有字符原生编码构成的二进制计算机文件，与富文本相比，其不包含字样样式的控制元素，能够被最简单的文本编辑器直接读取。<br>二进制文件（英语：Binary file）一般指包含ASCLL及扩展ASCII字符中编写的数据或程序指令（Program instructions）的文件。广义的二进制文件即为文件，由文件在外部存储设备的存放方式为二进制而得名。狭义的二进制文件即指除文本文件以外的文件。</p>
+</blockquote>
+<p>看得出来《深》书之描述更接近于狭义的定义: 文本文件以外的文件是二进制文件。但是此定义又与《深》书不同：<code>ANSI编码文件</code>在维基百科的定义上不等于<code>文本文件</code>。</p>
+<p>读书解意，既然定义有所不同，那么需要辨明他们为什么不同，才能减轻记忆负担和深入理解问题。</p>
+<p>那么辨意的第一步就是明白<code>文本文件</code>和<code>二进制文件</code>的应用场景有哪些。</p>
+<p>谷歌搜索<code>文本文件 二进制文件</code>，以前三个结果进行综合分析。<br>2018 年 3 月 27 日按照上述关键词以香港谷歌进行检索，返回的前三个结果分别来源于<code>知乎</code>，<code>博客园</code>，<code>简书</code>。<br>鉴于结果来源社区全都是技术氛围比较浓厚的社区，于是决定都点进去看看。</p>
+<p>知乎答案第一名67赞，中心思想为<code>二进制文件</code>和<code>文本文件</code>都是以二进制方式存储，他们的读取方式由文件头决定。<br>不愧是逼乎，人家问区别，你回答没什么区别。虽然增长了知识但是对于我们的问题没有任何直接帮助。</p>
+<p>知乎答案第二名31赞，中心思想为<code>二进制文件</code>的实质是它<code>含有文件的内容信息和解释方式</code>，而<code>二进制文件</code>仅仅拥有控制信息和内容，不提供让你直接解读的途径。</p>
+<p>接下来分别看看博客园和简书上的两篇高排名博文。</p>
+<p>博客园中的博客分别以二者定义，文件存取，优缺点，C语言的二进制和文本方式读写，实例五个方面介绍了文本文件和二进制文件。<br>而其中的实例则证明C语言在进行写文件操作时，仅仅对<code>文本文件</code>多进行一些转换，实质上文件内容仅仅是增加了一些编码内容而已，从侧面重新论述了知乎排名第一的人的言论。</p>
+<p>而简书上的那篇博文则直接举出了<code>文本文件</code>和<code>二进制文件</code>的四点区别，也最能解决疑惑：</p>
+<blockquote>
+<p>文本文件基本上是定长编码的(也有非定长的编码如UTF-8)，基于字符，每个字符在具体编码中是固定的，ASCII码是8个比特的编码，UNICODE一般占16个比特。而二进制文件可看成是变长编码的，因为是值编码，多少个比特代表一个值，完全由自己决定。</p>
+</blockquote>
+<p><code>文本文件</code>依照字符为单位，大多数为定长编码。而<code>二进制文件</code>并不要求依照字符（这体现在前几篇文章中无格式、不存在解释方式等表象上）进行存储。</p>
+<p>那么我们可以归纳出<code>文本文件</code>和<code>二进制文件</code>的使用语境：他们大多数用来辨析某个文件能否被人直接以某种编码进行有格式的读取：<code>文本文件</code>可以，<code>二进制文件</code>往往不行。</p>
+<p>问题大致至此可以解决：《深》书的描述不够准确，因为当前文本的编码格式不仅仅有<code>ANSI</code>，流行的方案还有<code>UTF-8</code>,<code>UTF-16</code>等等，所有以文本编码存储的文件都可以称之为<code>文本文件</code>。</p>
+<p>另外，还有一些很有用的关于编码的知识：</p>
+<ol>
+<li>现代文本文件存储往往使用UTF-8编码进行，UTF系列编码是Unicode字符集下的一系列编码规则。</li>
+<li>字符集为每一个字符指定了一个唯一的码位，有<code>Unicode</code>，<code>ASCLL</code>等，大多数<code>ANSI</code>编码基于<code>ASCLL</code>字符集。</li>
+<li>编码规则将每一个码位转换为字符序列。</li>
+<li><code>UTF-8</code>编码是可变长编码，也就是说存储一个字符用到的存储空间可能不一样长，这样做是为了节省空间。</li>
+<li>JavaScript使用的编码是<code>UCS-2</code>编码，所有字符在JavaScript中都是2个字节，如果是4个字节的字符，会被当做两个双字节的字符处理（知乎就有些字符因此无法显示），ES6增加了对双字节<code>Unicode</code>码的支持，但是写程序时还要做一些特殊的处理才能够正确显示，详细请阅读参考资料。</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>知乎：<a href="https://www.zhihu.com/question/19971994" target="_blank" rel="external">文本文件和二进制文件的区别？请举例说明。</a></li>
+<li>博客园：<a href="http://www.cnblogs.com/zhangjiankun/archive/2011/11/27/2265184.html" target="_blank" rel="external">文本文件与二进制文件区别</a></li>
+<li>简书：<a href="https://www.jianshu.com/p/af0b4f8b030e" target="_blank" rel="external">文本文件和二进制文件的差异和区别</a></li>
+<li>阮一峰博客：<a href="http://www.ruanyifeng.com/blog/2014/12/unicode.html" target="_blank" rel="external">Unicode与JavaScript详解</a></li>
+<li>另参考维基百科相关条目，《深入理解计算机系统》第二版</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2018/03/16/18-3-16周记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -368,7 +528,7 @@
 <p>另外在自己的<code>bandwagonHost</code>上面尝试了用<code>express</code>脚本结合<code>githooks</code>自动部署代码，原理就是<code>github</code>自动post一个请求到我的服务器，然后我的服务器收到对应请求之后执行相应的<code>shell</code>脚本。</p>
 <h2 id="阅读与学习"><a href="#阅读与学习" class="headerlink" title="阅读与学习"></a>阅读与学习</h2><p>最近在阅读《代码大全》，并过了一下node的教程。《代码大全》中关于编码过程的思考我放在下一节讲。接下来想读的书是吴浩麟的《深入浅出Webpack》和张鑫旭的《CSS世界》。</p>
 <h2 id="反思与杂谈"><a href="#反思与杂谈" class="headerlink" title="反思与杂谈"></a>反思与杂谈</h2><p>其实某种意义上来讲这个章节才是每周最重要的部分吧，会放一些思考在里面。</p>
-<h4 id="和设计师沟通的细节程度"><a href="#和设计师沟通的细节程度" class="headerlink" title="和设计师沟通的细节程度"></a>和设计师沟通的细节程度</h4><p>在弦歌的时候，因为缺乏交互设计，往往是61或者李林林给我平面设计图，所有的设计和交互细节由我自己敲定，大一点的方面去询问设计师。<br>在奇迹空间的时候，往往是Tinker直接派发任务，由我来直接借助既有的样式库完成前后端所有的部分。这并不是没有原因：因为在开发的项目是一个后台管理系统，不需要十分注重交互体验。<br>多抓鱼是我目前以来所认识到的对于设计体验要求最为详细的公司，和印子交谈的过程中往往细节会深化到某一个特别微小辅助元素的跳转。（没错我指的就是新书单列表页由XXX推荐那一行小字）。<br>这样细微的沟通有好处，可以完全还原设计师的意图和理念，但是也有坏处：修改一个列表页的细节情况竟然需要沟通3~4次。<br>当然其中有我们之间还不够了解以及我现在有一些做到哪想到哪的问题（这个问题在“对处理事情的顺序思考”一节有详细的描述），但是刨除这些因素，考虑到下一次沟通也有可能依赖上一次沟通，以此类推，即使是小细节的修改，也要沟通两次左右，这对于开发效率会有降低，被提出沟通方正在进行的工作会被打断。<br>这个问题的细节需要下周和印子谈谈，问问她以前和超强以及Whyme沟通设计细节时的粒度。</p>
+<h4 id="和设计师沟通的细节程度"><a href="#和设计师沟通的细节程度" class="headerlink" title="和设计师沟通的细节程度"></a>和设计师沟通的细节程度</h4><p>在弦歌的时候，因为缺乏交互设计，往往是61或者李林林给我平面设计图，所有的设计和交互细节由我自己敲定，大一点的方面去询问设计师。<br>在奇迹空间的时候，往往是Tinker直接派发任务，由我来直接借助既有的样式库完成前后端所有的部分。这并不是没有原因：因为在开发的项目是一个后台管理系统，不需要十分注重交互体验。<br>多抓鱼是我目前以来所认识到的对于设计体验要求最为详细的公司，和印子交谈的过程中往往细节会深化到某一个特别微小辅助元素的跳转。（没错我指的就是新书单列表页由XXX推荐那一行小字）。<br>这样细微的沟通有好处，可以完全还原设计师的意图和理念，但是也有坏处：修改一个列表页的细节情况竟然需要沟通3~4次。<br>当然其中有我们之间还不够了解以及我现在有一些做到哪想到哪的问题（这个问题在“对处理事情的顺序思考”一节有详细的描述），但是刨除这些因素，考虑到下一次沟通也有可能依赖上一次沟通，以此类推，即使是小细节的修改，也要沟通两次左右，这对于开发效率会有降低，被提出沟通方正在进行的工作会被打断。<br>这个问题的细节需要下周和印子谈谈，问问她以前和超强以及 Whyme 沟通设计细节时的粒度。</p>
 <h4 id="对编码目标认识的改变"><a href="#对编码目标认识的改变" class="headerlink" title="对编码目标认识的改变"></a>对编码目标认识的改变</h4><p>忽然翻到我以前的一个知乎回答<a href="https://www.zhihu.com/question/59650690/answer/181020702" target="_blank" rel="external">已经学完 HTML/CSS 但是完全看不懂JavaScript 教程怎么办？</a><br>发现自己对于前端学习的认识已经上升到另外的阶段，不再以库的掌握为标准而评判了。<br>对于工作中进行code review时出现最多的问题往往有三个</p>
 <ol>
 <li>对于英文单词拼写的问题</li>
@@ -532,126 +692,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2018/01/07/函数节流/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/01/07/函数节流/" itemprop="url">用setTimeout实现函数节流</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T20:03:26+08:00">
-                2018-01-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>当一个事件频繁触发，我们往往希望它不要每次触发都执行它的回调。<br>实现这种效果的技术称作函数节流。<br>下面提供一种通过setTimeout进行函数节流的实现。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">delayFun</span> (<span class="params">func, wait, immediate</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> timeout;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>, args = <span class="built_in">arguments</span>;</div><div class="line">        <span class="keyword">var</span> later = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            timeout = <span class="literal">null</span>;</div><div class="line">            <span class="keyword">if</span> (!immediate) func.apply(context, args);</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">var</span> callNow = immediate || !timeout;</div><div class="line">        clearTimeout(timeout);</div><div class="line">        timeout = setTimeout(later, wait);</div><div class="line">        <span class="keyword">if</span> (callNow) func.apply(context, args);</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 用法</span></div><div class="line"><span class="keyword">var</span> myEfficientFn = delayFun (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 所有繁重的操作</span></div><div class="line">&#125;, <span class="number">250</span>);</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, myEfficientFn);</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -702,7 +742,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -715,7 +755,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
