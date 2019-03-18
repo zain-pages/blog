@@ -266,6 +266,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/11/19/常见前端设计模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/11/19/常见前端设计模式/" itemprop="url">常见前端设计模式</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T13:53:58+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="写出-构造函数模式、混合模式、模块模式、工厂模式、单例模式、发布订阅模式的范例。"><a href="#写出-构造函数模式、混合模式、模块模式、工厂模式、单例模式、发布订阅模式的范例。" class="headerlink" title="写出 构造函数模式、混合模式、模块模式、工厂模式、单例模式、发布订阅模式的范例。"></a>写出 构造函数模式、混合模式、模块模式、工厂模式、单例模式、发布订阅模式的范例。</h2><h3 id="四个简单设计模式分别是"><a href="#四个简单设计模式分别是" class="headerlink" title="四个简单设计模式分别是"></a>四个简单设计模式分别是</h3><ul>
+<li>构造函数模式<br>构造函数模式充分的利用了js的基于原型的面向对象思想<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name</div><div class="line">  <span class="keyword">this</span>.age = age</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;</div><div class="line">  sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> zainking = <span class="keyword">new</span> Person(<span class="string">'zain'</span>, <span class="number">21</span>)</div><div class="line">zainking.sayName()</div></pre></td></tr></table></figure></li>
+<li>工厂模式<br>工厂模式主要的特点是在函数内部封装一个对象<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> p = &#123;</div><div class="line">    name: name,</div><div class="line">    age: age,</div><div class="line">    sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> p</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> zainking = Person(<span class="string">'zain'</span>, <span class="number">21</span>)</div><div class="line">zainking.sayName()</div></pre></td></tr></table></figure></li>
+<li>模块模式<br>模块模式主要体现在IIFE上<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doSomething = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'doSomething'</span>)</div><div class="line">  <span class="keyword">return</span> <span class="string">'exploreSomething'</span></div><div class="line">&#125;)(<span class="string">'requireSomething'</span>)</div></pre></td></tr></table></figure></li>
+<li><p>混合模式<br>混合模式主要应用于继承</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name</div><div class="line">  <span class="keyword">this</span>.age = age</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;</div><div class="line">  sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name, age, score</span>) </span>&#123;</div><div class="line">  Person.call(<span class="keyword">this</span>, name, age)</div><div class="line">  <span class="keyword">this</span>.score = score</div><div class="line">&#125;</div><div class="line">Student.prototype = <span class="built_in">Object</span>.create(Person.prototype)</div><div class="line">Student.prototype.sayScore = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.score)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> zainking = <span class="keyword">new</span> Student(<span class="string">'zain'</span>, <span class="number">21</span>, <span class="number">90</span>)</div><div class="line">zainking.sayName()</div><div class="line">zainking.sayScore()</div></pre></td></tr></table></figure>
+<h3 id="两个较为独立的设计模式"><a href="#两个较为独立的设计模式" class="headerlink" title="两个较为独立的设计模式"></a>两个较为独立的设计模式</h3></li>
+<li><p>单例模式<br>单例模式提供了只实例化某一个实例的方法，常常应用于dialog等组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Singleton = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> instantiated</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">init</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'do something only once'</span>)</div><div class="line">    <span class="keyword">return</span> <span class="string">'some public function and value'</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    getInstantiated: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span>(!instantiated)&#123;</div><div class="line">        instantiated = init()</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> instantiated</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)()</div><div class="line"></div><div class="line">Singleton.getInstantiated()</div><div class="line">Singleton.getInstantiated()</div></pre></td></tr></table></figure></li>
+<li>发布订阅模式<br>发布订阅模式提供了定义行为和调用行为的分离，常用于异步操作<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 我认为基于事件池的发布订阅模式不应该简单的在fire中传参</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Pub</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.evtPool = &#123;&#125;</div><div class="line">&#125;</div><div class="line">Pub.prototype.on = <span class="function"><span class="keyword">function</span> (<span class="params">evt, callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.evtPool[evt] = <span class="keyword">this</span>.evtPool[evt] || []</div><div class="line">  <span class="keyword">this</span>.evtPool[evt].push(callback)</div><div class="line">&#125;</div><div class="line">Pub.prototype.off = <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.evtPool[evt]) &#123;</div><div class="line">    <span class="keyword">delete</span> <span class="keyword">this</span>.evtPool[evt]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">Pub.prototype.fire = <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.evtPool[evt]) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="keyword">this</span>.evtPool[evt].length;i++) &#123;</div><div class="line">      <span class="keyword">this</span>.evtPool[evt][i]();</div><div class="line">    &#125;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Event is not exist!'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> evenList1 = <span class="keyword">new</span> Pub()</div><div class="line">evenList1.on(<span class="string">'hello'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span>)</div><div class="line">&#125;)</div><div class="line">evenList1.fire(<span class="string">'hello'</span>)</div><div class="line">evenList1.on(<span class="string">'hello'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'world'</span>)</div><div class="line">&#125;)</div><div class="line">evenList1.fire(<span class="string">'hello'</span>)</div><div class="line">evenList1.off(<span class="string">'hello'</span>)</div><div class="line">evenList1.fire(<span class="string">'hello'</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="使用发布订阅模式写一个事件管理器，可以实现如下方式调用"><a href="#使用发布订阅模式写一个事件管理器，可以实现如下方式调用" class="headerlink" title="使用发布订阅模式写一个事件管理器，可以实现如下方式调用"></a>使用发布订阅模式写一个事件管理器，可以实现如下方式调用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//需要传参的发布订阅模式不应该使用事件池</span></div><div class="line">Event = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> events = &#123;&#125;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      on: <span class="function"><span class="keyword">function</span> (<span class="params">evt, callback</span>) </span>&#123;</div><div class="line">          events[evt] = callback</div><div class="line">        &#125;,</div><div class="line">      off: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</div><div class="line">          <span class="keyword">delete</span> events[evt]</div><div class="line">        &#125;,</div><div class="line">      fire: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> evt = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>)</div><div class="line">        <span class="keyword">if</span> (events[evt]) &#123;</div><div class="line">          events[evt].apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'Event is not exist!'</span>)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)()</div><div class="line">Event.on(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'change...  now val is '</span> + val);  </div><div class="line">&#125;);</div><div class="line">Event.fire(<span class="string">'change'</span>, <span class="string">'饥人谷'</span>);</div><div class="line">Event.off(<span class="string">'change'</span>);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/23/gulp-webpack-npmscript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -548,155 +680,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/19/this-原型链-继承/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/10/19/this-原型链-继承/" itemprop="url">this_原型链_继承</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T11:06:50+08:00">
-                2017-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="apply、call-、bind有什么作用，什么区别"><a href="#apply、call-、bind有什么作用，什么区别" class="headerlink" title="apply、call 、bind有什么作用，什么区别"></a>apply、call 、bind有什么作用，什么区别</h2><p>三个函数的作用都是 <strong>改变函数执行上下文</strong> ，这句话翻译过来就是 <strong>更改函数中this的指向</strong> ，三个函数只不过是在调用方式上有所不同，具体不同请看以下实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = &#123;</div><div class="line">  name: <span class="string">'xiaoming'</span>,</div><div class="line">  age: <span class="number">18</span>,</div><div class="line">  selfIntroduce : <span class="function"><span class="keyword">function</span>(<span class="params">sex</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'My name is '</span> + <span class="keyword">this</span>.name + <span class="string">' ,and i am '</span> + <span class="keyword">this</span>.age + <span class="string">' years old.I am a '</span> + sex + <span class="string">'.'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = &#123;</div><div class="line">  name: <span class="string">'xiaogang'</span>,</div><div class="line">  age: <span class="number">25</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">obj1.selfIntroduce(<span class="string">'boy'</span>); <span class="comment">//My name is xiaoming ,and i am 18 years old.I am a boy.</span></div><div class="line">obj1.selfIntroduce.bind(obj2)(<span class="string">'girl'</span>); <span class="comment">//My name is xiaogang ,and i am 25 years old.I am a girl.</span></div><div class="line">obj1.selfIntroduce.call(obj2,<span class="string">'girl'</span>); <span class="comment">//My name is xiaogang ,and i am 25 years old.I am a girl.</span></div><div class="line">obj1.selfIntroduce.call(obj2,[<span class="string">'girl'</span>]); <span class="comment">//My name is xiaogang ,and i am 25 years old.I am a girl.</span></div></pre></td></tr></table></figure></p>
-<p>从以上代码可以见得，这三个函数分别以不同的方式将此函数的执行上下文更改成了obj2，Function.prototype.bind()方法内参数为执行上下文对象，返回执行上下文为此对象的一个函数；Function.prototype.call()方法第一个参数为执行上下文对象，第二个及以后的参数依次为此函数的参数，并直接依此执行此函数；Function.prototype.apply()方法则与Function.prototype.call()方法类似，只不过最后的参数序列更换为了一个数组。</p>
-<h2 id="以下代码输出什么"><a href="#以下代码输出什么" class="headerlink" title="以下代码输出什么?"></a>以下代码输出什么?</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> john = &#123;</div><div class="line">  firstName: <span class="string">"John"</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.firstName + <span class="string">": hi!"</span>)</div><div class="line">&#125;</div><div class="line">john.sayHi = func <span class="comment">// a</span></div><div class="line">john.sayHi() <span class="comment">//John: hi!</span></div></pre></td></tr></table></figure>
-<p>在a步骤进行赋值时，实际上john对象内部的sayHi函数执行上下文已经被指定为john对象，所以函数中的this指向john。</p>
-<h2 id="下面代码输出什么，为什么"><a href="#下面代码输出什么，为什么" class="headerlink" title="下面代码输出什么，为什么"></a>下面代码输出什么，为什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">func()<span class="comment">//[object Window]</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在未被对象包裹的函数被调用时，视为被window对象调用。</p>
-<h2 id="下面代码输出什么"><a href="#下面代码输出什么" class="headerlink" title="下面代码输出什么"></a>下面代码输出什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//#document</span></div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window</span></div><div class="line">    &#125;, <span class="number">200</span>);</div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
-<p>setTimeout函数是window对象的方法，在它内部声明的回调函数被window对象调用。</p>
-<h2 id="下面代码输出什么，why"><a href="#下面代码输出什么，why" class="headerlink" title="下面代码输出什么，why"></a>下面代码输出什么，why</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> john = &#123;</div><div class="line">  firstName: <span class="string">"John"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  alert( <span class="keyword">this</span>.firstName )</div><div class="line">&#125;</div><div class="line">func.call(john) <span class="comment">//John</span></div></pre></td></tr></table></figure>
-<p>如题1所述，call方法改变了func函数的执行上下文，将john对象作为func函数的执行上下文运行。</p>
-<h2 id="以下代码有什么问题，如何修改"><a href="#以下代码有什么问题，如何修改" class="headerlink" title="以下代码有什么问题，如何修改"></a>以下代码有什么问题，如何修改</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">module</span>= &#123;</div><div class="line">  bind: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $btn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//this指什么</span></div><div class="line">      <span class="keyword">this</span>.showMsg();</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  showMsg: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'饥人谷'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">module</span>= &#123;</div><div class="line">  bind: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">    $btn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="comment">//      console.log(this) //this指$btn[0]</span></div><div class="line">      self.showMsg();</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  showMsg: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'饥人谷'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="有如下代码，解释Person、-prototype、-proto-、p、constructor之间的关联。"><a href="#有如下代码，解释Person、-prototype、-proto-、p、constructor之间的关联。" class="headerlink" title="有如下代码，解释Person、 prototype、__proto__、p、constructor之间的关联。"></a>有如下代码，解释Person、 prototype、__proto__、p、constructor之间的关联。</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'My name is :'</span> + <span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"若愚"</span>)</div><div class="line">p.sayName();</div></pre></td></tr></table></figure>
-<p><img src="https://static.zain.red/10.19/1.jpg" alt="Person原型链"></p>
-<h2 id="上例中，对对象-p可以这样调用-p-toString-。toString是哪里来的-画出原型图-并解释什么是原型链。"><a href="#上例中，对对象-p可以这样调用-p-toString-。toString是哪里来的-画出原型图-并解释什么是原型链。" class="headerlink" title="上例中，对对象 p可以这样调用 p.toString()。toString是哪里来的? 画出原型图?并解释什么是原型链。"></a>上例中，对对象 p可以这样调用 p.toString()。toString是哪里来的? 画出原型图?并解释什么是原型链。</h2><p>p.toString()是从Person对象的原型对象Object对象中来的。<br><img src="https://static.zain.red/10.19/2.jpg" alt="Person原型链"><br>函数的原型对象constructor默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针<strong>proto</strong>，该指针指向上一层的原型对象，而上一层的原型对象的结构依然类似，这样利用<strong>proto</strong>一直指向Object的原型对象上，而Object的原型对象用Object.prototype.__proto__ = null表示原型链的最顶端，如此变形成了javascript的原型链继承，同时也解释了为什么所有的javascript对象都具有Object的基本方法。<br><a href="http://www.cnblogs.com/shuiyi/p/5305435.html" target="_blank" rel="external">水乙：三张图搞懂JavaScript的原型对象与原型链</a></p>
-<h2 id="对String做扩展，实现如下方式获取字符串中频率最高的字符"><a href="#对String做扩展，实现如下方式获取字符串中频率最高的字符" class="headerlink" title="对String做扩展，实现如下方式获取字符串中频率最高的字符"></a>对String做扩展，实现如下方式获取字符串中频率最高的字符</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.getMostOften = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> mostNum = <span class="number">0</span>, currentNum = <span class="number">0</span>, mostChar = <span class="keyword">this</span>[<span class="number">0</span>];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="keyword">this</span>.length;i++)&#123;</div><div class="line">    currentNum = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = i;j &lt; <span class="keyword">this</span>.length;j++)&#123;</div><div class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>[i] === <span class="keyword">this</span>[j])&#123;</div><div class="line">        currentNum++;</div><div class="line">        <span class="keyword">if</span>(currentNum &gt; mostNum)&#123;</div><div class="line">          mostNum = currentNum;</div><div class="line">          mostChar = <span class="keyword">this</span>[i];</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> mostChar;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> str = <span class="string">'ahbbccdeddddfg'</span>;</div><div class="line"><span class="keyword">var</span> ch = str.getMostOften();</div><div class="line"><span class="built_in">console</span>.log(ch); <span class="comment">//d , 因为d 出现了5次</span></div></pre></td></tr></table></figure>
-<h2 id="instanceOf有什么作用？内部逻辑是如何实现的？"><a href="#instanceOf有什么作用？内部逻辑是如何实现的？" class="headerlink" title="instanceOf有什么作用？内部逻辑是如何实现的？"></a>instanceOf有什么作用？内部逻辑是如何实现的？</h2><p>Object.prototype.instanceOf(Constructor)可以判断这个实例对象是否是某个构造函数的后代。<br>它会去寻找此对象中__proto__属性中constructor属性是否与参数吻合，如果不吻合则寻找下一级__proto__属性中的constructor属性是否吻合，一直寻找到Object构造函数，如果全部没有吻合则返回false，有一个吻合就返回true。</p>
-<h2 id="继承有什么作用"><a href="#继承有什么作用" class="headerlink" title="继承有什么作用?"></a>继承有什么作用?</h2><ol>
-<li>可以使对象派生结构清晰。</li>
-<li>可以节省重复代码。</li>
-<li>如果父级类属性改变，则只需更改父级类，继承的子级类自动得到修改。</li>
-</ol>
-<h2 id="下面两种写法有什么区别"><a href="#下面两种写法有什么区别" class="headerlink" title="下面两种写法有什么区别?"></a>下面两种写法有什么区别?</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name, sex</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.sex = sex;</div><div class="line">    <span class="keyword">this</span>.printName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> People(<span class="string">'饥人谷'</span>, <span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="comment">//方法2</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, sex</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.sex = sex;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.printName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'若愚'</span>, <span class="number">27</span>);</div></pre></td></tr></table></figure>
-<p>第一种写法在每次实例化对象时都在实例对象中生成一个单独的printName方法，每一个函数占用一块内存。<br>第二种写法只需要开辟一块内存存放printName方法即可，其他所有实例对象的原型指向含有这个函数的原型对象，节省内存。</p>
-<h2 id="Object-create-有什么作用？兼容性如何？"><a href="#Object-create-有什么作用？兼容性如何？" class="headerlink" title="Object.create 有什么作用？兼容性如何？"></a>Object.create 有什么作用？兼容性如何？</h2><p>Object.create(prototype, descriptors)创建一个具有指定原型且可选择性地包含指定属性的对象。<br>prototype 必需。  要用作原型的对象。 可以为 null。<br>descriptors 可选。 包含一个或多个属性描述符的 JavaScript 对象。<br>“数据属性”是可获取且可设置值的属性。 数据属性描述符包含 value 特性，以及 writable、enumerable 和 configurable 特性。</p>
-<p>如果未指定最后三个特性，则它们默认为 false。 只要检索或设置该值，“访问器属性”就会调用用户提供的函数。 访问器属性描述符包含 set 特性和/或 get 特性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> pt = &#123;</div><div class="line">        say : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'saying!'</span>);    </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> o = <span class="built_in">Object</span>.create(pt);</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'say'</span> <span class="keyword">in</span> o); <span class="comment">// true</span></div><div class="line">    <span class="built_in">console</span>.log(o.hasOwnProperty(<span class="string">'say'</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure><br>Object.create()是ES5语法，仅在支持ES5语法的浏览器上可以实现。</p>
-<h2 id="hasOwnProperty有什么作用？-如何使用？"><a href="#hasOwnProperty有什么作用？-如何使用？" class="headerlink" title="hasOwnProperty有什么作用？ 如何使用？"></a>hasOwnProperty有什么作用？ 如何使用？</h2><p>hasOwnProperty()用于判断此实例对象是否含有此属性,如上题代码，say是pt的属性，o可以以它的子代身份调用，但是检测发现并非其自带属性。</p>
-<h2 id="如下代码中call的作用是什么"><a href="#如下代码中call的作用是什么" class="headerlink" title="如下代码中call的作用是什么?"></a>如下代码中call的作用是什么?</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, sex</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.sex = sex;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Male</span>(<span class="params">name, sex, age</span>)</span>&#123;</div><div class="line">    Person.call(<span class="keyword">this</span>, name, sex);    <span class="comment">//这里的 call 有什么作用</span></div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这里的call相当于实现属性的继承。可以将Person的属性全部继承给Male。</p>
-<h2 id="补全代码，实现继承"><a href="#补全代码，实现继承" class="headerlink" title="补全代码，实现继承"></a>补全代码，实现继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, sex</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.sex = sex;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;;    </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Male</span>(<span class="params">name, sex, age</span>)</span>&#123;</div><div class="line">   Person.call(<span class="keyword">this</span>, name, sex);</div><div class="line">   <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">fn.prototype = Person.prototype;</div><div class="line">Male.prototype = <span class="keyword">new</span> fn();</div><div class="line">Male.prototype.constructor = Male;</div><div class="line">Male.prototype.getAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ruoyu = <span class="keyword">new</span> Male(<span class="string">'若愚'</span>, <span class="string">'男'</span>, <span class="number">27</span>);</div><div class="line">ruoyu.getName();</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -747,7 +730,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

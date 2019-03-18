@@ -266,6 +266,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2018/01/07/滚动穿透问题完美解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/01/07/滚动穿透问题完美解决方案/" itemprop="url">滚动穿透问题完美解决方案</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T20:14:13+08:00">
+                2018-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>滚动穿透问题往往发生在移动端呼出模态框的时候，滑动模态框内内容，背后的body也跟着滑动。<br>下面提供了一种完美的解决方案。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span><span class="selector-class">.modal-open</span> &#123;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* ModalHelper helpers resolve the modal scrolling issue on mobile devices</span></div><div class="line"><span class="comment">* https://github.com/twbs/bootstrap/issues/15852</span></div><div class="line"><span class="comment">* requires document.scrollingElement polyfill</span></div><div class="line"><span class="comment">* https://github.com/yangg/scrolling-element</span></div><div class="line"><span class="comment">\*/</span></div><div class="line"><span class="keyword">var</span> ModalHelper = (<span class="function"><span class="keyword">function</span>(<span class="params">bodyCls</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> scrollTop;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    afterOpen: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      scrollTop = <span class="built_in">document</span>.scrollingElement.scrollTop;</div><div class="line">      <span class="built_in">document</span>.body.classList.add(bodyCls);</div><div class="line">      <span class="built_in">document</span>.body.style.top = -scrollTop + <span class="string">'px'</span>;</div><div class="line">    &#125;,</div><div class="line">    beforeClose: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">document</span>.body.classList.remove(bodyCls);</div><div class="line">      <span class="comment">// scrollTop lost after set position:fixed, restore it back.</span></div><div class="line">      <span class="built_in">document</span>.scrollingElement.scrollTop = scrollTop;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;)(<span class="string">'modal-open'</span>);</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2018/01/07/函数节流/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -510,139 +630,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/12/11/八大排序三大查找JavaScript实现之二：顺序查找，二分查找/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/12/11/八大排序三大查找JavaScript实现之二：顺序查找，二分查找/" itemprop="url">八大排序三大查找JavaScript实现之二：线性查找，二分查找</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T18:09:37+08:00">
-                2017-12-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>这是我“八大排序三大查找JavaScript实现”系列文章的第二篇，转载请注明来源。<br>所有排序算法针对顺序存储结构，以升序方式排列；三大查找算法不涉及动态查找（查找树与平衡查找树等）的知识。<br>文章算法仅供参考复习数据结构与算法之用，实际工程推荐使用使用Array.prototype.sort()函数和Array.prototype.indexOf()函数</p>
-</blockquote>
-<h2 id="线性查找"><a href="#线性查找" class="headerlink" title="线性查找"></a>线性查找</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><ul>
-<li>时间复杂度：O(n)</li>
-</ul>
-<h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><p>从第一个记录开始，逐个比较记录的关键字，直到和给定的K值相等，则查找成功；若比较结果与文件中n个记录的关键字都不等，则查找失败。</p>
-<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">linear_search</span> (<span class="params">keyword, array</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; array.length;i++) &#123;</div><div class="line">    <span class="keyword">if</span> (array[i] === keyword) &#123;</div><div class="line">      <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">arr = [<span class="number">6</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">8</span>];</div><div class="line"><span class="keyword">var</span> result = linear_search(<span class="number">3</span>, arr);</div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">//5</span></div></pre></td></tr></table></figure>
-<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><ul>
-<li>时间复杂度：O(logn)</li>
-</ul>
-<h3 id="算法描述-1"><a href="#算法描述-1" class="headerlink" title="算法描述"></a>算法描述</h3><p>对于升序序列查找所要查找的元素时,首先与序列中间的元素进行比较,如果大于这个元素,就在当前序列的后半部分继续查找,如果小于这个元素,就在当前序列的前半部分继续查找,直到找到相同的元素,或者所查找的序列范围为空为止。（降序亦然）</p>
-<h3 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bisect_search</span> (<span class="params">keyword, array, left, right</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> start = left || <span class="number">0</span>, end = right || array.length - <span class="number">1</span>;</div><div class="line">  <span class="keyword">var</span> mid = <span class="built_in">Math</span>.floor((end - start) / <span class="number">2</span>) + start;  </div><div class="line">  <span class="keyword">if</span> (array[mid] === keyword) &#123;  </div><div class="line">      <span class="keyword">return</span> mid;  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">if</span> (start &gt;= end) &#123;  </div><div class="line">      <span class="keyword">return</span> <span class="number">-1</span>;  </div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (keyword &gt; array[mid]) &#123;  </div><div class="line">      <span class="keyword">return</span> bisect_search(keyword, array, mid + <span class="number">1</span>, end);  </div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (keyword &lt; array[mid]) &#123;  </div><div class="line">      <span class="keyword">return</span> bisect_search(keyword, array, start, mid - <span class="number">1</span>);  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">return</span> <span class="number">-1</span>;  </div><div class="line">&#125;</div><div class="line"></div><div class="line">arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> result = bisect_search(<span class="number">3</span>, arr);</div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">//3</span></div></pre></td></tr></table></figure>
-<h3 id="非递归实现"><a href="#非递归实现" class="headerlink" title="非递归实现"></a>非递归实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bisect_search</span> (<span class="params">keyword, array</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> mid = array.length / <span class="number">2</span>;  </div><div class="line">  <span class="keyword">if</span> (keyword === array[mid]) &#123;  </div><div class="line">      <span class="keyword">return</span> mid;  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">var</span> start = <span class="number">0</span>;  </div><div class="line">  <span class="keyword">var</span> end = array.length - <span class="number">1</span>;  </div><div class="line">  <span class="keyword">while</span> (start &lt;= end) &#123;  </div><div class="line">    mid = <span class="built_in">Math</span>.floor((end - start) / <span class="number">2</span>) + start;  </div><div class="line">    <span class="keyword">if</span> (keyword &lt; array[mid]) &#123;  </div><div class="line">        end = mid - <span class="number">1</span>;  </div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (keyword &gt; array[mid]) &#123;  </div><div class="line">        start = mid + <span class="number">1</span>;  </div><div class="line">    &#125; <span class="keyword">else</span> &#123;  </div><div class="line">        <span class="keyword">return</span> mid;  </div><div class="line">    &#125;  </div><div class="line">  &#125;  </div><div class="line">  <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> result = bisect_search(<span class="number">3</span>, arr);</div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">//3</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -693,7 +680,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

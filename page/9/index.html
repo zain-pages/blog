@@ -266,6 +266,146 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/04/跨域/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/10/04/跨域/" itemprop="url">跨域</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-04T15:32:33+08:00">
+                2017-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h2><p>同源策略是指浏览器为了防止非同源网址使用Ajax导致的安全隐患而采取的禁止调用非同源网址的Ajax请求的策略。<br>同源网址有三大特征：</p>
+<ol>
+<li>协议相同</li>
+<li>网址相同</li>
+<li>端口相同</li>
+</ol>
+<h2 id="什么是跨域？跨域有几种实现形式"><a href="#什么是跨域？跨域有几种实现形式" class="headerlink" title="什么是跨域？跨域有几种实现形式"></a>什么是跨域？跨域有几种实现形式</h2><p>跨域是指绕过同源策略，使得不同源间的网址可以相互做出Ajax请求（或者达到类似Ajax请求的效果）的方式。<br>跨域一般有四种实现方式。</p>
+<ol>
+<li>JSONP</li>
+<li>CORS</li>
+<li>降域</li>
+<li>PostMessage</li>
+</ol>
+<h2 id="JSONP-的原理是什么"><a href="#JSONP-的原理是什么" class="headerlink" title="JSONP 的原理是什么"></a>JSONP 的原理是什么</h2><p>JSONP是指将请求返回的数据包装成JS可执行函数的形式，将真实数据作为参数传入此函数中，从而使用script标签来获取数据的方式。本质上来讲script标签获取脚本并非Ajax，所以不受同源策略影响。<br>具体步骤为：先创造一个 script 标签，然后把 src 赋值为后端的地址再加上 ?callback=doJSONP，其中 doJSONP 为自定义的函数的名字，再利用 script 标签向目标发送跨域请求。目标接收到请求后，解析里面的 callback 参数，然后返回函数包含数据的格式，例如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.send(callback+<span class="string">'('</span>+<span class="built_in">JSON</span>.stringify(data)+<span class="string">')'</span>) <span class="comment">// data为要返回的数据</span></div></pre></td></tr></table></figure>
+<p>等到脚本加载完毕后，doJSONP 函数就会自动执行，从而能够处理跨域请求的数据</p>
+<h2 id="CORS是什么"><a href="#CORS是什么" class="headerlink" title="CORS是什么"></a>CORS是什么</h2><p>CORS是指在后端对请求添加Access-Control-Allow-Origin头，在现代浏览器中，只要Access-Control-Allow-Origin头包含发起请求的域，则将此次请求视为“跨域资源共享”，允许跨域。<br>当使用 XMLHttpRequest 发送请求时，浏览器发现该请求不符合同源策略，会给该请求加一个请求头：Origin，后台进行一系列处理，如果确定接受请求则在返回结果中加入一个响应头：Access-Control-Allow-Origin; 浏览器判断该相应头中是否包含 Origin 的值，如果有则浏览器会处理响应，我们就可以拿到响应数据，如果不包含则会报跨域错误。所以 CORS 的表象与同源的 ajax 请求没区别，代码完全一样。</p>
+<h2 id="演示三种以上跨域的解决方式"><a href="#演示三种以上跨域的解决方式" class="headerlink" title="演示三种以上跨域的解决方式"></a>演示三种以上跨域的解决方式</h2><h3 id="CORS跨域"><a href="#CORS跨域" class="headerlink" title="CORS跨域"></a>CORS跨域</h3><p>以我的曾经一个小Demo“十条评论区”的后端PHP代码为例：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  header(<span class="string">'Access-Control-Allow-Origin:http://comment.zain.red'</span>);header(<span class="string">"Content-Type: text/html;charset=utf-8"</span>);</div></pre></td></tr></table></figure><br>只要在代码头加入Access-Control-Allow-Origin，值为允许的网址，即可实现跨域资源共享。</p>
+<h3 id="JSONP跨域"><a href="#JSONP跨域" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 前端代码 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> printfData = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(data);</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://a.zain.red/data?callback=printfData"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 后端代码 */</span></div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$result = <span class="string">"我是数据"</span>;  </div><div class="line">$callback = $_GET[<span class="string">'callback'</span>];  </div><div class="line"><span class="keyword">echo</span> $callback.<span class="string">"($result)"</span>;  </div></pre></td></tr></table></figure>
+<h3 id="降域实现iframe跨域"><a href="#降域实现iframe跨域" class="headerlink" title="降域实现iframe跨域"></a>降域实现iframe跨域</h3><p>在使用iframe时，可通过定义document.domain实现降域。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- http://zain.red/index.html--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://a.zain.red/data.html"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- http://a.zain.red/index.html--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>12342234<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.domain = <span class="string">"zain.red"</span>;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/10/03/Ajax实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -515,136 +655,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/29/事件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/09/29/事件/" itemprop="url">事件</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T20:31:21+08:00">
-                2017-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="DOM0-事件和DOM2级在事件监听使用方式上有什么区别？"><a href="#DOM0-事件和DOM2级在事件监听使用方式上有什么区别？" class="headerlink" title="DOM0 事件和DOM2级在事件监听使用方式上有什么区别？"></a>DOM0 事件和DOM2级在事件监听使用方式上有什么区别？</h2><p>DOM0事件相当于HEML节点上面的一个属性，如果重新赋值会被替换。<br>DOM2级事件相当于增加一个事件监听，再次监听会与之前的事件叠加。甚至还可以通过第三个参数来确定事件是否冒泡。</p>
-<h2 id="attachEvent与addEventListener的区别？"><a href="#attachEvent与addEventListener的区别？" class="headerlink" title="attachEvent与addEventListener的区别？"></a>attachEvent与addEventListener的区别？</h2><p>attachEvent和addEventListener的区别主要体现在attachEvent：</p>
-<ol>
-<li>不存在第三个参数，无法阻止事件冒泡。</li>
-<li>第二个参数的匿名函数中无法得到事件信息参数e。</li>
-<li>第二个参数的匿名函数中的this指向window而不是产生事件的元素本身。</li>
-</ol>
-<h2 id="解释IE事件冒泡和DOM2事件传播机制？"><a href="#解释IE事件冒泡和DOM2事件传播机制？" class="headerlink" title="解释IE事件冒泡和DOM2事件传播机制？"></a>解释IE事件冒泡和DOM2事件传播机制？</h2><p>IE事件冒泡是指事件信息DOM树中接受事件的最下层开始向上传递直到根节点。DOM2事件传递机制是指先进行事件捕获后进行事件冒泡。事件信息从DOM根节点开始逐层下传到事件发生的目标元素，在达到目标元素后逐层冒泡上传至根节点。</p>
-<h2 id="如何阻止事件冒泡？-如何阻止默认事件？"><a href="#如何阻止事件冒泡？-如何阻止默认事件？" class="headerlink" title="如何阻止事件冒泡？ 如何阻止默认事件？"></a>如何阻止事件冒泡？ 如何阻止默认事件？</h2><p>DOM浏览器：<br>在DOM2级事件监听的第二个参数即匿名函数内使用e.stopPropagation();可以阻止冒泡，使用e.preventDefault()可以阻止默认事件。<br>IE浏览器：<br>window.event.cancelBubble = true;//停止冒泡<br>window.event.returnValue = false;//阻止事件的默认行为</p>
-<h2 id="有如下代码，要求当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容"><a href="#有如下代码，要求当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容" class="headerlink" title="有如下代码，要求当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容"></a>有如下代码，要求当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ct"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>这里是<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>饥人谷<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>前端6班<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(e.target.tagName.toLowerCase() == <span class="string">'li'</span> )&#123;</span></div><div class="line"><span class="javascript">			<span class="built_in">console</span>.log(e.target.innerText);</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="补全代码，要求："><a href="#补全代码，要求：" class="headerlink" title="补全代码，要求："></a>补全代码，要求：</h2><p>当点击按钮开头添加时在&lt;li/&gt;这里是&lt;/li&gt;元素前添加一个新元素，内容为用户输入的非空字符串；当点击结尾添加时在最后一个 li 元素后添加用户输入的非空字符串.<br>当点击每一个元素li时控制台展示该元素的文本内容。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ct"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>这里是<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>饥人谷<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>任务班<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"ipt-add-content"</span> <span class="attr">placeholder</span>=<span class="string">"添加内容"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn-add-start"</span>&gt;</span>开头添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn-add-end"</span>&gt;</span>结尾添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(e.target.tagName.toLowerCase() == <span class="string">'li'</span> )&#123;</span></div><div class="line"><span class="javascript">			<span class="built_in">console</span>.log(e.target.innerText);</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'#btn-add-start'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(<span class="built_in">document</span>.querySelector(<span class="string">'.ipt-add-content'</span>).value)&#123;</span></div><div class="line"><span class="javascript">			<span class="keyword">var</span> newli = <span class="built_in">document</span>.createElement(<span class="string">'LI'</span>);</span></div><div class="line"><span class="javascript">			newli.innerText = <span class="built_in">document</span>.querySelector(<span class="string">'.ipt-add-content'</span>).value;</span></div><div class="line"><span class="javascript">			<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).insertBefore((newli,<span class="built_in">document</span>.querySelector(<span class="string">'.ct li:nth-child(1)'</span>)));</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'#btn-add-end'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(<span class="built_in">document</span>.querySelector(<span class="string">'.ipt-add-content'</span>).value)&#123;</span></div><div class="line"><span class="javascript">			<span class="keyword">var</span> newli = <span class="built_in">document</span>.createElement(<span class="string">'LI'</span>);</span></div><div class="line"><span class="javascript">			newli.innerText = <span class="built_in">document</span>.querySelector(<span class="string">'.ipt-add-content'</span>).value;</span></div><div class="line"><span class="javascript">			<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).appendChild(newli);</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="补全代码，要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。"><a href="#补全代码，要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。" class="headerlink" title="补全代码，要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。"></a>补全代码，要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ct"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-img</span>=<span class="string">"1.png"</span>&gt;</span>鼠标放置查看图片1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-img</span>=<span class="string">"2.png"</span>&gt;</span>鼠标放置查看图片2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-img</span>=<span class="string">"3.png"</span>&gt;</span>鼠标放置查看图片3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img-preview"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(e.target.tagName.toLowerCase() === <span class="string">"li"</span>)&#123;</span></div><div class="line"><span class="javascript">			<span class="keyword">if</span>(<span class="built_in">document</span>.querySelector(<span class="string">'.img-preview img'</span>))&#123;</span></div><div class="line"><span class="javascript">				<span class="built_in">document</span>.querySelector(<span class="string">'.img-preview img'</span>).src = e.target.getAttribute(<span class="string">'data-img'</span>);</span></div><div class="line"><span class="javascript">			&#125;<span class="keyword">else</span>&#123;</span></div><div class="line"><span class="javascript">				<span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span></div><div class="line"><span class="javascript">				img.src = e.target.getAttribute(<span class="string">'data-img'</span>);</span></div><div class="line"><span class="javascript">				<span class="built_in">document</span>.querySelector(<span class="string">'.img-preview'</span>).appendChild(img);</span></div><div class="line"><span class="undefined">			&#125;</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -695,7 +705,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

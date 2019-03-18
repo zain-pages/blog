@@ -266,6 +266,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/29/事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zain King">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zain.red">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/09/29/事件/" itemprop="url">事件</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T20:31:21+08:00">
+                2017-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="DOM0-事件和DOM2级在事件监听使用方式上有什么区别？"><a href="#DOM0-事件和DOM2级在事件监听使用方式上有什么区别？" class="headerlink" title="DOM0 事件和DOM2级在事件监听使用方式上有什么区别？"></a>DOM0 事件和DOM2级在事件监听使用方式上有什么区别？</h2><p>DOM0事件相当于HEML节点上面的一个属性，如果重新赋值会被替换。<br>DOM2级事件相当于增加一个事件监听，再次监听会与之前的事件叠加。甚至还可以通过第三个参数来确定事件是否冒泡。</p>
+<h2 id="attachEvent与addEventListener的区别？"><a href="#attachEvent与addEventListener的区别？" class="headerlink" title="attachEvent与addEventListener的区别？"></a>attachEvent与addEventListener的区别？</h2><p>attachEvent和addEventListener的区别主要体现在attachEvent：</p>
+<ol>
+<li>不存在第三个参数，无法阻止事件冒泡。</li>
+<li>第二个参数的匿名函数中无法得到事件信息参数e。</li>
+<li>第二个参数的匿名函数中的this指向window而不是产生事件的元素本身。</li>
+</ol>
+<h2 id="解释IE事件冒泡和DOM2事件传播机制？"><a href="#解释IE事件冒泡和DOM2事件传播机制？" class="headerlink" title="解释IE事件冒泡和DOM2事件传播机制？"></a>解释IE事件冒泡和DOM2事件传播机制？</h2><p>IE事件冒泡是指事件信息DOM树中接受事件的最下层开始向上传递直到根节点。DOM2事件传递机制是指先进行事件捕获后进行事件冒泡。事件信息从DOM根节点开始逐层下传到事件发生的目标元素，在达到目标元素后逐层冒泡上传至根节点。</p>
+<h2 id="如何阻止事件冒泡？-如何阻止默认事件？"><a href="#如何阻止事件冒泡？-如何阻止默认事件？" class="headerlink" title="如何阻止事件冒泡？ 如何阻止默认事件？"></a>如何阻止事件冒泡？ 如何阻止默认事件？</h2><p>DOM浏览器：<br>在DOM2级事件监听的第二个参数即匿名函数内使用e.stopPropagation();可以阻止冒泡，使用e.preventDefault()可以阻止默认事件。<br>IE浏览器：<br>window.event.cancelBubble = true;//停止冒泡<br>window.event.returnValue = false;//阻止事件的默认行为</p>
+<h2 id="有如下代码，要求当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容"><a href="#有如下代码，要求当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容" class="headerlink" title="有如下代码，要求当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容"></a>有如下代码，要求当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ct"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>这里是<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>饥人谷<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>前端6班<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(e.target.tagName.toLowerCase() == <span class="string">'li'</span> )&#123;</span></div><div class="line"><span class="javascript">			<span class="built_in">console</span>.log(e.target.innerText);</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="补全代码，要求："><a href="#补全代码，要求：" class="headerlink" title="补全代码，要求："></a>补全代码，要求：</h2><p>当点击按钮开头添加时在&lt;li/&gt;这里是&lt;/li&gt;元素前添加一个新元素，内容为用户输入的非空字符串；当点击结尾添加时在最后一个 li 元素后添加用户输入的非空字符串.<br>当点击每一个元素li时控制台展示该元素的文本内容。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ct"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>这里是<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>饥人谷<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>任务班<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"ipt-add-content"</span> <span class="attr">placeholder</span>=<span class="string">"添加内容"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn-add-start"</span>&gt;</span>开头添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn-add-end"</span>&gt;</span>结尾添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(e.target.tagName.toLowerCase() == <span class="string">'li'</span> )&#123;</span></div><div class="line"><span class="javascript">			<span class="built_in">console</span>.log(e.target.innerText);</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'#btn-add-start'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(<span class="built_in">document</span>.querySelector(<span class="string">'.ipt-add-content'</span>).value)&#123;</span></div><div class="line"><span class="javascript">			<span class="keyword">var</span> newli = <span class="built_in">document</span>.createElement(<span class="string">'LI'</span>);</span></div><div class="line"><span class="javascript">			newli.innerText = <span class="built_in">document</span>.querySelector(<span class="string">'.ipt-add-content'</span>).value;</span></div><div class="line"><span class="javascript">			<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).insertBefore((newli,<span class="built_in">document</span>.querySelector(<span class="string">'.ct li:nth-child(1)'</span>)));</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'#btn-add-end'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(<span class="built_in">document</span>.querySelector(<span class="string">'.ipt-add-content'</span>).value)&#123;</span></div><div class="line"><span class="javascript">			<span class="keyword">var</span> newli = <span class="built_in">document</span>.createElement(<span class="string">'LI'</span>);</span></div><div class="line"><span class="javascript">			newli.innerText = <span class="built_in">document</span>.querySelector(<span class="string">'.ipt-add-content'</span>).value;</span></div><div class="line"><span class="javascript">			<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).appendChild(newli);</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="补全代码，要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。"><a href="#补全代码，要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。" class="headerlink" title="补全代码，要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。"></a>补全代码，要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ct"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-img</span>=<span class="string">"1.png"</span>&gt;</span>鼠标放置查看图片1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-img</span>=<span class="string">"2.png"</span>&gt;</span>鼠标放置查看图片2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-img</span>=<span class="string">"3.png"</span>&gt;</span>鼠标放置查看图片3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img-preview"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">	<span class="built_in">document</span>.querySelector(<span class="string">'.ct'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></div><div class="line"><span class="javascript">		<span class="keyword">if</span>(e.target.tagName.toLowerCase() === <span class="string">"li"</span>)&#123;</span></div><div class="line"><span class="javascript">			<span class="keyword">if</span>(<span class="built_in">document</span>.querySelector(<span class="string">'.img-preview img'</span>))&#123;</span></div><div class="line"><span class="javascript">				<span class="built_in">document</span>.querySelector(<span class="string">'.img-preview img'</span>).src = e.target.getAttribute(<span class="string">'data-img'</span>);</span></div><div class="line"><span class="javascript">			&#125;<span class="keyword">else</span>&#123;</span></div><div class="line"><span class="javascript">				<span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span></div><div class="line"><span class="javascript">				img.src = e.target.getAttribute(<span class="string">'data-img'</span>);</span></div><div class="line"><span class="javascript">				<span class="built_in">document</span>.querySelector(<span class="string">'.img-preview'</span>).appendChild(img);</span></div><div class="line"><span class="undefined">			&#125;</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/28/正则表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -518,138 +648,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zain.red/blog/blog/2017/09/27/字符串和JSON/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zain King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://static.zain.red/11.25/avatar.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zain.red">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/09/27/字符串和JSON/" itemprop="url">字符串和JSON</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T13:19:05+08:00">
-                2017-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="对于-HTTP-协议而言，HTML、CSS、JS、JSON-的本质都是什么？"><a href="#对于-HTTP-协议而言，HTML、CSS、JS、JSON-的本质都是什么？" class="headerlink" title="对于 HTTP 协议而言，HTML、CSS、JS、JSON 的本质都是什么？"></a>对于 HTTP 协议而言，HTML、CSS、JS、JSON 的本质都是什么？</h2><p>字符串。<br>浏览器根据相应请求头中的Content-Type以对应的语法解析这些字符串，再分别渲染执行。</p>
-<h2 id="使用数组拼接出如下字符串-，其中styles数组里的个数不定"><a href="#使用数组拼接出如下字符串-，其中styles数组里的个数不定" class="headerlink" title="使用数组拼接出如下字符串 ，其中styles数组里的个数不定"></a>使用数组拼接出如下字符串 ，其中styles数组里的个数不定</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> prod = &#123;</div><div class="line">    name: <span class="string">'女装'</span>,</div><div class="line">    styles: [<span class="string">'短款'</span>, <span class="string">'冬季'</span>, <span class="string">'春装'</span>]</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTpl</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> res = <span class="string">""</span>;</div><div class="line">	res += <span class="string">"&lt;dl class='product'&gt;&lt;dt&gt;"</span> + data.name +<span class="string">"&lt;/dt&gt;"</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; data.styles.length;i++)&#123;</div><div class="line">		res += <span class="string">"&lt;dd&gt;"</span> + data.styles[i] +<span class="string">"&lt;/dd&gt;"</span></div><div class="line">	&#125;</div><div class="line">	res += <span class="string">"&lt;/dl&gt;"</span>;</div><div class="line">	<span class="keyword">return</span> res;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> result = getTpl(prod);  <span class="comment">//result为下面的字符串</span></div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dl</span> <span class="attr">class</span>=<span class="string">"product"</span>&gt;</span><span class="tag">&lt;<span class="name">dt</span>&gt;</span>女装<span class="tag">&lt;/<span class="name">dt</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>短款<span class="tag">&lt;/<span class="name">dd</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>冬季<span class="tag">&lt;/<span class="name">dd</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>春装<span class="tag">&lt;/<span class="name">dd</span>&gt;</span><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="写出两种以上声明多行字符串的方法"><a href="#写出两种以上声明多行字符串的方法" class="headerlink" title="写出两种以上声明多行字符串的方法"></a>写出两种以上声明多行字符串的方法</h2><p>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str1 = <span class="string">'abcdeabcdeabcdeancdea\</span></div><div class="line"><span class="string">			bcdeabcdeabcdeancdeabcdeabcdeabcd\</span></div><div class="line"><span class="string">			eancdeabcdeabcdeabcdeancde'</span>;</div><div class="line"><span class="keyword">var</span> str2 = <span class="string">'abcdeabcdeabcdeancdea'</span></div><div class="line">		  +<span class="string">'bcdeabcdeabcdeancdeabcdeabcdeabcd'</span></div><div class="line">		  +<span class="string">'eancdeabcdeabcdeabcdeancde'</span>;</div><div class="line"><span class="keyword">var</span> str3 = <span class="string">`abcdeabcdeabcdeancdea</span></div><div class="line"><span class="string">			bcdeabcdeabcdeancdeabcdeabcdeabcd</span></div><div class="line"><span class="string">			eancdeabcdeabcdeabcdeancde`</span>;</div></pre></td></tr></table></figure><br>这段字符串很长，如何多行优雅的显示</p>
-<h2 id="补全如下代码-让输出结果为字符串-hello-饥人谷"><a href="#补全如下代码-让输出结果为字符串-hello-饥人谷" class="headerlink" title="补全如下代码,让输出结果为字符串: hello\饥人谷"></a>补全如下代码,让输出结果为字符串: hello\饥人谷</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"hello\\\\饥人谷"</span></div><div class="line"><span class="built_in">console</span>.log(str)</div></pre></td></tr></table></figure>
-<h2 id="以下代码输出什么-为什么"><a href="#以下代码输出什么-为什么" class="headerlink" title="以下代码输出什么?为什么"></a>以下代码输出什么?为什么</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'jirengu\nruoyu'</span></div><div class="line"><span class="built_in">console</span>.log(str.length) <span class="comment">//13,因为其中\n转移为换行符，长度为1</span></div></pre></td></tr></table></figure>
-<h2 id="写一个函数，判断一个字符串是回文字符串，如-abcdcba是回文字符串-abcdcbb不是"><a href="#写一个函数，判断一个字符串是回文字符串，如-abcdcba是回文字符串-abcdcbb不是" class="headerlink" title="写一个函数，判断一个字符串是回文字符串，如 abcdcba是回文字符串, abcdcbb不是"></a>写一个函数，判断一个字符串是回文字符串，如 abcdcba是回文字符串, abcdcbb不是</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPalindrome</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; str.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(str.split(<span class="string">""</span>)[i] !== str.split(<span class="string">""</span>)[str.length<span class="number">-1</span>-i])&#123;</div><div class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="写一个函数，统计字符串里出现出现频率最多的字符"><a href="#写一个函数，统计字符串里出现出现频率最多的字符" class="headerlink" title="写一个函数，统计字符串里出现出现频率最多的字符"></a>写一个函数，统计字符串里出现出现频率最多的字符</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">maxNumOfStr</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> dist = &#123;&#125;;</div><div class="line">	maxNumStr = <span class="string">""</span>;</div><div class="line">	maxNum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; str.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(dist[str[i]] == <span class="literal">undefined</span>)&#123;</div><div class="line">			dist[str[i]] = <span class="number">1</span>;</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			dist[str[i]]++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(key <span class="keyword">in</span> dist)&#123;</div><div class="line">		<span class="keyword">if</span>(dist[key] &gt; maxNum)&#123;</div><div class="line">			maxNum = dist[key];</div><div class="line">			maxNumStr = key;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> maxNumStr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="写一个camelize函数，把my-short-string形式的字符串转化成myShortString形式的字符串，如"><a href="#写一个camelize函数，把my-short-string形式的字符串转化成myShortString形式的字符串，如" class="headerlink" title="写一个camelize函数，把my-short-string形式的字符串转化成myShortString形式的字符串，如"></a>写一个camelize函数，把my-short-string形式的字符串转化成myShortString形式的字符串，如</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">camelize</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> res = str.split(<span class="string">'-'</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt; res.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(res[i].length &gt; <span class="number">1</span>)&#123;</div><div class="line">			res[i] = res[i][<span class="number">0</span>].toUpperCase() + res[i].slice(<span class="number">1</span>);</div><div class="line">		&#125;<span class="keyword">else</span> res[i]=res[i].toUpperCase();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> res.join(<span class="string">''</span>);</div><div class="line">&#125;</div><div class="line">camelize(<span class="string">"background-color"</span>) == <span class="string">'backgroundColor'</span></div><div class="line">camelize(<span class="string">"list-style-image"</span>) == <span class="string">'listStyleImage'</span></div></pre></td></tr></table></figure>
-<h2 id="写一个-ucFirst函数，返回第一个字母为大写的字符-（-）"><a href="#写一个-ucFirst函数，返回第一个字母为大写的字符-（-）" class="headerlink" title="写一个 ucFirst函数，返回第一个字母为大写的字符 （*）"></a>写一个 ucFirst函数，返回第一个字母为大写的字符 （<em>*</em>）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ucFirst(<span class="string">"hunger"</span>) == <span class="string">"Hunger"</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ucFirst</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> str[<span class="number">0</span>].toUpperCase() + str.slice(<span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="写一个函数truncate-str-maxlength-如果str的长度大于maxlength，会把str截断到maxlength长，并加上…，如"><a href="#写一个函数truncate-str-maxlength-如果str的长度大于maxlength，会把str截断到maxlength长，并加上…，如" class="headerlink" title="写一个函数truncate(str, maxlength), 如果str的长度大于maxlength，会把str截断到maxlength长，并加上…，如"></a>写一个函数truncate(str, maxlength), 如果str的长度大于maxlength，会把str截断到maxlength长，并加上…，如</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">truncate(<span class="string">"hello, this is hunger valley,"</span>, <span class="number">10</span>) == <span class="string">"hello, thi..."</span>;</div><div class="line">truncate(<span class="string">"hello world"</span>, <span class="number">20</span>) == <span class="string">"hello world"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, maxlength</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> str.length&lt;=maxlength?str:str.slice(<span class="number">0</span>,maxlength) + <span class="string">"..."</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="什么是-JSON格式数据？JSON格式数据如何表示对象？window-JSON-是什么？"><a href="#什么是-JSON格式数据？JSON格式数据如何表示对象？window-JSON-是什么？" class="headerlink" title="什么是 JSON格式数据？JSON格式数据如何表示对象？window.JSON 是什么？"></a>什么是 JSON格式数据？JSON格式数据如何表示对象？window.JSON 是什么？</h2><p>JSON数据就是符合JSON语法的字符串，JSON格式数据以键值对的形式表示对象，键值对间以:分隔，对象间以,分隔。window.JSON是指BOM上用来操作JSON对象的工具对象，包含了parse()和stringify()等常用的JSON方法。</p>
-<h2 id="如何把JSON-格式的字符串转换为-JS-对象？如何把-JS对象转换为-JSON-格式的字符串"><a href="#如何把JSON-格式的字符串转换为-JS-对象？如何把-JS对象转换为-JSON-格式的字符串" class="headerlink" title="如何把JSON 格式的字符串转换为 JS 对象？如何把 JS对象转换为 JSON 格式的字符串?"></a>如何把JSON 格式的字符串转换为 JS 对象？如何把 JS对象转换为 JSON 格式的字符串?</h2><p>JSON 格式的字符串转换为 JS 对象用JSON.parse()方法，把 JS对象转换为 JSON 格式的字符串用JSON.stringify()方法。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -700,7 +698,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
