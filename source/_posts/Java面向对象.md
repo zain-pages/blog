@@ -132,4 +132,84 @@ public class MammalInt implements Animal{
 
 ## 多态
 
-待补充
+Java 多态是Java程序运行时才确定一个对象所执行的非静态方法。
+Java 多态的实现依赖于运行时虚拟方法调用。
+
+实现 Java 多态有三个必要条件，分别是：
+1. 继承
+2. 重写
+3. 父类引用指向子类对象
+
+如下例所描述：
+```java
+public interface Vegetarian{}
+public class Animal{}
+public class Deer extends Animal implements Vegetarian{}
+```
+现在 Deer 类是多态的，因为他有多个继承机制。针对上面的例子有以下说法：
+* `Deer` 就是 `Animal`
+* `Deer` 就是 `Vegetarian`
+* `Deer` 就是 `Deer`
+* `Deer` 就是 `Object`
+
+当我们提供引用变量来引用 `Deer` 对象，下面的声明是合法的：
+```java
+Deer d = new Deer();
+Animal a = d;
+Vegetarian v = d;
+Object o = d;
+```
+所有的引用变量 `d`, `a`, `v`, `o` 在堆内存中引用同一个对象 `Deer`。
+
+需要注意的是，Java 中多态的完整语义是 *对非静态方法多态*。
+如下例所示：
+```java
+class Animal {
+    int num = 10;
+    static int age = 20;
+    public void eat() {
+        System.out.println("Animal Eating");
+    }
+    public static void sleep() {
+        System.out.println("Animals are sleeping");
+    }
+    public void run(){
+        System.out.println("Animals are running");
+    }
+}
+
+class Cat extends Animal { //【多态第一个条件：继承】
+    int num = 80;
+    static int age = 90;
+    String name = "tomCat";
+    public void eat() { //【多态第二个条件：重写】
+        System.out.println("Cat Eat");
+    }
+    public static void sleep() {
+        System.out.println("Cat is sleeping");
+    }
+    public void catchMouse() {
+        System.out.println("Cat is catching mice");
+    }
+}
+
+class Demo_Test1 {
+	public static void main(String[] args) {	
+        Animal am = new Cat(); //【多态第三个条件：父类引用指向子类对象】
+        am.eat(); // 猫吃饭
+        am.sleep(); // 动物在睡觉
+        am.run(); // 动物在奔跑
+        // am.catchMouse(); // 编译报错 虽然堆内实际有这个方法但是声明的变量类型没有
+        // System.out.println(am.name); // 编译报错 虽然堆内实际有这个方法但是声明的变量类型没有
+        System.out.println(am.num); // 10
+        System.out.println(am.age); // 20
+        ((Cat)am).catchMouse(); // "Cat is catching mice"
+        System.out.println(((Cat)am).name); // "tomCat"
+	}
+}
+```
+其特征可以总结为：
+* 成员变量 编译看类型定义(父类),运行看类型定义(父类)
+* 成员方法 编译看类型定义(父类)，运行看实例化对象(子类)。动态绑定
+* 静态方法 编译看类型定义(父类)，运行看类型定义(父类)。
+(静态和类相关，算不上重写，所以，访问还是左边的)
